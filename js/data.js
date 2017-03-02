@@ -8,7 +8,7 @@ var database = {};
 // https://openweathermap.org/
 function getWeather() {
 	database.weather = {};
-	$.getJSON('http://api.openweathermap.org/data/2.5/weather?id=2643743&APPID=6ed3aee5ec9f68cc29928a132686008f').then(function(data){
+	$.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/2c462647a4abb6a3d74a5ca240018004/51.5074,0.1278').then(function(data){
 		console.log('Received weather data', data);
 		database.weather = data;
 	})
@@ -43,7 +43,7 @@ function getFlights() {
 	})
 }
 function getFlightDetails(flight, callback) {
-	var url = 'http://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/'+flight.flightId+'?appId=1ce57a01&appKey=dcaf7b444da5f530573b82ee0cdb5e36&includeFlightPlan=false&maxPositions=1'
+	var url = 'https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/'+flight.flightId+'?appId=1ce57a01&appKey=dcaf7b444da5f530573b82ee0cdb5e36&includeFlightPlan=false&maxPositions=1'
 	
 	$.getJSON(url).then(function(data){
 		var airports = data.appendix.airports;
