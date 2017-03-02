@@ -1,0 +1,86 @@
+.airplane {
+    background: transparent;
+    color: #333;
+    padding: 5px;
+    display: inline-block;
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 500px;
+    height: 100px;
+	transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    backface-visibility: hidden;
+	perspective: 1000;
+}
+.airplane:hover {
+	color: red;
+	cursor:pointer;
+}
+.airplane span {
+    text-align: right;
+    display: inline-block;
+    width: auto;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.airplane1 span {
+	margin-left: -270px;
+    margin-top: 23px;
+}
+.airplane2 span {
+    margin-left: -233px;
+    margin-top: 7px;	
+}
+.airplane3 span {
+	margin-left: 275px;
+    margin-top: 23px;
+}
+.airplane4 span {
+    margin-left: 240px;
+    margin-top: 8px;
+}
+.airplane1 {
+    -webkit-animation: airplaneLeft 50s linear infinite;
+    background-image: url(../images/airplane.png);	
+}
+.airplane2 {
+    -webkit-animation: airplaneLeft 200s linear infinite;	
+	background-image: url(../images/airplane4.png);
+}
+.airplane3 {
+    -webkit-animation: airplaneRight 25s linear infinite;	
+	background-image: url(../images/airplane2.png);
+}
+.airplane4 {
+    -webkit-animation: airplaneRight 100s linear infinite;
+	background-image: url(../images/airplane3.png);
+}
+
+@-webkit-keyframes airplaneRight {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-moz-keyframes airplaneRight {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-o-keyframes airplaneRight {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-webkit-keyframes airplaneLeft {
+	0% {margin-left: -1000px;}
+	100% {margin-left: 1000px;}
+}
+@-moz-keyframes airplaneLeft {
+	0% {margin-left: -1000px;}
+	100% {margin-left: 1000px;}
+}
+@-o-keyframes airplaneLeft {
+	0% {margin-left: -1000px;}
+	100% {margin-left: 1000px;}
+}
