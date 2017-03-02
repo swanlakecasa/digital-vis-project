@@ -18,7 +18,7 @@ function getWeather() {
 // https://developer.flightstats.com
 function getFlights() {
 	
-	var numberOfFlights = 25;
+	var numberOfFlights = 5;
 	var mileRadius = 50;
 	database.flights = [];
 	database.flightsProcessed = 0;

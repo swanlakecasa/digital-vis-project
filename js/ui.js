@@ -20,7 +20,7 @@ UI.drawAirplane = function(flight) {
 	} else {
 		dir = 'airplaneRight';
 	}
-	$('#sky').append('<a target="_blank" href="http://www.flightstats.com/go/FlightTracker/flightTracker.do?id='+flight.flightId+'" class="airplane airplane'+(++UI.airplainCounter)+'" style="-webkit-animation:'+dir+' '+Math.ceil(100+(Math.random()*300))+'s linear infinite; margin-top:'+(Math.random()*(window.innerHeight-200))+'px" id="'+flight.flightId+'"><span>'+flight.depart+' to '+flight.arrive+'</span></a>');
+	$('#sky').append('<a target="_blank" href="http://www.flightstats.com/go/FlightTracker/flightTracker.do?id='+flight.flightId+'" class="airplane airplane'+(++UI.airplainCounter)+'" style="-webkit-animation:'+dir+' '+Math.ceil(10+(Math.random()*150))+'s linear infinite; margin-top:'+(Math.random()*(window.innerHeight-200))+'px" id="'+flight.flightId+'"><span>'+flight.depart+' to '+flight.arrive+'</span></a>');
 }
 
 $(document).ready(function(){
