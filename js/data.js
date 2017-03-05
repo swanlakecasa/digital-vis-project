@@ -62,4 +62,20 @@ function getFlightDetails(flight, callback) {
 	});
 }
 
+// BUS API
+function getBusStatus(){
+	$.getJSON('https://api.tfl.gov.uk/line/mode/bus/status').then(function(data){
+		console.log('Bus status data received', data);
+		database.buses = data;
+		UI.drawBuses();
+	});
+}
+// TUBE API
+function getTubeStatus(){
+	$.getJSON('https://api.tfl.gov.uk/line/mode/tube/status').then(function(data){
+		console.log('Tube status data received', data);
+		database.tubes = data;
+		UI.drawTubeLines();
+	});
+}
 

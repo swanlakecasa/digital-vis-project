@@ -2,3 +2,5 @@
 
 getWeather();
 getFlights();
+getTubeStatus();
+getBusStatus();

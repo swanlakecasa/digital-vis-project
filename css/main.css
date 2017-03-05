@@ -1,10 +1,10 @@
 body {
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 section .container {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 0px;
+    padding-left: 0px;
     margin-right: auto;
     margin-left: auto;
     position: absolute;
@@ -27,7 +27,7 @@ section .container {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #fff;
+    background: #a1dbff;
 }
 
 
@@ -47,11 +47,14 @@ section .container {
     height: 100%;
     padding-top: 150px;
     text-align: center;
+	background-image: url(../images/building-skyline.svg);
+	background-repeat: repeat-x;
+	background-position: bottom center;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,edf8ff+47,f2faff+100 */
-    background: #f0f9ff; /* Old browsers */
-    background: -moz-linear-gradient(top, #f0f9ff 0%, #edf8ff 47%, #f2faff 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #f0f9ff 0%,#edf8ff 47%,#f2faff 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #f0f9ff 0%,#edf8ff 47%,#f2faff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-color: #f0f9ff; /* Old browsers */
+    background-color: -moz-linear-gradient(top, #f0f9ff 0%, #edf8ff 47%, #f2faff 100%); /* FF3.6-15 */
+    background-color: -webkit-linear-gradient(top, #f0f9ff 0%,#edf8ff 47%,#f2faff 100%); /* Chrome10-25,Safari5.1-6 */
+    background-color: linear-gradient(to bottom, #f0f9ff 0%,#edf8ff 47%,#f2faff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#f2faff',GradientType=0 ); /* IE6-9 */
 }
 
