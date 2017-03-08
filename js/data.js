@@ -1,3 +1,7 @@
+// Swan Lake CASA
+// 2017
+// Digital Visualisation Project
+
 var DATA = {};
 
 $.ajaxSetup({
@@ -61,19 +65,19 @@ DATA.getFlightDetails = function(flight, onComplete) {
 	});
 };
 // BUS API
-DATA.getBusStatus = function(){
+DATA.getBusStatus = function(onComplete){
 	$.getJSON('https://api.tfl.gov.uk/line/mode/bus/status').then(function(data){
 		console.log('Bus status data received', data);
 		DATA.buses = data;
-		UI.drawBuses();
+		onComplete();
 	});
 };
 // TUBE API
-DATA.getTubeStatus = function(){
+DATA.getTubeStatus = function(onComplete){
 	$.getJSON('https://api.tfl.gov.uk/line/mode/tube/status').then(function(data){
 		console.log('Tube status data received', data);
 		DATA.tubes = data;
-		UI.drawTubeLines();
+		onComplete();
 	});
 };
 

@@ -1,4 +1,12 @@
+// Swan Lake CASA
+// 2017
+// Digital Visualisation Project
+
 var UI = {};
+
+UI.drawWeather = function() {
+  DATA.weather.currently.icon
+}
 
 UI.airplainCounter = 0;
 UI.drawAirplanes = function(flights) {
