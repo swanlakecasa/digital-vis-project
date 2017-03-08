@@ -11,7 +11,7 @@ DATA.getWeather(UI.drawWeather);
 // DATA.getFlights() function to be called once it has 
 // finished getting the data.
 DATA.getFlights(UI.drawAirplanes);
-DATA.getBusStatus(UI.drawBuses;
+DATA.getBusStatus(UI.drawBuses);
 DATA.getTubeStatus(UI.drawTubeLines);
 
 // UI.drawGoogleTubeMap();
