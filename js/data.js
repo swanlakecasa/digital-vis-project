@@ -67,7 +67,8 @@ function getBusStatus(){
 	$.getJSON('https://api.tfl.gov.uk/line/mode/bus/status').then(function(data){
 		console.log('Bus status data received', data);
 		database.buses = data;
-		UI.drawBuses();
+		UI.drawBuses
+();
 	});
 }
 // TUBE API

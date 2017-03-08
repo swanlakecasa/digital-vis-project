@@ -1,0 +1,13 @@
+#ground {}
+#vizicities {
+	width: 100%;
+	height: 600px;
+}
+#ground .sub-section {
+
+}
+#ground .buildings {
+	background-image: url(../images/building-skyline.svg);
+  background-repeat: repeat-x;
+  background-position: bottom center;
+}

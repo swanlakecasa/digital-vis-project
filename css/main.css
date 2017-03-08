@@ -1,104 +1,102 @@
 body {
-	/*overflow: hidden;*/
+  /*overflow: hidden;*/
 }
-
+nav.navbar {
+    z-index: 9999999;
+}
 section .container {
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
-    position: absolute;
-    width: 75%;
-    height: 100%;
-    overflow: hidden;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  overflow: hidden;
+}
+h1.section-title {
+  margin-top: 150px;
 }
 .side-panel {
-    background: rgba(51, 51, 51, 0.65);
-    height: 100%;
-    position: absolute;
-    width: 25%;
-    display: block;
-    margin-top: -150px;
-    right: 0;
-    z-index: 999999;
+  background: rgba(51, 51, 51, 0.65);
+  height: 100%;
+  position: absolute;
+  width: 25%;
+  display: block;
+  right: 0;
+  z-index: 999999;
+  padding-top: 150px;
 }
 
+.carousel {
+  width: 100%;
+  height: 100%;
+}
+.carousel-control {
+  color: #000000 !important;
+  background: none !important;
+}
+.carousel-indicators {
+    width: 100%;
+    padding-right: 25%;
+    left: 0;
+    margin-left: 0;
+}
+.carousel-indicators li {
+  border: 1px solid #333;
+}
+.carousel-control.right {
+  right: 25% !important;
+}
+.carousel-indicators .active {
+  background-color: #000;
+}
 .intro-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #a1dbff;
+  height: 100%;
+  text-align: center;
+  background: #a1dbff;
 }
-
 
 .sky-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a1dbff+0,cbebff+53,f0f9ff+100 */
-    background: #a1dbff; /* Old browsers */
-    background: -moz-linear-gradient(top, #a1dbff 0%, #cbebff 53%, #f0f9ff 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #a1dbff 0%,#cbebff 53%,#f0f9ff 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #a1dbff 0%,#cbebff 53%,#f0f9ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1dbff', endColorstr='#f0f9ff',GradientType=0 ); /* IE6-9 */
+  height: 100%;
+  text-align: center;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a1dbff+0,cbebff+53,f0f9ff+100 */
+  background: #a1dbff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #a1dbff 0%, #cbebff 53%, #f0f9ff 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #a1dbff 0%, #cbebff 53%, #f0f9ff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #a1dbff 0%, #cbebff 53%, #f0f9ff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#a1dbff', endColorstr='#f0f9ff', GradientType=0);
+  /* IE6-9 */
 }
 
-.buildings-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-	background-image: url(../images/building-skyline.svg);
-	background-repeat: repeat-x;
-	background-position: bottom center;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,edf8ff+47,f2faff+100 */
-    background-color: #f0f9ff; /* Old browsers */
-    background-color: -moz-linear-gradient(top, #f0f9ff 0%, #edf8ff 47%, #f2faff 100%); /* FF3.6-15 */
-    background-color: -webkit-linear-gradient(top, #f0f9ff 0%,#edf8ff 47%,#f2faff 100%); /* Chrome10-25,Safari5.1-6 */
-    background-color: linear-gradient(to bottom, #f0f9ff 0%,#edf8ff 47%,#f2faff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#f2faff',GradientType=0 ); /* IE6-9 */
-}
-
-.people-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,edf8ff+47,f2faff+100 */
-    background: #f0f9ff; /* Old browsers */
-    background: -moz-linear-gradient(top, #f0f9ff 0%, #edf8ff 47%, #f2faff 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #f0f9ff 0%,#edf8ff 47%,#f2faff 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #f0f9ff 0%,#edf8ff 47%,#f2faff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#f2faff',GradientType=0 ); /* IE6-9 */
-}
-
-.transport-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,edf8ff+47,f2faff+100 */
-    background: #f2faff; /* Old browsers */
-    background: -moz-linear-gradient(top, #f2faff 0%, #EAEAEA 47%, #D6DADA 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #f2faff 0%,#EAEAEA 47%,#D6DADA 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #f2faff 0%,#EAEAEA 47%,#D6DADA 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2faff', endColorstr='#f2faff',GradientType=0 ); /* IE6-9 */
-}
-
-.streets-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #D6DADA;
+.ground-section {
+  height: 100%;
+  text-align: center;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,edf8ff+47,f2faff+100 */
+  background-color: #f0f9ff;
+  /* Old browsers */
+  background-color: -moz-linear-gradient(top, #f0f9ff 0%, #edf8ff 47%, #f2faff 100%);
+  /* FF3.6-15 */
+  background-color: -webkit-linear-gradient(top, #f0f9ff 0%, #edf8ff 47%, #f2faff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background-color: linear-gradient(to bottom, #f0f9ff 0%, #edf8ff 47%, #f2faff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#f2faff', GradientType=0);
+  /* IE6-9 */
 }
 
 .underground-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #aaa;
+  height: 100%;
+  text-align: center;
+  background: #aaa;
 }
 
 .deep-underground-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #999;
+  height: 100%;
+  text-align: center;
+  background: #999;
 }
