@@ -1,5 +1,7 @@
-body {
-  /*overflow: hidden;*/
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 nav.navbar {
     z-index: 9999999;
@@ -12,7 +14,7 @@ section .container {
   position: absolute;
   width: 75%;
   height: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 h1.section-title {
   margin-top: 150px;
