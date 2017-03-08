@@ -13,5 +13,3 @@ DATA.getWeather(UI.drawWeather);
 DATA.getFlights(UI.drawAirplanes);
 DATA.getBusStatus(UI.drawBuses);
 DATA.getTubeStatus(UI.drawTubeLines);
-
-// UI.drawGoogleTubeMap();

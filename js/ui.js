@@ -5,8 +5,8 @@
 var UI = {};
 
 UI.drawWeather = function() {
-  DATA.weather.currently.icon
-}
+  console.log('Weather: ', DATA.weather.currently.icon);
+};
 
 UI.airplainCounter = 0;
 UI.drawAirplanes = function(flights) {
@@ -48,15 +48,18 @@ UI.drawTubeLines = function() {
   });
 };
 UI.drawGoogleTubeMap = function() {
-  console.log('UI.drawGoogleTubeMap');
+  console.log('drawing google map');
   var map = new google.maps.Map(document.getElementById('googleTubeMap'), {
     zoom: 13,
     center: {lat: 51.501904, lng: -0.115871}
   });
+
   var transitLayer = new google.maps.TransitLayer();
   transitLayer.setMap(map);
   $('#googleTubeMap').height(window.innerHeight);
-}
+  UI.resizeSubsections();
+  UI.googleTubeMapDrawn = true;
+};
 UI.resizeSubsections = function() {
   $('.sub-section').height(window.innerHeight);
 };
@@ -67,6 +70,11 @@ $(document).ready(function() {
   });
   $('.carousel').carousel();
   $('.carousel').on('slide.bs.carousel', function (e) {
-    console.log('Ground layer sub-section: ', $(this).find('.item.active').find('h3').text(), e);
+    console.log('Ground layer sub-section: ', $(e.relatedTarget).eq(0).attr('id'));
+    if($(e.relatedTarget).eq(0).attr('id') === 'transport') {
+      if(!UI.googleTubeMapDrawn) {
+        UI.drawGoogleTubeMap();
+      }
+    }
   });
 });
