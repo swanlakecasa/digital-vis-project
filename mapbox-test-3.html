@@ -18,14 +18,81 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100%;
+    width: 70%;
   }
+  #menu {
+        background: #fff;
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        right: 32%;
+        margin-right: 10px;
+        border-radius: 3px;
+        width: 120px;
+        border: 1px solid rgba(0,0,0,0.4);
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    #menu a {
+        font-size: 13px;
+        color: #fff;
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0,0,0,0.25);
+        text-align: center;
+    }
+
+    #menu a:last-child {
+        border: none;
+    }
+
+    #menu a:hover {
+        background-color: #f8f8f8;
+        color: #404040;
+    }
+
+/*    #menu a.active {
+        background-color: #3887be;
+        color: #ffffff;
+    }
+
+    #menu a.active:hover {
+        background: #3074a4;
+    }*/
+
+    #menu a#londonist-rivers {
+      background-color: #1C99C0;
+    }
+    #menu a#londonist-old-stations {
+      background-color: #A352FD;
+    }
+    #menu a#londonist-war-shelters {
+      background-color: #FF0000;
+    }
+    #story {
+      background-color: #000000;
+      color: #ffffff;
+      width: 30%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      padding: 10px;
+    }
   </style>
 </head>
 
 <body>
+  <nav id="menu"></nav>
   <div id='map'></div>
+  <div id="story">
+    
+  </div>
   <div id="info" style="position: absolute; right: 10px; top: 10px; background: #ccc;"></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js'></script>
   <script>
 
@@ -34,7 +101,7 @@
     container: 'map',
     style: 'mapbox://styles/danpaulsmith/cj1mfp0e800222rpb1nbd6jnb',
     zoom: 11,
-    center: [-0.164806, 51.551332]
+    center: [-0.116, 51.515]
   });
 
   map.on('load', function() {
@@ -53,6 +120,7 @@
       }
     });
     map.on('click', 'londonist-rivers', function (e) {
+      $('#story').html('<h3>Underground rivers</h3><p>There are 12 underground rivers that pass through London and into the Thames.</p>');
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
             .setHTML('<iframe width="600" height="500" src="'+e.features[0].properties.description+'" frameborder="0" />')
@@ -89,6 +157,8 @@
             .setLngLat(e.lngLat)
             .setHTML(e.features[0].properties.name+'<br /><br />'+e.features[0].properties.description)
             .addTo(map);
+
+        $('#story').html('<h3>Old stations</h3><p>There are 100 old stations deep below London\'s surface.</p>');
     });
     map.on('mouseenter', 'londonist-old-stations', function () {
         map.getCanvas().style.cursor = 'pointer';
@@ -111,6 +181,7 @@
       }
     });
     map.on('click', 'londonist-war-shelters', function (e) {
+        $('#story').html('<h3>Deep level war shelters</h3><p>There are 15 war shelters deep below London\'s surface, each planned to store up to 10,000 citizens.</p>');
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
             .setHTML('<iframe width="600" height="500" src="'+e.features[0].properties.description+'" frameborder="0" />')
@@ -144,6 +215,48 @@
     //         'fill-extrusion-opacity': .6
     //     }
     // });
+
+    var toggleableLayerIds = [ 'londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations'];
+    function getLayerName(id) {
+      switch(id){
+        case 'londonist-rivers':
+          return 'Underground rivers';
+        case 'londonist-war-shelters':
+          return 'War shelters';
+        case 'londonist-old-stations':
+          return 'Old tube stations';
+        default:
+          return '';
+      }
+    }
+    for (var i = 0; i < toggleableLayerIds.length; i++) {
+        var id = toggleableLayerIds[i];
+
+        var link = document.createElement('a');
+        link.href = '#';
+        link.className = 'active';
+        link.id = id;
+        link.textContent = getLayerName(id);
+
+        link.onclick = function (e) {
+            var clickedLayer = this.id;
+            e.preventDefault();
+            e.stopPropagation();
+
+            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+            if (visibility === 'visible' || visibility === undefined) {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                this.className = 'active';
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+            }
+        };
+
+        var layers = document.getElementById('menu');
+        layers.appendChild(link);
+    }
+
 
   });
   </script>
