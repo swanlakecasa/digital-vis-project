@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.0-beta.30/vega.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.0-beta.2/vega-lite.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-beta.14/vega-embed.js"></script>
+  <style>
+  body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .vega-actions {
+    display: none;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="parking" class="chart"></div>
+  <script>
+    var opt = {
+      "mode": "vega-lite"
+    };
+    var parking = {
+      "name": "parking",
+      "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+      "description": "http://www.thisismoney.co.uk/money/cars/article-2524669/London-expensive-city-world-park.html",
+      "width": "500",
+      "data": {
+        "values": [
+          {"City": "London","Parking cost (£)": 42},
+          {"City": "Tokyo","Parking cost (£)": 38},
+          {"City": "Stockholm","Parking cost (£)": 32},
+          {"City": "Zurich","Parking cost (£)": 31},
+          {"City": "Sydney","Parking cost (£)": 29},
+          {"City": "New York","Parking cost (£)": 28},
+          {"City": "Paris","Parking cost (£)": 26},
+          {"City": "Hong Kong","Parking cost (£)": 25},
+          {"City": "Hamburg","Parking cost (£)": 19},
+          {"City": "Brussels","Parking cost (£)": 16}
+        ]
+      },
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "City",
+          "type": "ordinal",
+          "sort": null
+        },
+        "y": {
+          "field": "Parking cost (£)",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    };
+    
+    function createVega(config) {
+      vega.embed("#"+config.name, config, opt, function(error, result) {
+        if(result) {
+          var a = document.createElement('a');
+          var linkText = document.createTextNode("Source");
+          a.appendChild(linkText);
+          a.title = "Click for "+config.name+" source";
+          a.href = config.description;
+          a.target = "_blank";
+          result.view._el.appendChild(a);
+        }
+      });
+    }
+
+    createVega(parking);
+
+  </script>
+</body>
+
+</html>
