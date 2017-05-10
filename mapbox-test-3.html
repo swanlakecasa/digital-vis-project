@@ -54,6 +54,7 @@
         color: #404040;
     }
 
+
 /*    #menu a.active {
         background-color: #3887be;
         color: #ffffff;
@@ -71,6 +72,30 @@
     }
     #menu a#londonist-war-shelters {
       background-color: #FF0000;
+    }
+    #menu a#sewer {
+      background-color: #FED04E;
+    }
+    #menu a#gas-pipe {
+      background-color: #FED0AE;
+    }
+    #menu a#gas-site {
+      background-color: #FED0AE;
+    }
+    #menu a#cable {
+      background-color: #1967FD;
+    }
+    #menu a#ohl {
+      background-color: #1967FD;
+    }
+    #menu a#substations {
+      background-color: #1967FD;
+    }
+    #menu a#towers {
+      background-color: #1967FD;
+    }
+    #menu a#sewer input {
+      width: 100%;
     }
     #story {
       background-color: #000000;
@@ -180,6 +205,150 @@
         "fill-opacity": 0.5
       }
     });
+    map.addLayer({
+        "id": "sewer",
+        "source": {
+            "type": "raster",
+            "url": "mapbox://danpaulsmith.480p7dgq"
+        },
+        "type": "raster",
+        "paint": {
+          "raster-opacity": 0.2
+        }
+    });
+    map.addLayer({
+        "id": "gas-pipe",
+        "type": "line",
+        "source": {
+            type: 'vector',
+            url: 'mapbox://danpaulsmith.24gbr2l3'
+        },
+        "source-layer": "Gas_Pipe-1vxwnf",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#FED0AE",
+            "line-width": 1
+        }
+    });
+    map.addLayer({
+        "id": "gas-site",
+        "type": "polygon",
+        "source": {
+            type: 'vector',
+            url: 'mapbox://danpaulsmith.6jbwn84j'
+        },
+        "source-layer": "Gas_Site-5f5032",
+        "paint": {
+            "fill-color": "#FED0AE",
+            "fill-opacity": 1
+        }
+    });
+    map.addLayer({
+        "id": "cable",
+        "type": "line",
+        "source": {
+            type: 'vector',
+            url: 'mapbox://danpaulsmith.69v59blx'
+        },
+        "source-layer": "Cable-8yg86a",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#1967FD",
+            "line-width": 1
+        }
+    });
+    map.addLayer({
+        "id": "ohl",
+        "type": "point",
+        "source": {
+            type: 'vector',
+            url: 'mapbox://danpaulsmith.79930dxt'
+        },
+        "source-layer": "OHL-40ipub",
+        "paint": {
+            "line-color": "#1967FD",
+            "line-width": 1
+        }
+    });
+    map.addLayer({
+        "id": "substations",
+        "type": "fill",
+        "source": {
+            type: 'vector',
+            url: 'mapbox://danpaulsmith.9htn62xa'
+        },
+        "source-layer": "Substations-25ms1l",
+        "paint": {
+            "fill-color": "#1967FD",
+            "fill-width": 1
+        }
+    });
+    map.addLayer({
+        "id": "towers",
+        "type": "point",
+        "source": {
+            type: 'vector',
+            url: 'mapbox://danpaulsmith.3buy55k2'
+        },
+        "source-layer": "Towers-cs8csv",
+        "paint": {
+            "fill-color": "#1967FD"
+        }
+    });
+
+
+    // map.addLayer({
+    //     "id": "gas-pipe",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.24gbr2l3"
+    //     },
+    //     "type": "vector"
+    // });
+    // map.addLayer({
+    //     "id": "gas-station",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.6jbwn84j"
+    //     },
+    //     "type": "vector"
+    // });
+    // map.addLayer({
+    //     "id": "ohl",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.79930dxt"
+    //     },
+    //     "type": "vector"
+    // });
+    // map.addLayer({
+    //     "id": "substations",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.9htn62xa"
+    //     },
+    //     "type": "vector"
+    // });
+    // map.addLayer({
+    //     "id": "towers",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.3buy55k2"
+    //     },
+    //     "type": "vector"
+    // });
+    
+    
+    
+    
+    
+
     map.on('click', 'londonist-war-shelters', function (e) {
         $('#story').html('<h3>Deep level war shelters</h3><p>There are 15 war shelters deep below London\'s surface, each planned to store up to 10,000 citizens.</p>');
         new mapboxgl.Popup()
@@ -216,7 +385,7 @@
     //     }
     // });
 
-    var toggleableLayerIds = [ 'londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations'];
+    var toggleableLayerIds = [ 'londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations', 'sewer', 'gas-pipe', 'gas-site', 'cable', 'ohl', 'substations', 'towers'];
     function getLayerName(id) {
       switch(id){
         case 'londonist-rivers':
@@ -225,24 +394,60 @@
           return 'War shelters';
         case 'londonist-old-stations':
           return 'Old tube stations';
+        case 'sewer':
+          return 'London Sewer network (1980)';
+        case 'cable':
+          return 'National Grid - Electricity cable';
+        case 'gas-pipe':
+          return 'National Grid - Gas pipes';
+        case 'gas-site':
+          return 'National Grid - Gas site';
+        case 'ohl':
+          return 'National Grid - Electricity overhead lines';
+        case 'substations':
+          return 'National Grid - Electricity substations';
+        case 'towers':
+          return 'National Grid - Electricity towers';
         default:
-          return '';
+          return id;
       }
     }
     for (var i = 0; i < toggleableLayerIds.length; i++) {
         var id = toggleableLayerIds[i];
 
         var link = document.createElement('a');
-        link.href = '#';
+        link.href = 'javascript:void(0);';
         link.className = 'active';
         link.id = id;
-        link.textContent = getLayerName(id);
+        if(id === 'sewer') {
+          var input = document.createElement('input');
+          input.type = 'range';
+          input.min = 0;
+          input.max = 100;
+          input.step = 1;
+          input.value = 30;
+          input.id = 'sewerOpacity';
+          var span = document.createElement('span');
+          var t = document.createTextNode(getLayerName(id));
+          span.appendChild(t);
+          link.appendChild(span);
+          link.appendChild(input);
+          input.addEventListener('input', function(e) {
+              // Adjust the layers opacity. layer here is arbitrary - this could
+              // be another layer name found in your style or a custom layer
+              // added on the fly using `addSource`.
+              map.setPaintProperty('sewer', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+          });
+        } else {
+          var span = document.createElement('span');
+          var t = document.createTextNode(getLayerName(id));
+          span.appendChild(t);
+        }
 
-        link.onclick = function (e) {
-            var clickedLayer = this.id;
+        span.onclick = function (e) {
+            var clickedLayer = this.parentNode.id;
             e.preventDefault();
             e.stopPropagation();
-
             var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
             if (visibility === 'visible' || visibility === undefined) {
                 map.setLayoutProperty(clickedLayer, 'visibility', 'none');
@@ -252,10 +457,20 @@
                 map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
             }
         };
-
+        link.appendChild(span);
+        
         var layers = document.getElementById('menu');
         layers.appendChild(link);
     }
+
+    // var slider = document.getElementById('sewerOpacity');
+
+    // slider.addEventListener('input', function(e) {
+    //     // Adjust the layers opacity. layer here is arbitrary - this could
+    //     // be another layer name found in your style or a custom layer
+    //     // added on the fly using `addSource`.
+    //     map.setPaintProperty('sewer', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+    // });
 
 
   });
