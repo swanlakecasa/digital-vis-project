@@ -20,26 +20,32 @@
     text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
     cursor: default;
   }
+  
   .info {
-  	position: absolute;
-  	bottom: 0;
-  	left: 0;
-  	width: 300px;
-  	text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    text-align: left;
+    font-size: 16px;
   }
+  
   .info p {
-  	margin: 0;
-  	padding: 0;
-  	clear: both;
+    margin: 0;
+    padding: 0;
+    clear: both;
   }
+  
   span.one {
-  	float: left;
+    float: left;
   }
+  
   span.two {
-  	float:right;
+    float: right;
   }
+  
   .key {
-position: absolute;
+    position: absolute;
     left: 0;
     top: 0;
     margin-left: 30px;
@@ -61,15 +67,19 @@ position: absolute;
     list-style-type: none;
     text-align: left;
   }
-  .key ul  li {
-  	margin-bottom: 3px;
+  
+  .key ul li {
+    margin-bottom: 3px;
   }
+  
   li.active {
-  	opacity: 1;
+    opacity: 1;
   }
+  
   li {
-  	opacity: 0.3;
+    opacity: 0.3;
   }
+  
   .legend {
     font-family: 'Raleway', sans-serif;
     fill: #333333;
@@ -77,6 +87,10 @@ position: absolute;
   
   .tooltip {
     fill: #333333;
+  }
+  
+  .radarChart {
+    text-align: right;
   }
   </style>
 </head>
@@ -99,13 +113,14 @@ position: absolute;
       bottom: 100,
       left: 100
     },
-    width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
-    height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+    width = (window.innerWidth * 0.5) - margin.left - margin.right,
+    height = window.innerHeight - margin.top - margin.bottom;
 
   ////////////////////////////////////////////////////////////// 
   ////////////////////////// Data ////////////////////////////// 
   ////////////////////////////////////////////////////////////// 
-  var cityStats2 = [[{
+  var cityStats2 = [
+    [{
       axis: "City",
       value: "Beijing"
     }, {
@@ -214,7 +229,8 @@ position: absolute;
     }, {
       axis: "Private cars per 100 persons",
       value: 31
-    }]]
+    }]
+  ]
 
   // var data = [
   //   [ //iPhone
@@ -528,42 +544,44 @@ position: absolute;
   var exclusions = [];
   var color = d3.scale.category10();
   var lis = cityStats.map(function(city, i) {
-    return '<li class="active" id="menu-'+i+'"><span class="icon" style="background:' + color(i) + '"></span>' + city[0].value + '</li>';
+    return '<li class="active" id="menu-' + i + '"><span class="icon" style="background:' + color(i) + '"></span>' + city[0].value + '</li>';
   }).join('');
   d3.select('.key').append('ul').html(lis);
-  d3.select('.key').selectAll('ul').selectAll('li').on('mouseover', function(){
-  	var id = d3.select(this).attr('id').replace('menu-','');
-  	 d3.selectAll('path').style('fill-opacity', 0.1); d3.selectAll('#path-'+id).style('fill-opacity', 1);
-  	 d3.selectAll('.key ul li').attr('class', '');
-  	 d3.select(this).attr('class', 'active');
-  	 displayInfo(id);
-  	// if(id in exclusions) {
-  	// 	exclusions.splice(exclusions.indexOf(id), 1);
-  	// 	d3.select('#path-'+id).attr('fill-opacity', 1);
-  	// 	d3.select(this).attr('class', 'active');
-  	// } else {
-  	// 	exclusions.push(id);
-  	// 	d3.select('#path-'+id).attr('fill-opacity', 0);
-  	// 	d3.select(this).attr('class', 'inactive');
-  	// }
-  	// rebuildChart();
-  }).on('mouseout', function(){
-  	d3.selectAll('path').style('fill-opacity', 0.5); 
-  	d3.selectAll('.key ul li').attr('class', 'active');
-  	hideInfo();
+  d3.select('.key').selectAll('ul').selectAll('li').on('mouseover', function() {
+    var id = d3.select(this).attr('id').replace('menu-', '');
+    d3.selectAll('path').style('fill-opacity', 0.1);
+    d3.selectAll('#path-' + id).style('fill-opacity', 1);
+    d3.selectAll('.key ul li').attr('class', '');
+    d3.select(this).attr('class', 'active');
+    displayInfo(id);
+    // if(id in exclusions) {
+    // 	exclusions.splice(exclusions.indexOf(id), 1);
+    // 	d3.select('#path-'+id).attr('fill-opacity', 1);
+    // 	d3.select(this).attr('class', 'active');
+    // } else {
+    // 	exclusions.push(id);
+    // 	d3.select('#path-'+id).attr('fill-opacity', 0);
+    // 	d3.select(this).attr('class', 'inactive');
+    // }
+    // rebuildChart();
+  }).on('mouseout', function() {
+    d3.selectAll('path').style('fill-opacity', 0.5);
+    d3.selectAll('.key ul li').attr('class', 'active');
+    hideInfo();
   });
 
   function displayInfo(id) {
-  	var html = '';
-  	c = cityStats[id];
-  	console.log(c);
-  	html = '<h3>'+names[id].value+'</h3>';
-  	c.forEach(function(attr){
-  		html += '<p><span class="one">'+attr.axis+'</span><span class="two">'+attr.originalValue+'</span></p>';
-  	})
-  	d3.select('.info').html(html);
-  	//c.originalValue
+    var html = '';
+    c = cityStats[id];
+    console.log(c);
+    html = '<h3>' + names[id].value + '</h3>';
+    c.forEach(function(attr) {
+      html += '<p><span class="one">' + attr.axis + '</span><span class="two">' + attr.originalValue + '</span></p>';
+    })
+    d3.select('.info').html(html);
+    //c.originalValue
   }
+
   function hideInfo() {
 
   }
@@ -599,10 +617,9 @@ position: absolute;
   // console.log(data);
   //Call function to draw the Radar chart
   RadarChart(".radarChart", data, radarChartOptions);
-  	d3.selectAll('.radarStroke').style('stroke-opacity', 0); d3.selectAll('.radarCircle').style('fill-opacity', 0);
-  	d3.selectAll('path').style('fill-opacity', 0.5); 
-  
-
+  d3.selectAll('.radarStroke').style('stroke-opacity', 0);
+  d3.selectAll('.radarCircle').style('fill-opacity', 0);
+  d3.selectAll('path').style('fill-opacity', 0.5);
   </script>
 </body>
 
