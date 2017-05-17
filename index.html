@@ -22,6 +22,7 @@
   <link href="css/ground.css" rel="stylesheet">
   <link href="css/transport.css" rel="stylesheet">
   <link href="css/deep-underground.css" rel="stylesheet">
+  <link href="css/city-stats.css" rel="stylesheet">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -74,7 +75,7 @@
   <section id="intro" class="intro-section">
     <!-- <div class="container"> -->
     <div class="">
-      <div class="col-lg-12">
+      <div class="col-lg-12 main">
         <h1 class="section-title">London</h1>
         <p><strong>Usage Instructions:</strong> Scroll the page to slice through the layers of London.</p>
         <a class="btn btn-default page-scroll" href="#sky">Let's dance</a>
@@ -127,9 +128,10 @@
           <div class="container">
             <div class="">
               <div class="col-lg-12">
-                <h1 class="section-title">Streets</h1>
+                <h1 class="section-title">Cars</h1>
                 <div class="content">
-                  <canvas data-processing-sources="processing/webtest/webtest.pde"></canvas>
+                  <canvas data-processing-sources="processing/webtest/car_transp/car_transp.pde" width="350"></canvas>
+                  <canvas data-processing-sources="processing/webtest/car_transp/car_transp.pde" width="350"></canvas>
                 </div>
               </div>
             </div>
@@ -146,17 +148,38 @@
                 </div>
               </div>
             </div>
-            <div id="googleTubeMap"></div>
+            <!-- <div id="googleTubeMap"></div> -->
           </div>
           <div class="side-panel">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/sLD7GYZT7Z8" frameborder="0" allowfullscreen></iframe>
+            <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/sLD7GYZT7Z8" frameborder="0" allowfullscreen></iframe> -->
           </div>
         </div>
         <div class="sub-section item people" id="people">
           <div class="container">
             <div class="">
               <div class="col-lg-12">
-                <h1 class="section-title">People</h1>
+                <h1 class="section-title">Land prices</h1>
+                <div class="content">
+                  <iframe width="100%" height="520" frameborder="0" src="https://ucfngeo.carto.com/builder/a06cd61c-3a4b-11e7-a402-0ee66e2c9693/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="side-panel"></div>
+        </div>
+        <div class="sub-section item citystats" id="citystats">
+          <div class="container">
+            <div class="">
+              <div class="col-lg-12">
+                <h1 class="section-title">City stats</h1>
+                <div class="content">
+                  <div class="radarChart"></div>
+                  <p class="citystats-info">Click the key items to toggle between cities</p>
+                  <div class="key"></div>
+                  <div class="info">
+                    <table></table>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -206,25 +229,28 @@
   </section>
 
   <script src="js/libraries/jquery.js"></script>
+  <script src="js/libraries/d3.min.js"></script>
   <script src="js/libraries/processing.min.js"></script>
   <script src="js/libraries/underscore-min.js"></script>
   <script src="js/libraries/bootstrap.min.js"></script>
   <script src="js/libraries/jquery.easing.min.js"></script>
   <script src="js/libraries/scrolling-nav.js"></script>
   <script src="js/libraries/window-resize.js"></script>
+  <script src="js/radarChart.js"></script>
 
   <script src="js/data.js"></script>
   <script src="js/ui.js"></script>
   <script src="js/logic.js"></script>
+  <script src="js/city-stats.js"></script>
 
-  <script>
+<!--   <script>
     function googleTubeMap() {
       console.log('Google Maps JS loaded');
     }
-  </script>
-  <script async defer
+  </script> -->
+<!--   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBVm6B5V6IfpFg2P78EAhlKASl9z2g7UY&callback=googleTubeMap">
-  </script>
+  </script> -->
 
 </body>
 

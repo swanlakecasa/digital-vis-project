@@ -71,10 +71,10 @@ $(document).ready(function() {
   $('.carousel').carousel();
   $('.carousel').on('slide.bs.carousel', function (e) {
     console.log('Ground layer sub-section: ', $(e.relatedTarget).eq(0).attr('id'));
-    if($(e.relatedTarget).eq(0).attr('id') === 'transport') {
-      if(!UI.googleTubeMapDrawn) {
-        UI.drawGoogleTubeMap();
-      }
-    }
+    // if($(e.relatedTarget).eq(0).attr('id') === 'transport') {
+    //   if(!UI.googleTubeMapDrawn) {
+    //     UI.drawGoogleTubeMap();
+    //   }
+    // }
   });
 });

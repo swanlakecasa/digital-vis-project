@@ -1,0 +1,84 @@
+#citystats .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  text-align: left;
+  font-size: 16px;
+}
+
+#citystats .info p {
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+#citystats span.one {
+  float: left;
+}
+
+#citystats span.two {
+  float: right;
+}
+
+#citystats .key {
+  top: 150px;
+  position: absolute;
+  left: 0;
+  margin-left: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+#citystats .icon {
+  width: 20px;
+  height: 20px;
+  margin: 3px;
+  position: absolute;
+  margin-left: -25px;
+}
+
+#citystats .citystats-info {
+  margin-top: 120px;
+  margin-left: 15px;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+#citystats .key ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+#citystats .key ul li {
+  margin-bottom: 3px;
+}
+
+#citystats li.active {
+  opacity: 1;
+}
+#citystats li.activated {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+#citystats li {
+  opacity: 0.3;
+  text-decoration: none;
+}
+
+#citystats .legend {
+  font-family: 'Raleway', sans-serif;
+  fill: #333333;
+}
+
+#citystats .tooltip {
+  fill: #333333;
+}
+
+#citystats .radarChart {
+  text-align: right;
+}
