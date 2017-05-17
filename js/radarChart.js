@@ -15,7 +15,7 @@ function RadarChart(id, data, options) {
 	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
 	 wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
 	 opacityArea: 0.35, 	//The opacity of the area of the blob
-	 dotRadius: 2, 			//The size of the colored circles of each blog
+	 dotRadius: 5, 			//The size of the colored circles of each blog
 	 opacityCircles: 0.1, 	//The opacity of the circles of each blob
 	 strokeWidth: 2, 		//The width of the stroke around each blob
 	 roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
@@ -35,7 +35,7 @@ function RadarChart(id, data, options) {
 	var allAxis = (data[0].map(function(i, j){return i.axis})),	//Names of each axis
 		total = allAxis.length,					//The number of different axes
 		radius = Math.min(cfg.w/2, cfg.h/2), 	//Radius of the outermost circle
-		Format = d3.format('%'),			 	//Percentage formatting
+		Format = d3.format(','),			 	//Thousands formatting
 		angleSlice = Math.PI * 2 / total;		//The width in radians of each "slice"
 	
 	//Scale for the radius
@@ -162,23 +162,23 @@ function RadarChart(id, data, options) {
 		.attr("class", "radarArea")
 		.attr("d", function(d,i) { console.log('i', i, 'd', d); return radarLine(d); })
 		.style("fill", function(d,i) { return cfg.color(i); })
-		.style("fill-opacity", cfg.opacityArea)
-		.on('mouseover', function (d,i){
-			//Dim all blobs
-			d3.selectAll(".radarArea")
-				.transition().duration(200)
-				.style("fill-opacity", 0.1); 
-			//Bring back the hovered over blob
-			d3.select(this)
-				.transition().duration(200)
-				.style("fill-opacity", 0.7);	
-		})
-		.on('mouseout', function(){
-			//Bring back all blobs
-			d3.selectAll(".radarArea")
-				.transition().duration(200)
-				.style("fill-opacity", cfg.opacityArea);
-		});
+		.style("fill-opacity", cfg.opacityArea);
+		// .on('mouseover', function (d,i){
+		// 	//Dim all blobs
+		// 	d3.selectAll(".radarArea")
+		// 		.transition().duration(200)
+		// 		.style("fill-opacity", 0.1); 
+		// 	//Bring back the hovered over blob
+		// 	d3.select(this)
+		// 		.transition().duration(200)
+		// 		.style("fill-opacity", 0.7);	
+		// })
+		// .on('mouseout', function(){
+		// 	//Bring back all blobs
+		// 	d3.selectAll(".radarArea")
+		// 		.transition().duration(200)
+		// 		.style("fill-opacity", cfg.opacityArea);
+		// });
 		
 	//Create the outlines	
 	blobWrapper.append("path")
@@ -227,7 +227,7 @@ function RadarChart(id, data, options) {
 			tooltip
 				.attr('x', newX)
 				.attr('y', newY)
-				.text(d.originalValue)
+				.text(Format(d.originalValue))
 				.transition().duration(200)
 				.style('opacity', 1);
 		})
