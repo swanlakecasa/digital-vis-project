@@ -576,16 +576,23 @@
   function buildHtmlTable2(list){
     var headerNames = ['Statistic'].concat(names.map(function(name){return name.value}));
     var headerHTML = headerNames.map(function(header){
-      return '<th>'+header+'</th>';
+      if(header==='Statistic') {
+        return '<th style="width:200px">'+header+'</th>';
+      } else {
+        return '<th>'+header+'</th>';
+      }
     }).join('');
     var headers = '<tr>'+headerHTML+'</tr>';
     console.log('header', headers)
     var firstColumn = list[0].map(function(value){return value.axis});
-    var rows = list.map(function(city, index){
-      // console.log('<tr><td>'+firstColumn[index]+'</td>'+city.map(function(val){return '<td>'+val.originalValue+'</td></tr>'}));
-      return '<tr><td>'+firstColumn[index]+'</td>'+city.map(function(val, index){if(index!==0){return '<td>'+val.originalValue+'</td>'}}).join('')+'</tr>';
-    }).join('');
-    return headers+rows;
+    var rows = [];
+    var rowHTML = '';
+    _.each(stats, function(val, key){
+      // rowHTML += '<tr>';
+      console.log('<tr><td style="width:200px">'+key+'</td>'+val.map(function(attr){return '<td>'+d3.format(',')(attr)+'</td>'}).join('')+'</tr>');
+      rowHTML += '<tr><td style="width:200px">'+key+'</td>'+val.map(function(attr){return '<td>'+d3.format(',')(attr)+'</td>'}).join('')+'</tr>';
+    });
+    return headers+rowHTML;
   }
   // console.log(data);
   //Call function to draw the Radar chart

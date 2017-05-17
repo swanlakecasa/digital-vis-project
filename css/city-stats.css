@@ -81,4 +81,36 @@
 
 #citystats .radarChart {
   text-align: right;
+  z-index: 5;
+}
+table#cityStatsTable {
+    z-index: 1;
+    opacity: 0.3;
+    border: none;
+    font-size: 12px;
+    display: table;
+    border-collapse: collapse;
+    margin-top: -101px;
+    position: absolute;
+    bottom: 130px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: left;
+    table-layout: fixed;
+    width: 1230px;
+}
+table#cityStatsTable:hover {
+    z-index: 10;
+    opacity: 1;
+}
+table#cityStatsTable tbody tr td {
+  border: none;
+    padding: 0;
+    width: 100px !important;
+    display: table-;
+    text-align: left;
+}
+table#cityStatsTable tbody tr td:first-child {
+    width: 200px !important;
+    display: table-caption;
 }
