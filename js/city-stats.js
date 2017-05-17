@@ -8,7 +8,7 @@
       top: 100,
       right: 150,
       bottom: 200,
-      left: 100
+      left: 150
     },
     width = (window.innerWidth * 0.5) - margin.left - margin.right,
     height = window.innerHeight - margin.top - margin.bottom;
@@ -20,6 +20,15 @@
     [{
       axis: "City",
       value: "Beijing"
+    }, {
+      axis: "Greater Population ('000)",
+      value: 20186
+    }, {
+      axis: "Greater Area (km2)",
+      value: 16411
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 1230
     }, {
       axis: "City Population (‘000)",
       value: 12014
@@ -39,7 +48,7 @@
       axis: "Rail length (km) per million persons",
       value: 38
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -67,6 +76,15 @@
       axis: "City",
       value: "London"
     }, {
+      axis: "Greater Population ('000)",
+      value: 8302
+    }, {
+      axis: "Greater Area (km2)",
+      value: 1572
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 5281
+    }, {
       axis: "City Population (‘000)",
       value: 8302
     }, {
@@ -85,7 +103,7 @@
       axis: "Rail length (km) per million persons",
       value: 53
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -113,6 +131,15 @@
       axis: "City",
       value: "Madrid"
     }, {
+      axis: "Greater Population ('000)",
+      value: 3249
+    }, {
+      axis: "Greater Area (km2)",
+      value: 604
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 5377
+    }, {
       axis: "City Population (‘000)",
       value: 3249
     }, {
@@ -131,7 +158,7 @@
       axis: "Rail length (km) per million persons",
       value: 90
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -159,6 +186,15 @@
       axis: "City",
       value: "New York"
     }, {
+      axis: "Greater Population ('000)",
+      value: 8337
+    }, {
+      axis: "Greater Area (km2)",
+      value: 790
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 10553
+    }, {
       axis: "City Population (‘000)",
       value: 8337
     }, {
@@ -177,7 +213,7 @@
       axis: "Rail length (km) per million persons",
       value: 45
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 1
     }, {
       axis: "Public buses per million persons",
@@ -205,6 +241,15 @@
       axis: "City",
       value: "Shanghai"
     }, {
+      axis: "Greater Population ('000)",
+      value: 23475
+    }, {
+      axis: "Greater Area (km2)",
+      value: 6341
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 3702
+    }, {
       axis: "City Population (‘000)",
       value: 14679
     }, {
@@ -223,7 +268,7 @@
       axis: "Rail length (km) per million persons",
       value: 31
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -251,6 +296,15 @@
       axis: "City",
       value: "Singapore"
     }, {
+      axis: "Greater Population ('000)",
+      value: 5312
+    }, {
+      axis: "Greater Area (km2)",
+      value: 716
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 7422
+    }, {
       axis: "City Population (‘000)",
       value: 5312
     }, {
@@ -269,7 +323,7 @@
       axis: "Rail length (km) per million persons",
       value: 34
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -297,6 +351,15 @@
       axis: "City",
       value: "Sydney"
     }, {
+      axis: "Greater Population ('000)",
+      value: 4667
+    }, {
+      axis: "Greater Area (km2)",
+      value: 12368
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 377
+    }, {
       axis: "City Population (‘000)",
       value: 1721
     }, {
@@ -315,7 +378,7 @@
       axis: "Rail length (km) per million persons",
       value: 71
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -343,6 +406,15 @@
       axis: "City",
       value: "Tokyo"
     }, {
+      axis: "Greater Population ('000)",
+      value: 13277
+    }, {
+      axis: "Greater Area (km2)",
+      value: 2189
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 6066
+    }, {
       axis: "City Population (‘000)",
       value: 9050
     }, {
@@ -361,7 +433,7 @@
       axis: "Rail length (km) per million persons",
       value: 34
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -389,6 +461,15 @@
       axis: "City",
       value: "Vienna"
     }, {
+      axis: "Greater Population ('000)",
+      value: 1757
+    }, {
+      axis: "Greater Area (km2)",
+      value: 415
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 4235
+    }, {
       axis: "City Population (‘000)",
       value: 1757
     }, {
@@ -407,7 +488,7 @@
       axis: "Rail length (km) per million persons",
       value: 42
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -435,6 +516,15 @@
       axis: "City",
       value: "Warsaw"
     }, {
+      axis: "Greater Population ('000)",
+      value: 1709
+    }, {
+      axis: "Greater Area (km2)",
+      value: 517
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 3303
+    }, {
       axis: "City Population (‘000)",
       value: 1709
     }, {
@@ -453,7 +543,7 @@
       axis: "Rail length (km) per million persons",
       value: 14
     }, {
-      axis: "Rail stations per km2",
+      axis: "No. of rail stations per km 2 of land area",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -589,7 +679,7 @@
     var rowHTML = '';
     _.each(stats, function(val, key){
       // rowHTML += '<tr>';
-      console.log('<tr><td style="width:200px">'+key+'</td>'+val.map(function(attr){return '<td>'+d3.format(',')(attr)+'</td>'}).join('')+'</tr>');
+      // console.log('<tr><td style="width:200px">'+key+'</td>'+val.map(function(attr){return '<td>'+d3.format(',')(attr)+'</td>'}).join('')+'</tr>');
       rowHTML += '<tr><td style="width:200px">'+key+'</td>'+val.map(function(attr){return '<td>'+d3.format(',')(attr)+'</td>'}).join('')+'</tr>';
     });
     return headers+rowHTML;
@@ -601,6 +691,9 @@
   d3.selectAll('.radarCircle').style('fill-opacity', 0.3);
   d3.selectAll('path').style('fill-opacity', 0.3);
   $('#cityStatsTable').html(buildHtmlTable2(data));
+  $('.table-button').click(function(){
+    $('#cityStatsTable').toggleClass("hidden");
+  });
 
   // d3.selectAll('path').style('fill-opacity', 0);
   // d3.selectAll('.key ul li').attr('class', '');
