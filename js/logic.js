@@ -12,4 +12,4 @@ DATA.getWeather(UI.drawWeather);
 // finished getting the data.
 DATA.getFlights(UI.drawAirplanes);
 DATA.getBusStatus(UI.drawBuses);
-DATA.getTubeStatus(UI.drawTubeLines);
+// DATA.getTubeStatus(UI.drawTubeLines);

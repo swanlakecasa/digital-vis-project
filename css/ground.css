@@ -7,9 +7,17 @@
 
 }
 #ground .buildings {
-	background-image: url(../images/building-skyline.svg);
-  background-repeat: repeat-x;
-  background-position: bottom center;
+    background-image: url(../images/building-skyline.svg);
+    background-repeat: repeat-x;
+    background-position: top center;
+}
+#ground .floor {
+    background-color: #8C8C8C;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 47%;
+    bottom: 0;
 }
  #googleTubeMap {
   height: 100%;

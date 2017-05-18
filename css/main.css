@@ -112,13 +112,17 @@ h1.section-title {
 }
 
 .underground-section {
-  height: 100%;
-  text-align: center;
-  background: #aaa;
+    height: 100%;
+    text-align: center;
+    background: url(../images/transition-ground-underground.png) no-repeat center center transparent;
+    background-position: 0px -568px;
+    background-size: cover;
 }
 
 .deep-underground-section {
-  height: 100%;
-  text-align: center;
-  background: #999;
+    height: 100%;
+    text-align: center;
+    background: url(../images/transition-ground-underground.png) no-repeat left bottom transparent;
+    background-position: 0px bottom;
+    background-size: cover;
 }

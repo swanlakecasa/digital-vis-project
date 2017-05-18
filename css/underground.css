@@ -1,0 +1,14 @@
+img.gas {
+    transform: rotateZ(-4deg);
+    height: 280px;
+    position: absolute;
+    left: 0px;
+     margin-top: 100px;
+}
+img.sewer {
+    transform: rotateZ(-17deg);
+    height: 800px;
+    position: absolute;
+    left: -130px;
+    margin-top: 100px;
+}
