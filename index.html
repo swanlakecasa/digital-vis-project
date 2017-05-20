@@ -54,7 +54,7 @@
             <a class="page-scroll" href="#page-top"></a>
           </li>
           <li>
-            <a class="page-scroll" href="#sky">Air</a>
+            <a class="page-scroll" href="#sky">Sky</a>
           </li>
           <li>
             <a class="page-scroll" href="#ground">Ground</a>
@@ -62,9 +62,9 @@
           <li>
             <a class="page-scroll" href="#underground">Underground</a>
           </li>
-          <li>
+<!--           <li>
             <a class="page-scroll" href="#deepUnderground">Deep underground</a>
-          </li>
+          </li> -->
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -116,7 +116,7 @@
           <div class="container">
             <div class="">
               <div class="col-lg-12">
-                <h1 class="section-title">Traffic</h1>
+                <h1 class="section-title">Air traffic</h1>
                 <div class="content">
                   <svg width="850" height="500" xmlns="http://www.w3.org/2000/svg">
                     <g>
@@ -252,20 +252,22 @@
                   </svg>
                   <span class="yaxis">Average delay (min)</span>
                   <span class="xaxis">On-time (%)</span>
-                  <span class="keyair">
-                    <span class="circle">Number of flights</span>
-                    <span class="circle1"></span>
-                    <span class="circle2"></span>
-                    <span class="colour">On-time top 50 rank</span>
-                    <span class="colour1"></span>
-                    <span class="colour2"></span>
-                  </span>
                   <table class="table table-striped table-condensed"><thead><tr><th>Airport<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th> On-time ranking<i class="fa fa-sort-desc pull-right" style="opacity: 1;"></i></th><th> Flights<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>Tracked<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>Comp.Factor<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>On-time<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>Delayed 15min+<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>Avg delay<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th></tr></thead><tbody><tr><td>Tokyo</td><td> 1</td><td> 18189</td><td>99.84</td><td>99.52</td><td>92.31</td><td>7.69</td><td>32.0</td></tr><tr><td>Heathrow</td><td> 3</td><td> 19687</td><td>90.25</td><td>99.81</td><td>85.94</td><td>14.06</td><td>39.4</td></tr><tr><td>Atlanta</td><td> 27</td><td>35856</td><td>99.62</td><td>95.58</td><td>76.60</td><td>23.40</td><td>91.4</td></tr><tr><td>Gatwick</td><td> 27</td><td>11599</td><td>99.45</td><td>99.91</td><td>76.60</td><td>23.40</td><td>40.8</td></tr><tr><td>New York</td><td>32</td><td>17771</td><td>95.85</td><td>97.63</td><td>73.67</td><td>26.33</td><td>72.9</td></tr><tr><td>Beijing</td><td> 48</td><td> 21120</td><td>95.11</td><td>99.71</td><td>46.23</td><td>53.77</td><td>66.1</td></tr></tbody></table>
                 </div>
               </div>
             </div>
           </div>
-          <div class="side-panel"></div>
+          <div class="side-panel">
+            <p></p>
+            <span class="keyair">
+              <span class="circle">Number of flights</span>
+              <span class="circle1"></span>
+              <span class="circle2"></span>
+              <span class="colour">On-time top 50 rank</span>
+              <span class="colour1"></span>
+              <span class="colour2"></span>
+            </span>
+          </div>
         </div>
         <div class="sub-section item pollution" id="pollution">
           <div class="container">
@@ -273,6 +275,7 @@
               <div class="col-lg-12">
                 <h1 class="section-title">Pollution</h1>
                 <div class="content">
+                  <h2 class="section-title2">London</h1>
                   <img class="gif 2008" src="images/LAEI2008_NO2a.png" />
                   <img class="gif 2011" src="images/LAEI2011_NO2a.png" />
                   <img class="gif 2015 active" src="images/LAEI2015_NO2a.png" />
@@ -325,11 +328,26 @@
           </div>
           <div class="side-panel"></div>
         </div>
+        <div class="sub-section item buildingheight" id="buildingheight">
+          <div class="container">
+            <div class="">
+              <div class="col-lg-12">
+                <h1 class="section-title">Building heights</h1>
+                <div class="content">
+                </div>
+              </div>
+            </div>
+            <!-- <div id="googleTubeMap"></div> -->
+          </div>
+          <div class="side-panel">
+            <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/sLD7GYZT7Z8" frameborder="0" allowfullscreen></iframe> -->
+          </div>
+        </div>
         <div class="sub-section item carstaxis" id="carstaxis">
           <div class="container">
             <div class="">
               <div class="col-lg-12">
-                <h1 class="section-title">Cars &amp; taxis</h1>
+                <h1 class="section-title">Cars and taxis</h1>
                 <div class="content">
                   <div class="london">
                     <h1>London</h1>
@@ -391,7 +409,23 @@
             <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/sLD7GYZT7Z8" frameborder="0" allowfullscreen></iframe> -->
           </div>
         </div>
-        <div class="sub-section item people" id="people">
+        <div class="sub-section item topAttractions" id="topAttractions">
+          <div class="container">
+            <div class="">
+              <div class="col-lg-12">
+                <h1 class="section-title">Top 10 attractions</h1>
+                <div class="content">
+                <iframe class="top-attractions" src="storyofinstagram.html" frameborder="0"></iframe>
+                </div>
+              </div>
+            </div>
+            <!-- <div id="googleTubeMap"></div> -->
+          </div>
+          <div class="side-panel">
+            <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/sLD7GYZT7Z8" frameborder="0" allowfullscreen></iframe> -->
+          </div>
+        </div>
+        <div class="sub-section item landprices" id="landprices">
           <div class="container">
             <div class="">
               <div class="col-lg-12">

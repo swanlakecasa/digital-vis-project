@@ -89,4 +89,6 @@ $(document).ready(function() {
       $('img.gif.2015').addClass('active');
     }
   });
+
+  $('iframe.storyofinstagram').height(window.innerHeight - 110);
 });
