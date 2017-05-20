@@ -74,22 +74,27 @@
       background-color: #FF0000;
     }
     #menu a#sewer {
-      background-color: #FED04E;
+      background-color: rgb(231,231,225);
+      color: #000000;
     }
     #menu a#gas-pipe {
       background-color: #FED0AE;
+      color: #000000;
     }
     #menu a#gas-site {
       background-color: #FED0AE;
+      color: #000000;
     }
     #menu a#cable {
-      background-color: #1967FD;
+      background-color: #76FFE1;
+      color: #000000;
     }
     #menu a#ohl {
       background-color: #1967FD;
     }
     #menu a#substations {
-      background-color: #1967FD;
+      background-color: #76FFE1;
+      color: #000000;
     }
     #menu a#towers {
       background-color: #1967FD;
@@ -259,23 +264,24 @@
             "line-cap": "round"
         },
         "paint": {
-            "line-color": "#1967FD",
+            "line-color": "#76FFE1",
             "line-width": 1
         }
     });
-    map.addLayer({
-        "id": "ohl",
-        "type": "point",
-        "source": {
-            type: 'vector',
-            url: 'mapbox://danpaulsmith.79930dxt'
-        },
-        "source-layer": "OHL-40ipub",
-        "paint": {
-            "line-color": "#1967FD",
-            "line-width": 1
-        }
-    });
+    // map.addLayer({
+    //     "id": "ohl",
+    //     "type": "point",
+    //     "source": {
+    //         type: 'vector',
+    //         url: 'mapbox://danpaulsmith.79930dxt'
+    //     },
+    //     "source-layer": "OHL-40ipub",
+    //     "paint": {
+    //         "line-color": "#AEFF68",
+    //         "line-width": 1
+    //     }
+    // });
+    // 
     map.addLayer({
         "id": "substations",
         "type": "fill",
@@ -285,22 +291,22 @@
         },
         "source-layer": "Substations-25ms1l",
         "paint": {
-            "fill-color": "#1967FD",
-            "fill-width": 1
+            "fill-color": "#76FFE1",
+            "fill-opacity": 1
         }
     });
-    map.addLayer({
-        "id": "towers",
-        "type": "point",
-        "source": {
-            type: 'vector',
-            url: 'mapbox://danpaulsmith.3buy55k2'
-        },
-        "source-layer": "Towers-cs8csv",
-        "paint": {
-            "fill-color": "#1967FD"
-        }
-    });
+    // map.addLayer({
+    //     "id": "towers",
+    //     "type": "point",
+    //     "source": {
+    //         type: 'vector',
+    //         url: 'mapbox://danpaulsmith.3buy55k2'
+    //     },
+    //     "source-layer": "Towers-cs8csv",
+    //     "paint": {
+    //         "fill-color": "#47F9FD"
+    //     }
+    // });
 
 
     // map.addLayer({
@@ -385,7 +391,7 @@
     //     }
     // });
 
-    var toggleableLayerIds = [ 'londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations', 'sewer', 'gas-pipe', 'gas-site', 'cable', 'ohl', 'substations', 'towers'];
+    var toggleableLayerIds = [ 'londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations', 'sewer', 'gas-pipe', 'gas-site', 'cable'];
     function getLayerName(id) {
       switch(id){
         case 'londonist-rivers':
@@ -395,13 +401,13 @@
         case 'londonist-old-stations':
           return 'Old tube stations';
         case 'sewer':
-          return 'London Sewer network (1980)';
+          return 'London Sewer network (1930)';
         case 'cable':
-          return 'National Grid - Electricity cable';
+          return 'Electric cables and substations';
         case 'gas-pipe':
-          return 'National Grid - Gas pipes';
+          return 'Gas pipes';
         case 'gas-site':
-          return 'National Grid - Gas site';
+          return 'Gas site';
         case 'ohl':
           return 'National Grid - Electricity overhead lines';
         case 'substations':
@@ -450,10 +456,16 @@
             e.stopPropagation();
             var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
             if (visibility === 'visible' || visibility === undefined) {
+                if(clickedLayer === 'cable') {
+                  map.setLayoutProperty('substations', 'visibility', 'none');
+                }
                 map.setLayoutProperty(clickedLayer, 'visibility', 'none');
                 this.className = '';
             } else {
                 this.className = 'active';
+                if(clickedLayer === 'cable') {
+                  map.setLayoutProperty('substations', 'visibility', 'visible');
+                }
                 map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
             }
         };

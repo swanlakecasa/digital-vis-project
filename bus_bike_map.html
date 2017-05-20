@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        h1 {color: #333;} 
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+        
+    </style>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.css' type='text/css' />
+
+
+    <div id='before' class='map0'></div>
+    <div id='after' class='map0'></div>
+    <div id='before1' class='map1'></div>
+    <div id='after1' class='map1'></div>
+
+<script type="text/javascript">
+
+mapboxgl.accessToken = 'pk.eyJ1IjoibGlzYXNhc2FzYSIsImEiOiJjajJndjhmdHEwMDBoMzNtdnF0MjNvYjV1In0.LK1-VqSfhFRIEs8yvpmu8Q';
+
+function initialize()
+{
+
+var beforeMap = new mapboxgl.Map({
+    container: 'before',
+    style: 'mapbox://styles/lisasasasa/cj2j7o38b001o2rmucu9ixplr',
+    center: [-0.1484, 51.5029],
+    zoom: 11
+});
+
+var afterMap = new mapboxgl.Map({
+    container: 'after',
+    style: 'mapbox://styles/lisasasasa/cj2jmhyju00012rnznsqb3xli',
+    center: [-0.047,51.484],
+    zoom: 9.1
+});
+
+var beforeMap1 = new mapboxgl.Map({
+    container: 'before1',
+    style: 'mapbox://styles/lisasasasa/cj2ivxtkc00392sru43bxmyt8',
+    center: [116.494, 39.912],
+    zoom: 9
+});
+
+var afterMap1 = new mapboxgl.Map({
+    container: 'after1',
+    style: 'mapbox://styles/lisasasasa/cj2t86olc001e2ss248dtywdz',
+    center: [116.405,39.895],
+    zoom: 9
+});
+
+var map0 = new mapboxgl.Compare(beforeMap, afterMap, {
+    // Set this to enable comparing two maps by mouse movement:
+    // mousemove: true
+});
+var map1 = new mapboxgl.Compare(beforeMap1, afterMap1, {
+    // Set this to enable comparing two maps by mouse movement:
+    // mousemove: true
+});
+
+}
+</script>
+
+</head>
+
+<body onload="initialize()">
+<H1 align="center">London V.S. Beijing</h1>
+
+<style>
+
+
+body {
+    overflow: hidden;
+}
+
+body * {
+   -webkit-touch-callout: none;
+     -webkit-user-select: none;
+        -moz-user-select: none;
+         -ms-user-select: none;
+             user-select: none;
+}
+
+.map0 {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 20px;
+    width: 48.5%;
+}
+
+.map1 {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    right: 20px;
+    width: 48.5%;
+}
+
+</style>
+
+
+</body>
+</html>

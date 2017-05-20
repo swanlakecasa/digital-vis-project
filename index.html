@@ -9,12 +9,14 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Swan Lake - The Ballet of the Streets - Tutorial example test</title>
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="js/libraries/mapbox-gl.css" rel="stylesheet">
+  <link href='js/libraries/mapbox-gl-compare.css' rel="stylesheet" />
   <!-- Custom CSS -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
@@ -44,7 +46,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand page-scroll" href="#page-top">London</a>
+        <!-- <a class="navbar-brand page-scroll" href="#page-top">London</a> -->
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -62,7 +64,7 @@
           <li>
             <a class="page-scroll" href="#underground">Underground</a>
           </li>
-<!--           <li>
+          <!--           <li>
             <a class="page-scroll" href="#deepUnderground">Deep underground</a>
           </li> -->
         </ul>
@@ -76,8 +78,8 @@
     <!-- <div class="container"> -->
     <div class="">
       <div class="col-lg-12 main">
-        <h1 class="section-title">London</h1>
-        <p><strong>Usage Instructions:</strong> Scroll the page to slice through the layers of London.</p>
+        <!-- <h1 class="section-title">London</h1> -->
+        <p class="quote">"although it is life, not art, we may fancifully call it the art form of the city and liken it to the dance — not to a simple-minded precision dance with everyone kicking up at the same time, twirling in unison and bowing off en masse, but to an intricate ballet in which the individual dancers and ensembles all have distinctive parts which miraculously reinforce each other and compose an orderly whole.</p>
         <a class="btn btn-default page-scroll" href="#sky">Let's dance</a>
       </div>
     </div>
@@ -101,6 +103,7 @@
                 <!-- <h1 class="section-title">Air</h1> -->
               </div>
             </div>
+            <img class="airtower" src="images/airtower.svg" height="500" />
             <div id="clouds">
               <div class="cloud x1"></div>
               <!-- Time for multiple clouds to dance around -->
@@ -118,154 +121,244 @@
               <div class="col-lg-12">
                 <h1 class="section-title">Air traffic</h1>
                 <div class="content">
-                  <svg width="850" height="500" xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                      <g class="x axis" transform="translate(0,440)" style="stroke-width: 1px; font-size: 10px; font-family: Arial, Helvetica;">
-                        <g class="tick" transform="translate(40,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">0</text>
+                  <div class="airtrafficstats">
+                   <!--  Airport, 2016 passengers
+                    London (All), 162335261
+                    Atlanta (ATL), 104171935
+                    Beijing (All), 99979802
+                    Beijing (PEX), 94393414
+                    Tokyo (HND), 79699762
+                    London Heathrow (LHR), 75711130  
+                    London Gatwick (LGW), 43119628  
+                    London Stansted (STN), 24320071
+                    London Luton (LTN), 14645619
+                    Beijing (NAY), 5586388
+                    London City (LCY), 4538813   -->
+
+                    <!-- London average passengers per day = 444,754
+                    London average passengers per hour = 18,531
+                    London average passengers per minute = 308
+                    Beijing average passengers per day = 273,917
+                    Beijing average passengers per hour = 11,413
+                    Beijing average passengers per minute = 190 -->
+
+                  </div>  
+                  <div class="airtrafficviz">
+                    <svg width="100%" height="500" xmlns="http://www.w3.org/2000/svg">
+                      <g>
+                        <g class="x axis" transform="translate(0,440)" style="stroke-width: 1px; font-size: 10px; font-family: Arial, Helvetica;">
+                          <g class="tick" transform="translate(40,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">0</text>
+                          </g>
+                          <g class="tick" transform="translate(123.08958942693098,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">10</text>
+                          </g>
+                          <g class="tick" transform="translate(206.17917885386197,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">20</text>
+                          </g>
+                          <g class="tick" transform="translate(289.268768280793,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">30</text>
+                          </g>
+                          <g class="tick" transform="translate(372.35835770772394,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">40</text>
+                          </g>
+                          <g class="tick" transform="translate(455.44794713465495,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">50</text>
+                          </g>
+                          <g class="tick" transform="translate(538.537536561586,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">60</text>
+                          </g>
+                          <g class="tick" transform="translate(621.6271259885169,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">70</text>
+                          </g>
+                          <g class="tick" transform="translate(704.7167154154479,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">80</text>
+                          </g>
+                          <g class="tick" transform="translate(787.806304842379,0)" style="opacity: 1;">
+                            <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".71em" y="3" x="0" style="text-anchor: middle;">90</text>
+                          </g>
+                          <path class="domain" d="M40,-400V0H807V-400" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></path>
                         </g>
-                        <g class="tick" transform="translate(123.08958942693098,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">10</text>
+                        <g class="y axis" transform="translate(40,0)" style="stroke-width: 1px; font-size: 10px; font-family: Arial, Helvetica;">
+                          <g class="tick" transform="translate(0,440)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">0</text>
+                          </g>
+                          <g class="tick" transform="translate(0,396.2363238512035)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">10</text>
+                          </g>
+                          <g class="tick" transform="translate(0,352.472647702407)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">20</text>
+                          </g>
+                          <g class="tick" transform="translate(0,308.7089715536105)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">30</text>
+                          </g>
+                          <g class="tick" transform="translate(0,264.945295404814)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">40</text>
+                          </g>
+                          <g class="tick" transform="translate(0,221.1816192560175)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">50</text>
+                          </g>
+                          <g class="tick" transform="translate(0,177.41794310722102)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">60</text>
+                          </g>
+                          <g class="tick" transform="translate(0,133.65426695842453)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">70</text>
+                          </g>
+                          <g class="tick" transform="translate(0,89.89059080962801)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">80</text>
+                          </g>
+                          <g class="tick" transform="translate(0,46.12691466083155)" style="opacity: 1;">
+                            <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
+                            <text dy=".32em" x="-3" y="0" style="text-anchor: end;">90</text>
+                          </g>
+                          <path class="domain" d="M767,40H0V440H767" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></path>
                         </g>
-                        <g class="tick" transform="translate(206.17917885386197,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">20</text>
+                        <g class="circle">
+                          <circle transform="translate(676.4662550102913,40)" r="40" style="fill: rgb(201, 147, 0); fill-opacity: 0.9;"></circle>
+                          <text transform="translate(676.4662550102913,40)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">ATL</text>
                         </g>
-                        <g class="tick" transform="translate(289.268768280793,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">30</text>
+                        <g class="circle">
+                          <circle transform="translate(424.12317192070196,150.7221006564552)" r="30.701257798910323" style="fill: rgb(242, 6, 6); fill-opacity: 0.9;"></circle>
+                          <text transform="translate(424.12317192070196,150.7221006564552)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">PEX</text>
                         </g>
-                        <g class="tick" transform="translate(372.35835770772394,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">40</text>
+                        <g class="circle">
+                          <circle transform="translate(676.4662550102913,261.4442013129103)" r="22.755148366678874" style="fill: rgb(201, 147, 0); fill-opacity: 0.9;"></circle>
+                          <text transform="translate(676.4662550102913,261.4442013129103)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">LGW</text>
                         </g>
-                        <g class="tick" transform="translate(455.44794713465495,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">50</text>
+                        <g class="circle">
+                          <circle transform="translate(754.0719315350449,267.5711159737418)" r="29.64178274435319" style="fill: rgb(99, 226, 6); fill-opacity: 0.9;"></circle>
+                          <text transform="translate(754.0719315350449,267.5711159737418)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">LHR</text>
                         </g>
-                        <g class="tick" transform="translate(538.537536561586,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">60</text>
+                        <g class="circle">
+                          <circle transform="translate(652.1210053082007,120.9628008752735)" r="28.163003172978694" style="fill: rgb(213, 128, 0); fill-opacity: 0.9;"></circle>
+                          <text transform="translate(652.1210053082007,120.9628008752735)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">JFK</text>
                         </g>
-                        <g class="tick" transform="translate(621.6271259885169,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">70</text>
+                        <g class="circle">
+                          <circle transform="translate(807,299.9562363238512)" r="28.492164260963744" style="fill: rgb(80, 232, 8); fill-opacity: 0.9;"></circle>
+                          <text transform="translate(807,299.9562363238512)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">HND</text>
                         </g>
-                        <g class="tick" transform="translate(704.7167154154479,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">80</text>
+                        <g class="point">
+                          <circle transform="translate(676.4662550102913,40)" r="1" style="fill: rgb(0, 0, 0);"></circle>
                         </g>
-                        <g class="tick" transform="translate(787.806304842379,0)" style="opacity: 1;">
-                          <line y2="-400" x2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".71em" y="3" x="0" style="text-anchor: middle;">90</text>
+                        <g class="point">
+                          <circle transform="translate(424.12317192070196,150.7221006564552)" r="1" style="fill: rgb(0, 0, 0);"></circle>
                         </g>
-                        <path class="domain" d="M40,-400V0H807V-400" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></path>
+                        <g class="point">
+                          <circle transform="translate(676.4662550102913,261.4442013129103)" r="1" style="fill: rgb(0, 0, 0);"></circle>
+                        </g>
+                        <g class="point">
+                          <circle transform="translate(754.0719315350449,267.5711159737418)" r="1" style="fill: rgb(0, 0, 0);"></circle>
+                        </g>
+                        <g class="point">
+                          <circle transform="translate(652.1210053082007,120.9628008752735)" r="1" style="fill: rgb(0, 0, 0);"></circle>
+                        </g>
+                        <g class="point">
+                          <circle transform="translate(807,299.9562363238512)" r="1" style="fill: rgb(0, 0, 0);"></circle>
+                        </g>
                       </g>
-                      <g class="y axis" transform="translate(40,0)" style="stroke-width: 1px; font-size: 10px; font-family: Arial, Helvetica;">
-                        <g class="tick" transform="translate(0,440)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">0</text>
-                        </g>
-                        <g class="tick" transform="translate(0,396.2363238512035)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">10</text>
-                        </g>
-                        <g class="tick" transform="translate(0,352.472647702407)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">20</text>
-                        </g>
-                        <g class="tick" transform="translate(0,308.7089715536105)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">30</text>
-                        </g>
-                        <g class="tick" transform="translate(0,264.945295404814)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">40</text>
-                        </g>
-                        <g class="tick" transform="translate(0,221.1816192560175)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">50</text>
-                        </g>
-                        <g class="tick" transform="translate(0,177.41794310722102)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">60</text>
-                        </g>
-                        <g class="tick" transform="translate(0,133.65426695842453)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">70</text>
-                        </g>
-                        <g class="tick" transform="translate(0,89.89059080962801)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">80</text>
-                        </g>
-                        <g class="tick" transform="translate(0,46.12691466083155)" style="opacity: 1;">
-                          <line x2="767" y2="0" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></line>
-                          <text dy=".32em" x="-3" y="0" style="text-anchor: end;">90</text>
-                        </g>
-                        <path class="domain" d="M767,40H0V440H767" style="shape-rendering: crispEdges; fill: none; stroke: rgb(204, 204, 204);"></path>
-                      </g>
-                      <g class="circle">
-                        <circle transform="translate(676.4662550102913,40)" r="40" style="fill: rgb(201, 147, 0); fill-opacity: 0.9;"></circle>
-                        <text transform="translate(676.4662550102913,40)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">Atlanta</text>
-                      </g>
-                      <g class="circle">
-                        <circle transform="translate(424.12317192070196,150.7221006564552)" r="30.701257798910323" style="fill: rgb(242, 6, 6); fill-opacity: 0.9;"></circle>
-                        <text transform="translate(424.12317192070196,150.7221006564552)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">Beijing</text>
-                      </g>
-                      <g class="circle">
-                        <circle transform="translate(676.4662550102913,261.4442013129103)" r="22.755148366678874" style="fill: rgb(201, 147, 0); fill-opacity: 0.9;"></circle>
-                        <text transform="translate(676.4662550102913,261.4442013129103)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">Gatwick</text>
-                      </g>
-                      <g class="circle">
-                        <circle transform="translate(754.0719315350449,267.5711159737418)" r="29.64178274435319" style="fill: rgb(99, 226, 6); fill-opacity: 0.9;"></circle>
-                        <text transform="translate(754.0719315350449,267.5711159737418)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">Heathrow</text>
-                      </g>
-                      <g class="circle">
-                        <circle transform="translate(652.1210053082007,120.9628008752735)" r="28.163003172978694" style="fill: rgb(213, 128, 0); fill-opacity: 0.9;"></circle>
-                        <text transform="translate(652.1210053082007,120.9628008752735)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">New York</text>
-                      </g>
-                      <g class="circle">
-                        <circle transform="translate(807,299.9562363238512)" r="28.492164260963744" style="fill: rgb(80, 232, 8); fill-opacity: 0.9;"></circle>
-                        <text transform="translate(807,299.9562363238512)" text-anchor="middle" dy="15" style="font-size: 10px; font-family: Arial, Helvetica;">Tokyo</text>
-                      </g>
-                      <g class="point">
-                        <circle transform="translate(676.4662550102913,40)" r="1" style="fill: rgb(0, 0, 0);"></circle>
-                      </g>
-                      <g class="point">
-                        <circle transform="translate(424.12317192070196,150.7221006564552)" r="1" style="fill: rgb(0, 0, 0);"></circle>
-                      </g>
-                      <g class="point">
-                        <circle transform="translate(676.4662550102913,261.4442013129103)" r="1" style="fill: rgb(0, 0, 0);"></circle>
-                      </g>
-                      <g class="point">
-                        <circle transform="translate(754.0719315350449,267.5711159737418)" r="1" style="fill: rgb(0, 0, 0);"></circle>
-                      </g>
-                      <g class="point">
-                        <circle transform="translate(652.1210053082007,120.9628008752735)" r="1" style="fill: rgb(0, 0, 0);"></circle>
-                      </g>
-                      <g class="point">
-                        <circle transform="translate(807,299.9562363238512)" r="1" style="fill: rgb(0, 0, 0);"></circle>
-                      </g>
-                    </g>
-                  </svg>
-                  <span class="yaxis">Average delay (min)</span>
-                  <span class="xaxis">On-time (%)</span>
-                  <table class="table table-striped table-condensed"><thead><tr><th>Airport<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th> On-time ranking<i class="fa fa-sort-desc pull-right" style="opacity: 1;"></i></th><th> Flights<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>Tracked<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>Comp.Factor<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>On-time<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>Delayed 15min+<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th><th>Avg delay<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th></tr></thead><tbody><tr><td>Tokyo</td><td> 1</td><td> 18189</td><td>99.84</td><td>99.52</td><td>92.31</td><td>7.69</td><td>32.0</td></tr><tr><td>Heathrow</td><td> 3</td><td> 19687</td><td>90.25</td><td>99.81</td><td>85.94</td><td>14.06</td><td>39.4</td></tr><tr><td>Atlanta</td><td> 27</td><td>35856</td><td>99.62</td><td>95.58</td><td>76.60</td><td>23.40</td><td>91.4</td></tr><tr><td>Gatwick</td><td> 27</td><td>11599</td><td>99.45</td><td>99.91</td><td>76.60</td><td>23.40</td><td>40.8</td></tr><tr><td>New York</td><td>32</td><td>17771</td><td>95.85</td><td>97.63</td><td>73.67</td><td>26.33</td><td>72.9</td></tr><tr><td>Beijing</td><td> 48</td><td> 21120</td><td>95.11</td><td>99.71</td><td>46.23</td><td>53.77</td><td>66.1</td></tr></tbody></table>
+                    </svg>
+                    <span class="yaxis">Average delay (min)</span>
+                    <span class="xaxis">On-time (%)</span>
+                    <table class="table table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Airport<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th>
+                          <th>On-time ranking<i class="fa fa-sort-desc pull-right" style="opacity: 1;"></i></th>
+                          <th>Flights<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th>
+                          <!-- <th>Tracked<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th> -->
+                          <!-- <th>Comp.Factor<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th> -->
+                          <th>On-time (%)<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th>
+                          <th>Delayed 15min+ (%)<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th>
+                          <th>Avg delay (min)<i class="fa fa-sort-desc pull-right" style="opacity: 0;"></i></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Tokyo (HND)</td>
+                          <td>1</td>
+                          <td>18,189</td>
+                          <td>92.31</td>
+                          <td>7.69</td>
+                          <td>32.0</td>
+                        </tr>
+                        <tr>
+                          <td>London (LHR)</td>
+                          <td>3</td>
+                          <td>19,687</td>
+                          <td>85.94</td>
+                          <td>14.06</td>
+                          <td>39.4</td>
+                        </tr>
+                        <tr>
+                          <td>Atlanta (ATL)</td>
+                          <td>27</td>
+                          <td>35,856</td>
+                          <td>76.60</td>
+                          <td>23.40</td>
+                          <td>91.4</td>
+                        </tr>
+                        <tr>
+                          <td>Gatwick (LGW)</td>
+                          <td>27</td>
+                          <td>11,599</td>
+                          <td>76.60</td>
+                          <td>23.40</td>
+                          <td>40.8</td>
+                        </tr>
+                        <tr>
+                          <td>New York (JFK)</td>
+                          <td>32</td>
+                          <td>17,771</td>
+                          <td>73.67</td>
+                          <td>26.33</td>
+                          <td>72.9</td>
+                        </tr>
+                        <tr>
+                          <td>Beijing (PEX)</td>
+                          <td>48</td>
+                          <td>21,120</td>
+                          <td>46.23</td>
+                          <td>53.77</td>
+                          <td>66.1</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="side-panel">
-            <p></p>
+            <p>Air traffic activity ....</p>
+            <a href="https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic#2016_statistics" target="_blank">Source: Wikipedia</a>
+            <a target="_blank" href="http://www.bbc.com/capital/story/20160420-this-is-why-chinas-airports-are-a-nightmare">Source: BBC</a>
+            <a target="_blank" href="http://www.flightstats.com/company/monthly-performance-reports/airports/">Source: FlightStats</a>
             <span class="keyair">
-              <span class="circle">Number of flights</span>
-              <span class="circle1"></span>
-              <span class="circle2"></span>
-              <span class="colour">On-time top 50 rank</span>
-              <span class="colour1"></span>
-              <span class="colour2"></span>
+            <span class="circle">Number of flights</span>
+            <span class="circle1"></span>
+            <span class="circle2"></span>
+            <span class="colour">On-time top 50 rank</span>
+            <span class="colour1"></span>
+            <span class="colour2"></span>
             </span>
           </div>
         </div>
@@ -290,6 +383,7 @@
             </div>
           </div>
           <div class="side-panel">
+            <p>Pollution levels ....</p>
           </div>
         </div>
         <!-- Controls -->
@@ -305,15 +399,17 @@
   </section>
   <!-- Ground Section -->
   <section id="ground" class="ground-section">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="0">
+    <div id="carousel-ground" class="carousel slide" data-ride="carousel" data-interval="0">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+        <li data-target="#carousel-ground" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-ground" data-slide-to="1"></li>
+        <li data-target="#carousel-ground" data-slide-to="2"></li>
+        <li data-target="#carousel-ground" data-slide-to="3"></li>
+        <li data-target="#carousel-ground" data-slide-to="4"></li>
+        <li data-target="#carousel-ground" data-slide-to="5"></li>
+        <li data-target="#carousel-ground" data-slide-to="6"></li>
+        <!-- <li data-target="#carousel-ground" data-slide-to="7"></li> -->
       </ol>
       <!-- Wrapper for sub-sections -->
       <div class="carousel-inner" role="listbox">
@@ -329,17 +425,21 @@
           <div class="side-panel"></div>
         </div>
         <div class="sub-section item buildingheight" id="buildingheight">
+          <div class="buildingheight-background"></div>
           <div class="container">
             <div class="">
               <div class="col-lg-12">
                 <h1 class="section-title">Building heights</h1>
                 <div class="content">
+
                 </div>
               </div>
             </div>
             <!-- <div id="googleTubeMap"></div> -->
           </div>
           <div class="side-panel">
+            <p>Building heights ....</p>
+
             <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/sLD7GYZT7Z8" frameborder="0" allowfullscreen></iframe> -->
           </div>
         </div>
@@ -392,7 +492,9 @@
               </div>
             </div>
           </div>
-          <div class="side-panel"></div>
+          <div class="side-panel">
+            <p>Cars and taxis ....</p>
+          </div>
         </div>
         <div class="sub-section item bikebus" id="bikebus">
           <div class="container">
@@ -400,12 +502,19 @@
               <div class="col-lg-12">
                 <h1 class="section-title">Bikes and buses</h1>
                 <div class="content">
+                  <h2 align="center">London V.S. Beijing</h2>
+                  <!-- <iframe class="bus-bike-iframe" src="bus_bike_map.html" frameborder="0"></iframe> -->
+                  <div id="before" class="map0"></div>
+                  <div id="after" class="map0"></div>
+                  <div id="before1" class="map1"></div>
+                  <div id="after1" class="map1"></div>
                 </div>
               </div>
             </div>
             <!-- <div id="googleTubeMap"></div> -->
           </div>
           <div class="side-panel">
+            <p>Bikes and buses ....</p>
             <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/sLD7GYZT7Z8" frameborder="0" allowfullscreen></iframe> -->
           </div>
         </div>
@@ -415,7 +524,7 @@
               <div class="col-lg-12">
                 <h1 class="section-title">Top 10 attractions</h1>
                 <div class="content">
-                <iframe class="top-attractions" src="storyofinstagram.html" frameborder="0"></iframe>
+                  <iframe class="top-attractions" src="storyofinstagram.html" frameborder="0"></iframe>
                 </div>
               </div>
             </div>
@@ -430,8 +539,9 @@
             <div class="">
               <div class="col-lg-12">
                 <h1 class="section-title">Land prices</h1>
+                <h2 class="section-title2">Beijing</h1>
                 <div class="content">
-                  <iframe width="100%" height="520" frameborder="0" src="https://ucfngeo.carto.com/builder/a06cd61c-3a4b-11e7-a402-0ee66e2c9693/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+                  <iframe class="landprice-iframe" width="100%" height="520" frameborder="0" src="https://ucfngeo.carto.com/builder/a06cd61c-3a4b-11e7-a402-0ee66e2c9693/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -459,11 +569,11 @@
         </div>
       </div>
       <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <a class="left carousel-control" href="#carousel-ground" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <a class="right carousel-control" href="#carousel-ground" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
@@ -500,9 +610,13 @@
     <a href='http://www.freepik.com/free-vector/air-transports-icons_781007.htm'>Designed by Freepik</a>
     <a target="_blank" href="https://www.vexels.com/vectors/preview/77362/highway-cityscape-flat-style"> Highway cityscape flat style </a> | Free vector by <a target="_blank" href="https://www.vexels.com/">Vexels</a>
     <a target="_blank" href="https://www.vexels.com/vectors/preview/124700/london-city-landscape"> London city landscape </a> | Free vector by <a target="_blank" href="https://www.vexels.com/">Vexels</a>
+    <a href="https://clipartfest.com/">Air traffic tower from clipartfest.com</a>
   </section>
   <script src="js/libraries/jquery.js"></script>
   <script src="js/libraries/d3.min.js"></script>
+  <script src='js/libraries/mapbox-gl.js'></script>
+  <script src='js/libraries/mapbox-gl-compare.js'></script>
+  
   <script src="js/libraries/processing.min.js"></script>
   <script src="js/libraries/underscore-min.js"></script>
   <script src="js/libraries/bootstrap.min.js"></script>

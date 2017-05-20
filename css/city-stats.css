@@ -80,12 +80,12 @@
 }
 
 #citystats .radarChart {
-  text-align: right;
+  /*text-align: right;*/
   z-index: 5;
 }
 table#cityStatsTable {
     z-index: 1;
-    opacity: 0.3;
+    opacity: 1;
     border: none;
     font-size: 12px;
     display: table;
@@ -96,7 +96,6 @@ table#cityStatsTable {
     background: rgba(255, 255, 255, 0.5);
     text-align: left;
     table-layout: fixed;
-    width: 1230px;
 }
 table#cityStatsTable:hover {
     z-index: 10;

@@ -694,6 +694,7 @@
   $('.table-button').click(function(){
     $('#cityStatsTable').toggleClass("hidden");
   });
+  $('table#cityStatsTable').width(window.innerWidth - 435);
 
   // d3.selectAll('path').style('fill-opacity', 0);
   // d3.selectAll('.key ul li').attr('class', '');
