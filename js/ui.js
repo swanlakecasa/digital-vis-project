@@ -77,4 +77,16 @@ $(document).ready(function() {
     //   }
     // }
   });
+  $('input.slider').change(function(){
+    $('img.gif').removeClass('active');
+    if(parseInt($(this).val()) === 0) {
+      $('img.gif.2008').addClass('active');
+    }
+    if(parseInt($(this).val()) === 1) {
+      $('img.gif.2011').addClass('active');
+    }
+    if(parseInt($(this).val()) === 2) {
+      $('img.gif.2015').addClass('active');
+    }
+  });
 });

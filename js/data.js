@@ -33,7 +33,7 @@ DATA.getFlights = function(onComplete) {
 		}
 	}
 
-	$.getJSON('https://api.flightstats.com/flex/flightstatus/rest/v2/jsonp/flightsNear/51.5074/0.1278/'+mileRadius+'?appId=5e50da44&appKey=6caa60485b431970a7624da0a73dd065&maxFlights='+numberOfFlights+'&sourceType=raw&callback=?').then(function(data){
+	$.getJSON('https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/jsonp/flightsNear/51.5074/0.1278/'+mileRadius+'?appId=5e50da44&appKey=6caa60485b431970a7624da0a73dd065&maxFlights='+numberOfFlights+'&sourceType=raw&callback=?').then(function(data){
 		console.log('Received flights data', data);
 		DATA.flights = data.flightPositions;
 		_.each(DATA.flights, function(flight){

@@ -1,25 +1,28 @@
 #ground {}
-#vizicities {
-	width: 100%;
-	height: 600px;
-}
-#ground .sub-section {
 
+#vizicities {
+  width: 100%;
+  height: 600px;
 }
+
+#ground .sub-section {}
+
 #ground .buildings {
-    background-image: url(../images/building-skyline.svg);
-    background-repeat: repeat-x;
-    background-position: top center;
+  background-image: url(../images/building-skyline.svg);
+  background-repeat: repeat-x;
+  background-position: top center;
 }
+
 #ground .floor {
-    background-color: #8C8C8C;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 47%;
-    bottom: 0;
+  background-color: #8C8C8C;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 47%;
+  bottom: 0;
 }
- #googleTubeMap {
+
+#googleTubeMap {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -28,4 +31,78 @@
   right: 0;
   bottom: 0;
   z-index: -1;
+}
+
+#carstaxis {}
+
+#carstaxis .london {
+    width: 40%;
+    position: absolute;
+    top: 100px;
+    bottom: 0px;
+    left: 0;
+    background: #8C8C8C;
+    height: 1000%;
+    color: #fff;
+}
+
+#carstaxis .beijing {
+  width: 40%;
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 60%;
+    background: #8C8C8C;
+    height: 1000%;
+    color: #fff;
+}
+
+#carstaxis .separator {
+  width: 20%;
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 40%;
+      background: #fff;
+    height: 1000%;
+    color: #fff;
+}
+#carstaxis .separator img {
+  width: 50%;
+}
+.stats {
+  font-size: 20px;
+}
+.stats2 {
+  font-size: 20px;
+  margin-top: 50px;
+}
+.stats2 p {
+    margin-top: 30px; 
+}
+.comp {
+    margin-top: 10px;
+}
+
+.car {
+    margin-top: 100px;
+}
+
+.taxi {
+  margin-top: 130px;
+}
+
+.buss {
+    max-width: 40%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.wage {
+margin-top: 20px;
+    max-width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
