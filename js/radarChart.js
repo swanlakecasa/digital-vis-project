@@ -160,7 +160,7 @@ function RadarChart(id, data, options) {
 			return 'path-'+i;
 		})
 		.attr("class", "radarArea")
-		.attr("d", function(d,i) { console.log('i', i, 'd', d); return radarLine(d); })
+		.attr("d", function(d,i) { return radarLine(d); })
 		.style("fill", function(d,i) { return cfg.color(i); })
 		.style("fill-opacity", cfg.opacityArea);
 		// .on('mouseover', function (d,i){

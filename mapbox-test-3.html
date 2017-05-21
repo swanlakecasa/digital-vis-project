@@ -18,44 +18,43 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 70%;
+    width: 100%;
   }
+  
   #menu {
-        background: #fff;
-        position: absolute;
-        z-index: 1;
-        top: 10px;
-        right: 32%;
-        margin-right: 10px;
-        border-radius: 3px;
-        width: 120px;
-        border: 1px solid rgba(0,0,0,0.4);
-        font-family: 'Open Sans', sans-serif;
-    }
-
-    #menu a {
-        font-size: 13px;
-        color: #fff;
-        display: block;
-        margin: 0;
-        padding: 0;
-        padding: 10px;
-        text-decoration: none;
-        border-bottom: 1px solid rgba(0,0,0,0.25);
-        text-align: center;
-    }
-
-    #menu a:last-child {
-        border: none;
-    }
-
-    #menu a:hover {
-        background-color: #f8f8f8;
-        color: #404040;
-    }
-
-
-/*    #menu a.active {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 0;
+    margin-right: 10px;
+    border-radius: 3px;
+    width: 120px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  #menu a {
+    font-size: 13px;
+    color: #fff;
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    text-align: center;
+  }
+  
+  #menu a:last-child {
+    border: none;
+  }
+  
+  #menu a:hover {
+    background-color: #f8f8f8;
+    color: #404040;
+  }
+  /*    #menu a.active {
         background-color: #3887be;
         color: #ffffff;
     }
@@ -63,55 +62,66 @@
     #menu a.active:hover {
         background: #3074a4;
     }*/
-
-    #menu a#londonist-rivers {
-      background-color: #1C99C0;
-    }
-    #menu a#londonist-old-stations {
-      background-color: #A352FD;
-    }
-    #menu a#londonist-war-shelters {
-      background-color: #FF0000;
-    }
-    #menu a#sewer {
-      background-color: rgb(231,231,225);
-      color: #000000;
-    }
-    #menu a#gas-pipe {
-      background-color: #FED0AE;
-      color: #000000;
-    }
-    #menu a#gas-site {
-      background-color: #FED0AE;
-      color: #000000;
-    }
-    #menu a#cable {
-      background-color: #76FFE1;
-      color: #000000;
-    }
-    #menu a#ohl {
-      background-color: #1967FD;
-    }
-    #menu a#substations {
-      background-color: #76FFE1;
-      color: #000000;
-    }
-    #menu a#towers {
-      background-color: #1967FD;
-    }
-    #menu a#sewer input {
-      width: 100%;
-    }
-    #story {
-      background-color: #000000;
-      color: #ffffff;
-      width: 30%;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      padding: 10px;
-    }
+  
+  #menu a#londonist-rivers {
+    background-color: #1C99C0;
+  }
+  
+  #menu a#londonist-old-stations {
+    background-color: #D569FD;
+  }
+  
+  #menu a#londonist-war-shelters {
+    background-color: #FF0000;
+  }
+  
+  #menu a#sewer {
+    background-color: rgb(231, 231, 225);
+    color: #000000;
+  }
+  
+  #menu a#gas-pipe {
+    background-color: #FED0AE;
+    color: #000000;
+  }
+  
+  #menu a#gas-site {
+    background-color: #FED0AE;
+    color: #000000;
+  }
+  
+  #menu a#cable {
+    background-color: #76FFE1;
+    color: #000000;
+  }
+  
+  #menu a#ohl {
+    background-color: #1967FD;
+  }
+  
+  #menu a#substations {
+    background-color: #76FFE1;
+    color: #000000;
+  }
+  
+  #menu a#towers {
+    background-color: #1967FD;
+  }
+  
+  #menu a#sewer input {
+    width: 100%;
+  }
+  
+  #story {
+    background-color: rgb(0,0,0,0.5);
+    color: #ffffff;
+    width: 30%;
+    position: absolute;
+    left: 1%;
+    bottom: 0;
+    top: 0;
+    padding: 10px;
+  }
   </style>
 </head>
 
@@ -119,13 +129,11 @@
   <nav id="menu"></nav>
   <div id='map'></div>
   <div id="story">
-    
   </div>
   <div id="info" style="position: absolute; right: 10px; top: 10px; background: #ccc;"></div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js'></script>
   <script>
-
   mapboxgl.accessToken = 'pk.eyJ1IjoiZGFucGF1bHNtaXRoIiwiYSI6ImNpeXc4NXU5ZDAwMDMzMm9lZmd4ZTFmZmQifQ.Nl9itu3jhaFTlhrV92LS0g';
   var map = new mapboxgl.Map({
     container: 'map',
@@ -135,7 +143,7 @@
   });
 
   map.on('load', function() {
-    
+
     // Rivers
     map.addLayer({
       "id": "londonist-rivers",
@@ -149,18 +157,18 @@
         "line-width": 3
       }
     });
-    map.on('click', 'londonist-rivers', function (e) {
+    map.on('click', 'londonist-rivers', function(e) {
       $('#story').html('<h3>Underground rivers</h3><p>There are 12 underground rivers that pass through London and into the Thames.</p>');
-        new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML('<iframe width="600" height="500" src="'+e.features[0].properties.description+'" frameborder="0" />')
-            .addTo(map);
+      new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML('<iframe width="600" height="500" src="' + e.features[0].properties.description + '" frameborder="0" />')
+        .addTo(map);
     });
-    map.on('mouseenter', 'londonist-rivers', function () {
-        map.getCanvas().style.cursor = 'pointer';
+    map.on('mouseenter', 'londonist-rivers', function() {
+      map.getCanvas().style.cursor = 'pointer';
     });
-    map.on('mouseleave', 'londonist-rivers', function () {
-        map.getCanvas().style.cursor = '';
+    map.on('mouseleave', 'londonist-rivers', function() {
+      map.getCanvas().style.cursor = '';
     });
 
     // Stations
@@ -172,29 +180,29 @@
         "data": 'data/londonist-old-stations.geojson',
       },
       "layout": {
-          "icon-image": "circle-11",
-          "text-field": "{name}",
-          "text-offset": [0, 0.6],
-          "text-anchor": "top"
+        "icon-image": "circle-11",
+        "text-field": "{name}",
+        "text-offset": [0, 0.6],
+        "text-anchor": "top"
       },
       "paint": {
-        "icon-color": "#A352FD",
-        "text-color": "#A352FD"
+        "icon-color": "#D569FD",
+        "text-color": "#D569FD"
       }
     });
-    map.on('click', 'londonist-old-stations', function (e) {
-        new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML(e.features[0].properties.name+'<br /><br />'+e.features[0].properties.description)
-            .addTo(map);
+    map.on('click', 'londonist-old-stations', function(e) {
+      new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(e.features[0].properties.name + '<br /><br />' + e.features[0].properties.description)
+        .addTo(map);
 
-        $('#story').html('<h3>Old stations</h3><p>There are 100 old stations deep below London\'s surface.</p>');
+      $('#story').html('<h3>Old stations</h3><p>There are 100 old stations deep below London\'s surface.</p>');
     });
-    map.on('mouseenter', 'londonist-old-stations', function () {
-        map.getCanvas().style.cursor = 'pointer';
+    map.on('mouseenter', 'londonist-old-stations', function() {
+      map.getCanvas().style.cursor = 'pointer';
     });
-    map.on('mouseleave', 'londonist-old-stations', function () {
-        map.getCanvas().style.cursor = '';
+    map.on('mouseleave', 'londonist-old-stations', function() {
+      map.getCanvas().style.cursor = '';
     });
 
     // War shelters
@@ -207,66 +215,66 @@
       },
       "paint": {
         "fill-color": "#FF0000",
-        "fill-opacity": 0.5
+        "fill-opacity": 1
       }
     });
     map.addLayer({
-        "id": "sewer",
-        "source": {
-            "type": "raster",
-            "url": "mapbox://danpaulsmith.480p7dgq"
-        },
+      "id": "sewer",
+      "source": {
         "type": "raster",
-        "paint": {
-          "raster-opacity": 0.2
-        }
+        "url": "mapbox://danpaulsmith.480p7dgq"
+      },
+      "type": "raster",
+      "paint": {
+        "raster-opacity": 0.2
+      }
     });
+    // map.addLayer({
+    //     "id": "gas-pipe",
+    //     "type": "line",
+    //     "source": {
+    //         type: 'vector',
+    //         url: 'mapbox://danpaulsmith.24gbr2l3'
+    //     },
+    //     "source-layer": "Gas_Pipe-1vxwnf",
+    //     "layout": {
+    //         "line-join": "round",
+    //         "line-cap": "round"
+    //     },
+    //     "paint": {
+    //         "line-color": "#FED0AE",
+    //         "line-width": 1
+    //     }
+    // });
+    // map.addLayer({
+    //     "id": "gas-site",
+    //     "type": "polygon",
+    //     "source": {
+    //         type: 'vector',
+    //         url: 'mapbox://danpaulsmith.6jbwn84j'
+    //     },
+    //     "source-layer": "Gas_Site-5f5032",
+    //     "paint": {
+    //         "fill-color": "#FED0AE",
+    //         "fill-opacity": 1
+    //     }
+    // });
     map.addLayer({
-        "id": "gas-pipe",
-        "type": "line",
-        "source": {
-            type: 'vector',
-            url: 'mapbox://danpaulsmith.24gbr2l3'
-        },
-        "source-layer": "Gas_Pipe-1vxwnf",
-        "layout": {
-            "line-join": "round",
-            "line-cap": "round"
-        },
-        "paint": {
-            "line-color": "#FED0AE",
-            "line-width": 1
-        }
-    });
-    map.addLayer({
-        "id": "gas-site",
-        "type": "polygon",
-        "source": {
-            type: 'vector',
-            url: 'mapbox://danpaulsmith.6jbwn84j'
-        },
-        "source-layer": "Gas_Site-5f5032",
-        "paint": {
-            "fill-color": "#FED0AE",
-            "fill-opacity": 1
-        }
-    });
-    map.addLayer({
-        "id": "cable",
-        "type": "line",
-        "source": {
-            type: 'vector',
-            url: 'mapbox://danpaulsmith.69v59blx'
-        },
-        "source-layer": "Cable-8yg86a",
-        "layout": {
-            "line-join": "round",
-            "line-cap": "round"
-        },
-        "paint": {
-            "line-color": "#76FFE1",
-            "line-width": 1
-        }
+      "id": "cable",
+      "type": "line",
+      "source": {
+        type: 'vector',
+        url: 'mapbox://danpaulsmith.69v59blx'
+      },
+      "source-layer": "Cable-8yg86a",
+      "layout": {
+        "line-join": "round",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#76FFE1",
+        "line-width": 1
+      }
     });
     // map.addLayer({
     //     "id": "ohl",
@@ -283,17 +291,17 @@
     // });
     // 
     map.addLayer({
-        "id": "substations",
-        "type": "fill",
-        "source": {
-            type: 'vector',
-            url: 'mapbox://danpaulsmith.9htn62xa'
-        },
-        "source-layer": "Substations-25ms1l",
-        "paint": {
-            "fill-color": "#76FFE1",
-            "fill-opacity": 1
-        }
+      "id": "substations",
+      "type": "fill",
+      "source": {
+        type: 'vector',
+        url: 'mapbox://danpaulsmith.9htn62xa'
+      },
+      "source-layer": "Substations-25ms1l",
+      "paint": {
+        "fill-color": "#76FFE1",
+        "fill-opacity": 1
+      }
     });
     // map.addLayer({
     //     "id": "towers",
@@ -349,24 +357,24 @@
     //     },
     //     "type": "vector"
     // });
-    
-    
-    
-    
-    
 
-    map.on('click', 'londonist-war-shelters', function (e) {
-        $('#story').html('<h3>Deep level war shelters</h3><p>There are 15 war shelters deep below London\'s surface, each planned to store up to 10,000 citizens.</p>');
-        new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML('<iframe width="600" height="500" src="'+e.features[0].properties.description+'" frameborder="0" />')
-            .addTo(map);
+
+
+
+
+
+    map.on('click', 'londonist-war-shelters', function(e) {
+      $('#story').html('<h3>Deep level war shelters</h3><p>There are 15 war shelters deep below London\'s surface, each planned to store up to 10,000 citizens.</p>');
+      new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML('<iframe width="600" height="500" src="' + e.features[0].properties.description + '" frameborder="0" />')
+        .addTo(map);
     });
-    map.on('mouseenter', 'londonist-war-shelters', function () {
-        map.getCanvas().style.cursor = 'pointer';
+    map.on('mouseenter', 'londonist-war-shelters', function() {
+      map.getCanvas().style.cursor = 'pointer';
     });
-    map.on('mouseleave', 'londonist-war-shelters', function () {
-        map.getCanvas().style.cursor = '';
+    map.on('mouseleave', 'londonist-war-shelters', function() {
+      map.getCanvas().style.cursor = '';
     });
 
     // 3D buildings
@@ -391,9 +399,10 @@
     //     }
     // });
 
-    var toggleableLayerIds = [ 'londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations', 'sewer', 'cable'];
+    var toggleableLayerIds = ['londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations', 'sewer', 'cable'];
+
     function getLayerName(id) {
-      switch(id){
+      switch (id) {
         case 'londonist-rivers':
           return 'Underground rivers';
         case 'londonist-war-shelters':
@@ -419,60 +428,60 @@
       }
     }
     for (var i = 0; i < toggleableLayerIds.length; i++) {
-        var id = toggleableLayerIds[i];
+      var id = toggleableLayerIds[i];
 
-        var link = document.createElement('a');
-        link.href = 'javascript:void(0);';
-        link.className = 'active';
-        link.id = id;
-        if(id === 'sewer') {
-          var input = document.createElement('input');
-          input.type = 'range';
-          input.min = 0;
-          input.max = 100;
-          input.step = 1;
-          input.value = 30;
-          input.id = 'sewerOpacity';
-          var span = document.createElement('span');
-          var t = document.createTextNode(getLayerName(id));
-          span.appendChild(t);
-          link.appendChild(span);
-          link.appendChild(input);
-          input.addEventListener('input', function(e) {
-              // Adjust the layers opacity. layer here is arbitrary - this could
-              // be another layer name found in your style or a custom layer
-              // added on the fly using `addSource`.
-              map.setPaintProperty('sewer', 'raster-opacity', parseInt(e.target.value, 10) / 100);
-          });
-        } else {
-          var span = document.createElement('span');
-          var t = document.createTextNode(getLayerName(id));
-          span.appendChild(t);
-        }
-
-        span.onclick = function (e) {
-            var clickedLayer = this.parentNode.id;
-            e.preventDefault();
-            e.stopPropagation();
-            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-            if (visibility === 'visible' || visibility === undefined) {
-                if(clickedLayer === 'cable') {
-                  map.setLayoutProperty('substations', 'visibility', 'none');
-                }
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.className = '';
-            } else {
-                this.className = 'active';
-                if(clickedLayer === 'cable') {
-                  map.setLayoutProperty('substations', 'visibility', 'visible');
-                }
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-            }
-        };
+      var link = document.createElement('a');
+      link.href = 'javascript:void(0);';
+      link.className = 'active';
+      link.id = id;
+      if (id === 'sewer') {
+        var input = document.createElement('input');
+        input.type = 'range';
+        input.min = 0;
+        input.max = 100;
+        input.step = 1;
+        input.value = 30;
+        input.id = 'sewerOpacity';
+        var span = document.createElement('span');
+        var t = document.createTextNode(getLayerName(id));
+        span.appendChild(t);
         link.appendChild(span);
-        
-        var layers = document.getElementById('menu');
-        layers.appendChild(link);
+        link.appendChild(input);
+        input.addEventListener('input', function(e) {
+          // Adjust the layers opacity. layer here is arbitrary - this could
+          // be another layer name found in your style or a custom layer
+          // added on the fly using `addSource`.
+          map.setPaintProperty('sewer', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+        });
+      } else {
+        var span = document.createElement('span');
+        var t = document.createTextNode(getLayerName(id));
+        span.appendChild(t);
+      }
+
+      span.onclick = function(e) {
+        var clickedLayer = this.parentNode.id;
+        e.preventDefault();
+        e.stopPropagation();
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+        if (visibility === 'visible' || visibility === undefined) {
+          if (clickedLayer === 'cable') {
+            map.setLayoutProperty('substations', 'visibility', 'none');
+          }
+          map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+          this.className = '';
+        } else {
+          this.className = 'active';
+          if (clickedLayer === 'cable') {
+            map.setLayoutProperty('substations', 'visibility', 'visible');
+          }
+          map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+      };
+      link.appendChild(span);
+
+      var layers = document.getElementById('menu');
+      layers.appendChild(link);
     }
 
     // var slider = document.getElementById('sewerOpacity');

@@ -8,9 +8,7 @@
 #ground .sub-section {}
 
 #ground .buildings {
-  background-image: url(../images/building-skyline.svg);
-  background-repeat: repeat-x;
-  background-position: top center;
+
 }
 
 #ground .floor {
@@ -28,7 +26,7 @@
     background-position: center center;
     background-size: contain;
     height: 100%;
-    width: calc(100% - 420px);
+    width: calc(100%);
     position: absolute;
 }
 /*#googleTubeMap {
@@ -47,7 +45,7 @@
 #carstaxis .london {
     width: 40%;
     position: absolute;
-    top: 100px;
+    top: 50px;
     bottom: 0px;
     left: 0;
     background: #8C8C8C;
@@ -58,18 +56,20 @@
 #carstaxis .beijing {
   width: 40%;
   position: absolute;
-  top: 100px;
+  top: 50px;
   bottom: 0;
   left: 60%;
     background: #8C8C8C;
     height: 1000%;
     color: #fff;
 }
-
+img.buildingbg {
+position: absolute;
+}
 #carstaxis .separator {
   width: 20%;
   position: absolute;
-  top: 100px;
+  top: 50px;
   bottom: 0;
   left: 40%;
       background: #fff;
@@ -119,6 +119,7 @@ margin-top: 20px;
 iframe.top-attractions {
     width: 100%;
     height: 784px;
+    margin-top: 50px;
 }
 
 /* top attractions */

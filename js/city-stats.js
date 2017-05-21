@@ -45,10 +45,10 @@
       axis: "Public bus fleet size",
       value: 21628
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 38
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -100,10 +100,10 @@
       axis: "Public bus fleet size",
       value: 7500
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 53
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -155,10 +155,10 @@
       axis: "Public bus fleet size",
       value: 2095
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 90
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -210,10 +210,10 @@
       axis: "Public bus fleet size",
       value: 4344
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 45
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 1
     }, {
       axis: "Public buses per million persons",
@@ -265,10 +265,10 @@
       axis: "Public bus fleet size",
       value: 16235
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 31
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -320,10 +320,10 @@
       axis: "Public bus fleet size",
       value: 4212
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 34
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -375,10 +375,10 @@
       axis: "Public bus fleet size",
       value: 2213
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 71
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -430,10 +430,10 @@
       axis: "Public bus fleet size",
       value: 1462
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 34
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -485,10 +485,10 @@
       axis: "Public bus fleet size",
       value: 496
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 42
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -540,10 +540,10 @@
       axis: "Public bus fleet size",
       value: 1561
     }, {
-      axis: "Rail length (km) per million persons",
+      axis: "Rail length (km) per m per",
       value: 14
     }, {
-      axis: "No. of rail stations per km 2 of land area",
+      axis: "Rail stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -673,7 +673,7 @@
       }
     }).join('');
     var headers = '<tr>'+headerHTML+'</tr>';
-    console.log('header', headers)
+    // console.log('header', headers)
     var firstColumn = list[0].map(function(value){return value.axis});
     var rows = [];
     var rowHTML = '';

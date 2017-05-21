@@ -4,11 +4,58 @@ body {
   margin: 0;
   padding: 0;
 }
-
+a, a:hover, a:active {
+  color: #ffffff;
+  /*text-decoration: underline;*/
+}
+.container {
+    width: auto;
+    padding: 0;
+}
+.glyphicon {
+  color: #ffffff;
+}
 nav.navbar {
   z-index: 9999999;
 }
-
+.col-lg-12 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+}
+a.up.carousel-control {
+    position: fixed;
+    left: calc(50% - 20px);
+    top: 0px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #ddd;
+    z-index: 9999999;
+}
+a.up.carousel-control:hover {
+  top: 3px;
+  color: #fff;
+}
+a.down.carousel-control {
+  cursor: pointer;
+    position: fixed;
+    top: auto;
+    left: calc(50% - 20px);
+    bottom: 10px;
+    font-size: 40px;
+    color: #ddd;
+    z-index: 9999;
+}
+a.down.carousel-control:hover {
+  bottom: 13px;
+  color: #fff;
+}
+.carousel-indicators {
+    bottom: 50px;
+    margin-left: 4px;
+}
 section .container {
   padding-right: 0px;
   padding-left: 0px;
@@ -19,14 +66,24 @@ section .container {
   height: 100%;
   /*overflow: hidden;*/
 }
-
-h1.section-title {
-  margin-top: 50px;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 5px 10px;
-  color: #333;
+.navbar-default {
+      background-color: transparent;
+    border-color: transparent;
 }
-
+.navbar-default ul.navbar-nav li {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+h1.section-title {
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    color: #4a4a4a;
+    width: auto;
+    font-size: 28px;
+    position: absolute;
+    margin-left: 241px;
+}
 .side-panel {
   background: rgba(51, 51, 51, 0.65);
   height: 100%;
@@ -38,9 +95,24 @@ h1.section-title {
   padding-top: 150px;
   color: #fff;
 }
-
+.side-panel.blurb {
+    background: rgba(51, 51, 51, 0.65);
+    height: auto;
+    position: absolute;
+    width: 25%;
+    display: block;
+    z-index: 999999;
+    padding-top: 0;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 25px;
+}
+#intro p {
+    margin-bottom: 50px;
+}
 .quote {
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: serif;
   font-style: italic;
   width: 50%;
@@ -48,14 +120,20 @@ h1.section-title {
   margin: 0 auto;
   margin-top: 100px;
 }
-
+img.diagram {
+    height: 200px;
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
 .carousel {
   width: 100%;
   height: 100%;
 }
 
 .carousel-inner {
-  overflow: visible;
+  overflow: hidden;
 }
 
 .carousel-control {
