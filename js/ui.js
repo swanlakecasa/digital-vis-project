@@ -231,9 +231,9 @@ $(document).ready(function() {
   $('iframe.storyofinstagram').height(window.innerHeight - 110);
   $('iframe.bus-bike-iframe').height(window.innerHeight - 110);
   $('table#cityStatsTable').width(window.innerWidth);
-  $('div.map0').height(window.innerHeight - 160);
-  $('div.map1').height(window.innerHeight - 160);
-  $('iframe.landprice-iframe').height(window.innerHeight - 160);
+  $('div.map0').height(window.innerHeight - 110);
+  $('div.map1').height(window.innerHeight - 110);
+  $('iframe.landprice-iframe').height(window.innerHeight - 110);
 
   disableScroll();
 

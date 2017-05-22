@@ -19,6 +19,8 @@ DATA.getWeather = function() {
 };
 // FLIGHTS
 // https://developer.flightstats.com
+// var fsApp = 'c38a8af3';
+// var fsKey = 'c00d66db3f621109ef786b2946a0f8da';
 DATA.getFlights = function(onComplete) {
 
   var numberOfFlights = 5;
@@ -33,7 +35,8 @@ DATA.getFlights = function(onComplete) {
     }
   }
 
-  $.getJSON('https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/jsonp/flightsNear/51.5074/0.1278/' + mileRadius + '?appId=5e50da44&appKey=6caa60485b431970a7624da0a73dd065&maxFlights=' + numberOfFlights + '&sourceType=raw').success(function(data) {
+  
+  $.getJSON('https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/flightsNear/51.5074/0.1278/' + mileRadius + '?appId='+fsApp+'&appKey='+fsKey+'&maxFlights=' + numberOfFlights + '&sourceType=raw').success(function(data) {
     console.log('Received flights data', data);
     DATA.flights = data.flightPositions;
     _.each(DATA.flights, function(flight) {
@@ -42,7 +45,7 @@ DATA.getFlights = function(onComplete) {
         DATA.getFlightDetails(flight, checkIfFinished);
       }
     });
-  }).error(function() {
+  }, function() {
     console.log('Did not receive flights data', data);
     DATA.flights = [{
       flightId: 1
@@ -66,10 +69,10 @@ DATA.getFlights = function(onComplete) {
   });
 }
 DATA.getFlightDetails = function(flight, onComplete) {
-  var url = 'https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/' + flight.flightId + '?appId=1ce57a01&appKey=dcaf7b444da5f530573b82ee0cdb5e36&includeFlightPlan=false&maxPositions=1'
+  var url = 'https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/' + flight.flightId + '?appId='+fsApp+'&appKey='+fsKey+'&includeFlightPlan=false&maxPositions=1'
 
   $.getJSON(url).success(function(data) {
-    if (data.error.errorCode === 'AUTH_FAILURE') {
+    if (data.error && data.error.errorCode === 'AUTH_FAILURE') {
       console.log('no flight details');
       var airports = [{ fs: 'MAD', city: 'Madrid' }, { fs: 'FRA', city: 'Frankfurt' }, { fs: 'LDN', city: 'London' }, { fs: 'PAR', city: 'Paris' }, { fs: 'DBN', city: 'Dublin' }, { fs: 'PEX', city: 'Beijing' }];
       var data = [{
@@ -126,17 +129,17 @@ DATA.getFlightDetails = function(flight, onComplete) {
 };
 // BUS API
 DATA.getBusStatus = function(onComplete) {
-  $.getJSON('https://api.tfl.gov.uk/line/mode/bus/status').then(function(data) {
-    console.log('Bus status data received', data);
-    DATA.buses = data;
-    onComplete();
-  });
+  // $.getJSON('https://api.tfl.gov.uk/line/mode/bus/status').then(function(data) {
+  //   console.log('Bus status data received', data);
+  //   DATA.buses = data;
+  //   onComplete();
+  // });
 };
 // TUBE API
 DATA.getTubeStatus = function(onComplete) {
-  $.getJSON('https://api.tfl.gov.uk/line/mode/tube/status').then(function(data) {
-    console.log('Tube status data received', data);
-    DATA.tubes = data;
-    onComplete();
-  });
+  // $.getJSON('https://api.tfl.gov.uk/line/mode/tube/status').then(function(data) {
+  //   console.log('Tube status data received', data);
+  //   DATA.tubes = data;
+  //   onComplete();
+  // });
 };

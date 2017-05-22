@@ -82,6 +82,7 @@
 #citystats .radarChart {
   /*text-align: right;*/
   z-index: 5;
+  margin-top: 50px;
 }
 table#cityStatsTable {
     z-index: 1;
