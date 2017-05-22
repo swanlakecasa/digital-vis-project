@@ -234,7 +234,16 @@ $(document).ready(function() {
   $('div.map0').height(window.innerHeight - 110);
   $('div.map1').height(window.innerHeight - 110);
   $('iframe.landprice-iframe').height(window.innerHeight - 110);
-
+  $('#lights').click(function(){
+    console.log('here', $('.revealviz iframe').hasClass('hidden'));
+    $('.revealviz iframe').toggleClass('hidden');
+    $('.revealviz img.revealed').toggleClass('hidden');
+    if($('.revealviz iframe').hasClass('hidden')) {
+      $(this).text('turn the lights off');
+    } else {
+      $(this).text('turn the lights on');      
+    }
+  });
   disableScroll();
 
 });

@@ -5,8 +5,12 @@ body {
   padding: 0;
 }
 a, a:hover, a:active {
-  color: #ffffff;
+  color: #ffffff !important;
+  outline:none;
   /*text-decoration: underline;*/
+}
+.navbar-default .navbar-nav>li>a {
+    color: #777 !important;
 }
 .container {
     width: auto;
@@ -219,11 +223,11 @@ img.diagram {
 }
 
 .underground-section {
-  height: 100%;
-  text-align: center;
-  background: url(../images/transition-ground-underground.png) no-repeat center center transparent;
-  background-position: 0px -568px;
-  background-size: cover;
+    height: 100%;
+    text-align: center;
+    background: url(../images/soil.png) repeat center center transparent;
+    background-position: center center;
+    background-size: initial;
 }
 
 .deep-underground-section {
