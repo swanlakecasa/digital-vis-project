@@ -45,10 +45,10 @@
       axis: "Public bus fleet size",
       value: 21628
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 38
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -100,10 +100,10 @@
       axis: "Public bus fleet size",
       value: 7500
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 53
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -155,10 +155,10 @@
       axis: "Public bus fleet size",
       value: 2095
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 90
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -210,10 +210,10 @@
       axis: "Public bus fleet size",
       value: 4344
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 45
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 1
     }, {
       axis: "Public buses per million persons",
@@ -265,10 +265,10 @@
       axis: "Public bus fleet size",
       value: 16235
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 31
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -320,10 +320,10 @@
       axis: "Public bus fleet size",
       value: 4212
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 34
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -375,10 +375,10 @@
       axis: "Public bus fleet size",
       value: 2213
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 71
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -430,10 +430,10 @@
       axis: "Public bus fleet size",
       value: 1462
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 34
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -485,10 +485,10 @@
       axis: "Public bus fleet size",
       value: 496
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 42
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
@@ -540,10 +540,10 @@
       axis: "Public bus fleet size",
       value: 1561
     }, {
-      axis: "Rail length (km) per m per",
+      axis: "Rail (km) per million",
       value: 14
     }, {
-      axis: "Rail stations per km2",
+      axis: "Stations per km2",
       value: 0
     }, {
       axis: "Public buses per million persons",
