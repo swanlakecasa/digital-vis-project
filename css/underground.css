@@ -66,6 +66,12 @@ span.ugc {
     box-shadow: 0px 5px 30px #000;
     padding: 2px 10px;
     border-radius: 10px;
+    cursor: pointer;
+}
+span.ugc:hover {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0px 5px 30px #fff;
 }
 span.ugc.sewer {
     position: absolute;
@@ -144,4 +150,6 @@ img.revealed {
     right: 0;
     top: 80px;
 }
-
+.tooltipster {
+    /*padding: 10px;*/
+}

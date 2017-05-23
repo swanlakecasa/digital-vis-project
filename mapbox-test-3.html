@@ -195,12 +195,19 @@
       }
     });
     map.on('click', 'londonist-old-stations', function(e) {
-      new mapboxgl.Popup()
+      console.log(e.features[0].properties.link)
+      if(e.features[0].properties.link) {
+         new mapboxgl.Popup()
         .setLngLat(e.lngLat)
-        .setHTML(e.features[0].properties.name + '<br /><br />' + e.features[0].properties.description)
+        .setHTML('<iframe width="600" height="500" src="' + e.features[0].properties.link + '" frameborder="0" />')
         .addTo(map);
-
-      $('#story').html('<h3>Old stations</h3><p>There are 100 old stations deep below London\'s surface.</p>');
+      } else {
+        new mapboxgl.Popup()
+          .setLngLat(e.lngLat)
+          .setHTML(e.features[0].properties.name + '<br /><br />' + e.features[0].properties.description)
+          .addTo(map);
+      }
+      $('#story').html('<h3>Old stations</h3><p>There are 100 old stations deep below London\'s surface.</p><p>Many tube stations were used as air-raid shelters during the Second World War, but the Central Line was even converted into a fighter aircraft factory that stretched for over two miles, with its own railway system. Its existence remained an official secret until the 1980s. <a href="http://www.telegraph.co.uk/travel/destinations/europe/united-kingdom/england/london/articles/London-Underground-150-fascinating-Tube-facts/" target="_blank">Source</a>.</p>');
     });
     map.on('mouseenter', 'londonist-old-stations', function() {
       map.getCanvas().style.cursor = 'pointer';

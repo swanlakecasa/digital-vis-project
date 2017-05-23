@@ -244,6 +244,10 @@ $(document).ready(function() {
       $(this).text('turn the lights on');      
     }
   });
+  $('.tooltipster').tooltipster({
+    theme: 'tooltipster-borderless',
+    maxWidth: 300
+  });
   disableScroll();
 
 });

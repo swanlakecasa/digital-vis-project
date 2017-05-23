@@ -26,6 +26,9 @@
   <link href="css/underground.css" rel="stylesheet">
   <link href="css/deep-underground.css" rel="stylesheet">
   <link href="css/city-stats.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="bower_components/tooltipster/dist/css/tooltipster.bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css" />
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -532,7 +535,10 @@
                 </div>
               </div>
           </div>
-          <div class="side-panel"></div>
+          <div class="side-panel blurb">
+            <p>The earth under London is composed of a bed of clay, therefore making tunneling much easier. It is one of the most tunneled cities in the world, with tunnels for road vehicles, pedestrians, the Tube and railway lines and utilities. Several tunnels are over a century old.</p>
+            <p>There is 150km of tube tunnel of which 32km is cut and cover tunnel. The other 55% of the system runs on the surface.</p>
+          </div>
         </div>
         <div class="sub-section item undergroundmap" id="undergroundmap">
           <div class="container">
@@ -543,7 +549,9 @@
                 </div>
             </div>
           </div>
-          <div class="side-panel">
+          <div class="side-panel blurb">
+          <p>This map of London's subterranea includes several types of underground features for which the geographic locations could be found.<p>
+          <p>Click on the features to load inline content about them.</p>.
           </div>
         </div>
         <div class="sub-section item ug-cross" id="ug-cross">
@@ -553,17 +561,20 @@
               <div class="content">
                 <!-- <video src="images/Crossrail-2-animated-fly-through_advanced.mp4" muted controls></video> -->
                 <img class="ug-cross-diagram" src="images/ug-cross.png" width="100%" />
-                <span class="ugc sewer">4m Sewers</span>
-                <span class="ugc war">6m War shelters</span>
-                <span class="ugc cac">6m Cut &amp; cover tube</span>
-                <span class="ugc dlt">24m Deep level tube</span>
-                <span class="ugc cr">25m Cross Rail</span>
-                <span class="ugc pt">35m Electricity tunnels</span>
-                <span class="ugc dls">36m Deep level shelters</span>
-                <span class="ugc wr">40m Water ring</span>
-                <span class="ugc sf">55m Building piles</span>
+                <span class="ugc tooltipster sewer" title="Victorian engineer Joseph Bazalgette’s much-vaunted London sewage system, built in the 1860s and 70s, was a huge improvement on the previous patchwork of rivers, gullies and conduits but, on about 50 days a year when rain is heavy, raw sewage is still discharged into the Thames [8].">4m Sewers</span>
+                <span class="ugc tooltipster war" title="A number of military citadels are known to have been constructed underground in central London, dating mostly from the Second World War and the Cold War. Unlike traditional above-ground citadels, these sites are primarily secure centres for defence co-ordination. A large network of tunnels exists below London for a variety of communications, civil defence and military purposes, however it is unclear how these tunnels, and the various facilities linked to them, fit together, if at all. Even the number and nature of these facilities is unclear; only a few have been officially admitted to.[3]">6m War shelters</span>
+                <span class="ugc tooltipster cac" title="The Circle, District, Hammersmith &amp; City, and Metropolitan lines are services that are on the sub-surface network. The railway tunnels are just below the surface and built mostly using the 'cut and cover' method. [7]">6m Cut &amp; cover tube</span>
+                <span class="ugc tooltipster dlt" title="The Bakerloo, Central, Jubilee, Northern, Piccadilly, Victoria and Waterloo & City lines are deep-level tubes; they have smaller trains that run in two circular tunnels. Many of the central stations on the deep-tube lines are higher than the running lines to assist deceleration when arriving and acceleration when departing (Central and Piccadilly lines). The deep tunnels have a diameter of about 3.59m and are lined with cast-iron or precast concrete rungs. They are bored using a tunneling shield. [7]">24m Deep level tube</span>
+                <span class="ugc tooltipster cr" title="Crossrail has been described as one of Europe's largest infrastructure construction projects. Its main feature is 21 km (13 mi) of new twin tunnels through central London [2].">25m Crossrail</span>
+                <span class="ugc tooltipster pt" title="In February 2011, National Grid embarked upon a seven-year project, to rewire the capital via deep underground tunnels, in order to meet increasing electricity demand and help London access the renewable energy of the future. In total, 32km of tunnels are being constructed between 20m and 60m deep below the road network.  The tunnels will carry high voltage (400kV) electricity cables and connect existing substations [1].">35m Electricity tunnels</span>
+                <span class="ugc tooltipster dls" title="The London deep-level shelters are eight deep-level air-raid shelters that were built under London Underground stations during World War II.[5]">36m Deep level shelters</span>
+                <span class="ugc tooltipster wr" title="The Thames Water Ring Main (TWRM) (formerly the London Water Ring Main/LWRM) is a major part of London's water supply infrastructure, approximately 80 km (50 mi) of mostly 2.54 m (100 in) concrete pipelines to transfer potable water from water treatment works (WTWs) in the Thames and River Lea catchments for distribution within London.[4]">40m Water ring</span>
+                <span class="ugc tooltipster sf" title="The Shard has 53 metre deep piles to support the building. That is a lot of concrete! [6]">55m Building piles</span>
               </div>
             </div>
+          </div>
+          <div class="side-panel blurb">
+            <p>Sources: <a href="http://www2.nationalgrid.com/UK/In-your-area/Projects/London-Power-Tunnels/">[1]</a>, <a href="https://en.wikipedia.org/wiki/Crossrail" target="_blank">[2]</a>, <a target="_blank" href="https://en.wikipedia.org/wiki/Military_citadels_under_London">[3]</a>, <a href="https://en.wikipedia.org/wiki/Thames_Water_Ring_Main" target="_blank">[4]</a>, <a href="https://en.wikipedia.org/wiki/London_deep-level_shelters" target="_blank">[5]</a>, <a href="http://www.nigelpaine.com/blog/learning-from-the-shard/" target="_blank">[6]</a>, <a href="https://metropolitantojubilee.wordpress.com/structural/" target="_blank">[7]</a>, <a href="https://www.theguardian.com/cities/2016/nov/10/what-lies-beneath-day-flusher-london-sewers-stephen-moss" target="_blank">[8]</a>, <a href="http://londonist.com/2015/10/how-deep-does-london-go" target="_blank">image reference</a>.</p>
           </div>
         </div>
         <div class="sub-section item revealviz" id="revealviz">
@@ -622,6 +633,7 @@
   <script src="js/libraries/jquery.easing.min.js"></script>
   <script src="js/libraries/scrolling-nav.js"></script>
   <script src="js/libraries/window-resize.js"></script>
+  <script type="text/javascript" src="bower_components/tooltipster/dist/js/tooltipster.bundle.min.js"></script>
   <script src="js/radarChart.js"></script>
   <script src="js/json2table.js"></script>
   <script src="js/data.js"></script>

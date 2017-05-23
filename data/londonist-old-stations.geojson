@@ -12,7 +12,8 @@
         ]
       },
       "properties": {
-        "name": "Tower Subway South Entrance (Demolished)"
+        "name": "Tower Subway South Entrance (Demolished)",
+        "link": "https://en.m.wikipedia.org/wiki/Tower_Subway"
       }
     },
     {
@@ -27,8 +28,7 @@
       },
       "properties": {
         "name": "Aldwych",
-        "description": "<img src=\"https://lh3.googleusercontent.com/proxy/ZTMpVk9cE7jPpDdar72AOWbwZLwiKbMxeOBJ_Tts3DDS35bU0IsXwe1uJvjwKOydTcaPyj0y8T0CEDBsPHsnFB2JuCLJ_OZHNHbDqQ21rN9oC2Ji9vxBbx3Rpy-VuA\" height=\"200\" width=\"auto\" /><br><br>Closed 1994",
-        "gx_media_links": "https://lh3.googleusercontent.com/proxy/ZTMpVk9cE7jPpDdar72AOWbwZLwiKbMxeOBJ_Tts3DDS35bU0IsXwe1uJvjwKOydTcaPyj0y8T0CEDBsPHsnFB2JuCLJ_OZHNHbDqQ21rN9oC2Ji9vxBbx3Rpy-VuA"
+        "link": "http://www.abandonedstations.org.uk/Aldwych_station_1.html"
       }
     },
     {
@@ -43,8 +43,7 @@
       },
       "properties": {
         "name": "British Museum",
-        "description": "<img src=\"https://lh6.googleusercontent.com/proxy/rKZldVaC3Hi1BcvPEY4yR6afhwxnXP20fzdxG2zRAyhIGXCixi1B9oY3iiWZP9zC4IH8ap0EtDt01_EA7QCQqnS2qlKc4j9fDzmGWY16Ki0wyd6p1bh-X5eaJqi3VyYfyJGppQNHxPnqfAs-OQEDlZn39HVULgtfszx_kYP3HID6XDThwPpyxdcvij9FA0V7jhPCUtOMLE6oSp-WlS-DCUXtynrcHBdu50ortw\" height=\"200\" width=\"auto\" /><br><br>Closed 1933<br>http://en.wikipedia.org/wiki/British_Museum_tube_station",
-        "gx_media_links": "https://lh6.googleusercontent.com/proxy/rKZldVaC3Hi1BcvPEY4yR6afhwxnXP20fzdxG2zRAyhIGXCixi1B9oY3iiWZP9zC4IH8ap0EtDt01_EA7QCQqnS2qlKc4j9fDzmGWY16Ki0wyd6p1bh-X5eaJqi3VyYfyJGppQNHxPnqfAs-OQEDlZn39HVULgtfszx_kYP3HID6XDThwPpyxdcvij9FA0V7jhPCUtOMLE6oSp-WlS-DCUXtynrcHBdu50ortw"
+        "link": "http://www.abandonedstations.org.uk/British_Museum_station.html"
       }
     },
     {
@@ -59,8 +58,7 @@
       },
       "properties": {
         "name": "Brompton Road",
-        "description": "<img src=\"https://lh3.googleusercontent.com/proxy/LzaiUvnVRCxvHzLzAaaj1oVoVZFC7Kq6tmLhHQVYrkBnYk-gFvYzc2UvZfgKo23d4GDDv3a2EPxJZOSQykNiR-RppUtAAKU5LUUpoJmO7XqcYQIz5339f83lSUYt3d7LFg\" height=\"200\" width=\"auto\" /><br><br>Closed 1934<br><br>http://en.wikipedia.org/wiki/Brompton_Road_tube_station",
-        "gx_media_links": "https://lh3.googleusercontent.com/proxy/LzaiUvnVRCxvHzLzAaaj1oVoVZFC7Kq6tmLhHQVYrkBnYk-gFvYzc2UvZfgKo23d4GDDv3a2EPxJZOSQykNiR-RppUtAAKU5LUUpoJmO7XqcYQIz5339f83lSUYt3d7LFg"
+        "link": "http://www.abandonedstations.org.uk/Brompton_Road_station.html"
       }
     },
     {
@@ -75,7 +73,7 @@
       },
       "properties": {
         "name": "City Road",
-        "description": "http://www.subbrit.org.uk/sb-sites/sites/c/city_road_station/index.shtml"
+        "link": "http://www.abandonedstations.org.uk/City_Road_station.html"
       }
     },
     {
@@ -90,8 +88,7 @@
       },
       "properties": {
         "name": "Down Street",
-        "description": "<img src=\"https://lh4.googleusercontent.com/proxy/k8aJgvNN4ozo83a-hvvsV_qvv1m6BAeFj3_3NRZ2PgqBONHUTg49TJh1gTnO_TAoPDJEMJT_vG5W-mRyueQJlD9b6D24FUfBGJ5xqf-uzZWFmIlnt4InE743YAKwuW10CDhMsp-nI2GCIxG3EFo8M25D9CVAPuIwp873EG4iE2aJ-J74kw\" height=\"200\" width=\"auto\" /><br><br>Closed 1932<br>http://underground-history.co.uk/downst.php",
-        "gx_media_links": "https://lh4.googleusercontent.com/proxy/k8aJgvNN4ozo83a-hvvsV_qvv1m6BAeFj3_3NRZ2PgqBONHUTg49TJh1gTnO_TAoPDJEMJT_vG5W-mRyueQJlD9b6D24FUfBGJ5xqf-uzZWFmIlnt4InE743YAKwuW10CDhMsp-nI2GCIxG3EFo8M25D9CVAPuIwp873EG4iE2aJ-J74kw"
+        "link": "http://www.abandonedstations.org.uk/Down_Street_station.html"
       }
     },
     {
@@ -106,7 +103,7 @@
       },
       "properties": {
         "name": "King William Street",
-        "description": "http://www.subbrit.org.uk/sb-sites/sites/k/king_william_street_station/index.shtml"
+        "link": "http://www.abandonedstations.org.uk/King_William_Street_1.html"
       }
     },
     {
@@ -121,8 +118,7 @@
       },
       "properties": {
         "name": "Mark Lane",
-        "description": "<img src=\"https://lh5.googleusercontent.com/proxy/d5KlpfKV293wes_248JaVnNc07HlmlJwjI3UO11Rtz8ZffWMADAvDk7xo2ZB0xAjVKPxeJlV55AVc6JxP3ZlGOptIpZFSblH4XLu6OdIes59Ofs7fluxDYjK_hp2r_eiKZ5dqzP5oI4F3UIoFYmCZS1h\" height=\"200\" width=\"auto\" /><br><br>Closed 1967<br>http://en.wikipedia.org/wiki/Mark_Lane_tube_station",
-        "gx_media_links": "https://lh5.googleusercontent.com/proxy/d5KlpfKV293wes_248JaVnNc07HlmlJwjI3UO11Rtz8ZffWMADAvDk7xo2ZB0xAjVKPxeJlV55AVc6JxP3ZlGOptIpZFSblH4XLu6OdIes59Ofs7fluxDYjK_hp2r_eiKZ5dqzP5oI4F3UIoFYmCZS1h"
+        "link": "http://www.abandonedstations.org.uk/Mark_Lane_station.html"
       }
     },
     {
@@ -137,8 +133,7 @@
       },
       "properties": {
         "name": "Marlborough Road",
-        "description": "<img src=\"https://lh3.googleusercontent.com/proxy/2iorzOgDJ6uVWvgiQ8xfOYn_hmphyC2x2SBExnnNGugoK8ifCvGfQ9d7W4IWr0qEh3H4qSDVITsSJn6RHxY-A-ir9acDPILQL1GNydiQVkQXxxjNapPGXimTUcQ7QtdaVj7Y9oN42qGAScMXMLcJkb8f66KMdy2QYLt3XxuxEHKu4bqQ3EALKc2YqA\" height=\"200\" width=\"auto\" /><br><br>Closed 1939<br>http://en.wikipedia.org/wiki/Marlborough_Road_tube_station",
-        "gx_media_links": "https://lh3.googleusercontent.com/proxy/2iorzOgDJ6uVWvgiQ8xfOYn_hmphyC2x2SBExnnNGugoK8ifCvGfQ9d7W4IWr0qEh3H4qSDVITsSJn6RHxY-A-ir9acDPILQL1GNydiQVkQXxxjNapPGXimTUcQ7QtdaVj7Y9oN42qGAScMXMLcJkb8f66KMdy2QYLt3XxuxEHKu4bqQ3EALKc2YqA"
+        "link": "http://www.abandonedstations.org.uk/Marlborough_Road_station.html"
       }
     },
     {
@@ -153,8 +148,7 @@
       },
       "properties": {
         "name": "York Road",
-        "description": "<img src=\"https://lh5.googleusercontent.com/proxy/KOMBUvnR_kZpBavQVjWMETThIOM9VGOuV7CdLf-Dxkzciouquj1yHkgaaGKxc4EuSZ3t5u0aEclAvG70DhNsTKjLEzWFBcEaQTQS3ofmJp2GWDUg_fl0GWjypL9EdCx41Qp29OGVXDAlHLfghA\" height=\"200\" width=\"auto\" /><br><br>Closed 1932<br>http://www.pendar.pwp.blueyonder.co.uk/Tube/York_Road_station.html",
-        "gx_media_links": "https://lh5.googleusercontent.com/proxy/KOMBUvnR_kZpBavQVjWMETThIOM9VGOuV7CdLf-Dxkzciouquj1yHkgaaGKxc4EuSZ3t5u0aEclAvG70DhNsTKjLEzWFBcEaQTQS3ofmJp2GWDUg_fl0GWjypL9EdCx41Qp29OGVXDAlHLfghA"
+        "link": "http://www.abandonedstations.org.uk/York_Road_station.html"
       }
     },
     {
@@ -169,7 +163,7 @@
       },
       "properties": {
         "name": "Bull and Bush/North End",
-        "description": "Never opened<br>http://underground-history.co.uk/bullbush.php"
+        "link": "http://www.abandonedstations.org.uk/North_End_station.html"
       }
     },
     {
@@ -183,7 +177,8 @@
         ]
       },
       "properties": {
-        "name": "Euston"
+        "name": "Euston",
+        "link": "http://www.abandonedstations.org.uk/Euston_station.html"
       }
     },
     {
@@ -197,7 +192,8 @@
         ]
       },
       "properties": {
-        "name": "Hyde Park Corner"
+        "name": "Hyde Park Corner",
+        "description": "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Pizza_on_the_Park.jpg/1280px-Pizza_on_the_Park.jpg' />"
       }
     },
     {
@@ -212,7 +208,7 @@
       },
       "properties": {
         "name": "Angel",
-        "description": "Old entrance and lift shaft"
+        "link": "http://www.abandonedstations.org.uk/Angel_station.html"
       }
     },
     {
@@ -227,7 +223,7 @@
       },
       "properties": {
         "name": "South Kentish Town",
-        "description": "Closed 1924<br>http://www.28dayslater.co.uk/forums/showthread.php?p=399468"
+        "link": "http://www.abandonedstations.org.uk/South_Kentish_Town_station.html"
       }
     },
     {
@@ -242,7 +238,7 @@
       },
       "properties": {
         "name": "Highbury & Islington",
-        "description": "Old enterance"
+        "link": "http://www.abandonedstations.org.uk/Highbury_station.html"
       }
     },
     {
@@ -257,7 +253,7 @@
       },
       "properties": {
         "name": "Chancery Lane",
-        "description": "Old station entrance"
+        "link": "http://www.subbrit.org.uk/rsg/sites/k/kingsway/"
       }
     }
   ]

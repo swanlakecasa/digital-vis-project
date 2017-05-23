@@ -112,6 +112,9 @@ h1.section-title {
     border-radius: 10px;
     margin: 25px;
 }
+.ug-cross .side-panel.blurb {
+    bottom: 0;
+}
 #intro p {
     margin-bottom: 50px;
 }
