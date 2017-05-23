@@ -29,6 +29,7 @@
   padding: 2px 10px;
   border-radius: 5px;
   font-size: 12px;
+  color: #333;
 }
 
 .airplane1 span {
@@ -319,10 +320,10 @@ img.airtower2 {
 }
 div.airtrafficviz {
     width: 50%;
-    top: 110px;
+    top: 200px;
     position: absolute;
     bottom: 0;
-    left: 25%;
+    right: 0;
 }
 div.airtrafficviz .table {
     border-color: transparent;
@@ -350,13 +351,13 @@ span.keyair {
     color: #333;
     text-align: center;
     width: 100%;
-    bottom: 150px;
+    bottom: 250px;
 }
 span.circle {
     margin: 0 auto;
     display: block;
     margin-top: -25px;
-    width: 50%;
+    width: 70%;
     margin-bottom: 10px;
     float: left;
     clear: both;
@@ -373,7 +374,7 @@ span.circle1 {
     margin: 0 auto;
     float: left;
     position: absolute;
-    left: 25%;
+    left: 34%;
     margin-top: 25px;
 }
 
@@ -386,7 +387,7 @@ span.circle2 {
     margin: 0 auto;
     margin-top: 5px;
     position: absolute;
-    left: 25%;
+    left: 34%;
     margin-left: -20px;
 }
 

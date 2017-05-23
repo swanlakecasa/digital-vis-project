@@ -19,8 +19,8 @@ DATA.getWeather = function() {
 };
 // FLIGHTS
 // https://developer.flightstats.com
-// var fsApp = 'c38a8af3';
-// var fsKey = 'c00d66db3f621109ef786b2946a0f8da';
+var fsApp = 'c38a8af3';
+var fsKey = 'c00d66db3f621109ef786b2946a0f8da';
 DATA.getFlights = function(onComplete) {
 
   var numberOfFlights = 5;
@@ -45,7 +45,7 @@ DATA.getFlights = function(onComplete) {
         DATA.getFlightDetails(flight, checkIfFinished);
       }
     });
-  }, function() {
+  }).error(function() {
     console.log('Did not receive flights data', data);
     DATA.flights = [{
       flightId: 1
