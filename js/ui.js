@@ -187,11 +187,11 @@ $(document).ready(function() {
 
   $('a.up').hide();
 
-  $('.page-scroll').unbind('click');
-  $('.page-scroll').on('click', function(e) {
-    e.preventDefault();
-    return false;
-  });
+  // $('.page-scroll').unbind('click');
+  // $('.page-scroll').on('click', function(e) {
+  //   e.preventDefault();
+  //   return false;
+  // });
   $('a.up').click(function(e) {
     e.preventDefault();
     scrollToPrevious();

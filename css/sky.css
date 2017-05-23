@@ -267,9 +267,10 @@
 }
 
 #pollution input.slider {
-    width: 700px;
-    margin: 0 auto;
-    margin-top: calc(12% + 500px);
+    width: 500px;
+    position: absolute;
+    left: 11%;
+    bottom: 100px;
 }
 
 div.labels span {
@@ -281,7 +282,7 @@ div.labels span {
     top: 15%;
     visibility: hidden;
     position: absolute;
-    left: calc(50% - 350px);
+    left: 5%;
 }
 
 #pollution img.gif.active {
@@ -294,7 +295,12 @@ div.labels span {
     text-align: center;
     position: absolute;
     top: calc(13% + 620px);
-    left: calc(50% - 350px);
+    left: 5%;
+}
+img.pol {
+    position: absolute;
+    right: 10%;
+    top: 100px;
 }
 img.airtower {
     position: absolute;
@@ -313,12 +319,16 @@ div.airtrafficviz {
     top: 110px;
     position: absolute;
     bottom: 0;
+    left: 25%;
 }
 div.airtrafficviz .table {
     border-color: transparent;
     text-align: left;
  }
-
+div.airtrafficviz image {
+    width: 120%;
+    margin-left: -10%;
+}
 span.yaxis {
       position: absolute;
     left: 30px;
@@ -333,19 +343,20 @@ span.xaxis {
 
 span.keyair {
     position: absolute;
-    left: calc(50% - 100px);
-    bottom: 50px;
+    left: 0;
     color: #333;
     text-align: center;
-    width: 200px;
-    top: 60%;
+    width: 100%;
+    bottom: 150px;
 }
-
 span.circle {
     margin: 0 auto;
     display: block;
-    margin-top: -10px;
+    margin-top: -25px;
+    width: 50%;
     margin-bottom: 10px;
+    float: left;
+    clear: both;
 }
 
 span.circle1 {
@@ -356,8 +367,11 @@ span.circle1 {
     background: rgba(0, 0, 0, 0.3);
     margin-left: 20px;
     margin-bottom: 20px;
-    margin-bottom: 20px;
     margin: 0 auto;
+    float: left;
+    position: absolute;
+    left: 25%;
+    margin-top: 25px;
 }
 
 span.circle2 {
@@ -367,12 +381,17 @@ span.circle2 {
     border-radius: 25px;
     background: rgba(0, 0, 0, 0.3);
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 5px;
+    position: absolute;
+    left: 25%;
+    margin-left: -20px;
 }
 
 span.colour {
-    margin-top: 10px;
+    margin-top: -25px;
     display: block;
+    position: absolute;
+    right: 25%;
 }
 
 span.colour1 {
@@ -381,11 +400,12 @@ span.colour1 {
     display: block;
     border-radius: 25px;
     background: linear-gradient(#a7fba7,#ff6565);
-    margin-top: 10px;
+        margin-top: 5px;
     margin: 0 auto;
     margin-top: 15px;
+    right: 30%;
+    position: absolute;
 }
-
 span.colour2 {}
 g.tick {
     stroke-opacity: 0;

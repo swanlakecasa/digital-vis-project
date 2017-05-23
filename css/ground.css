@@ -170,3 +170,27 @@ iframe.landprice-iframe {
     right: 0;
     width: 50%;
 }
+div.wordClouds img {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 500px;
+    position: absolute;
+    top: calc(50% - 250px);
+}
+div.wordClouds h3.london {
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 50%;
+}
+div.wordClouds h3.beijing {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    width: 50%;
+}
+div.wordClouds img.two {
+  position: absolute;
+  left: 50%;
+}

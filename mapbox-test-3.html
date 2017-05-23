@@ -65,6 +65,11 @@
         background: #3074a4;
     }*/
   
+  #menu a#satellite {
+    background-color: #CCCCCC;
+    color: #333333;
+  }
+
   #menu a#londonist-rivers {
     background-color: #1C99C0;
   }
@@ -430,10 +435,13 @@
     //     }
     // });
 
-    var toggleableLayerIds = ['londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations', 'sewer', 'cable'];
+    var toggleableLayerIds = ['satellite', 'londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations', 'sewer', 'cable'];
+    var satellite = false;
 
     function getLayerName(id) {
       switch (id) {
+        case 'satellite':
+          return 'Satellite image toggle';
         case 'londonist-rivers':
           return 'Underground rivers';
         case 'londonist-war-shelters':
@@ -501,6 +509,14 @@
           }
           map.setLayoutProperty(clickedLayer, 'visibility', 'none');
           this.className = '';
+        } else if(clickedLayer === 'satellite') {
+          if(!satellite) {
+            map.setStyle('mapbox://styles/mapbox/satellite-v9');
+            satellite = true;
+          } else {
+            map.setStyle('mapbox://styles/danpaulsmith/cj1ij723s000a2srknmqdbrgd');
+            satellite = false;
+          }
         } else {
           this.className = 'active';
           if (clickedLayer === 'cable') {

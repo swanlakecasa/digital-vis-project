@@ -165,3 +165,13 @@ div.undergroundmap .side-panel.blurb {
     left: 0;
     bottom: 70px;
 }
+.buses-repeat {
+    width: 100px;
+    background-image: url(images/london-bus.png);
+    height: 500px;
+    position: absolute;
+    left: 0;
+    top: 140px;
+    background-size: contain;
+    z-index: 999999;
+}
