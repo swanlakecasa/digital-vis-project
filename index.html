@@ -226,9 +226,16 @@
           <div class="side-panel blurb">
             <p>A city’s air traffic activity is a good indicator of it’s global significance - be it for business or leisure. Tourism has a huge impact on a city, resulting in an increased need of a reliable transport service and stable infrastructure to deal with the influx of visitors.</p>
             <p>The planes you see moving across the sky here are above London right now. </p>
+            <p>In 2016, London's 5 airports dealt with 162 million passengers.</p>
+            <p>That's 444,754 passengers per day, or one plane every minute.</p>
+            <br />  
+            <p>Beijing's 2 airports dealt with 273,917 passengers per day.</p>
+            <p><a href="https://en.wikipedia.org/wiki/List_of_busiest_airports_by_passenger_traffic#2016_statistics" target="_blank">Source: Wikipedia</a>, 
+            <a target="_blank" href="http://www.bbc.com/capital/story/20160420-this-is-why-chinas-airports-are-a-nightmare">BBC</a>, 
+            <a target="_blank" href="http://www.flightstats.com/company/monthly-performance-reports/airports/">FlightStats</a><p>
           </div>
         </div>
-        <div class="sub-section item traffic" id="traffic">
+       <!--  <div class="sub-section item traffic" id="traffic">
           <div class="container">
             <div class="">
               <div class="col-lg-12">
@@ -237,32 +244,7 @@
                   
                   
                   <div class="airtrafficstats">
-                    <!--  Airport, 2016 passengers
-                    London (All), 162335261
-                    Atlanta (ATL), 104171935
-                    Beijing (All), 99979802
-                    Beijing (PEX), 94393414
-                    Tokyo (HND), 79699762
-                    London Heathrow (LHR), 75711130  
-                    London Gatwick (LGW), 43119628  
-                    London Stansted (STN), 24320071
-                    London Luton (LTN), 14645619
-                    Beijing (NAY), 5586388
-                    London City (LCY), 4538813   -->
-                    <!-- London average passengers per day = 444,754
-                    London average passengers per hour = 18,531
-                    London average passengers per minute = 308
-                    Beijing average passengers per day = 273,917
-                    Beijing average passengers per hour = 11,413
-                    Beijing average passengers per minute = 190 -->
-<!--                     <p>In 2016,</p>
-                    <p>London's 5 airports dealt with</p>
-                    <p>162 million passengers.</p>
-                    <p>That's 444,754 passengers per day,</p>
-                    <p>or one plane every minute.</p>
-                    <br />  
-                    <p>Beijing's 2 airports dealt with</p>
-                    <p>273,917 passengers per day.</p> -->
+                  
                     
                   </div>
                   <div class="side-panel blurb">
@@ -284,7 +266,7 @@
             <a target="_blank" href="http://www.bbc.com/capital/story/20160420-this-is-why-chinas-airports-are-a-nightmare">Source: BBC</a>
             <a target="_blank" href="http://www.flightstats.com/company/monthly-performance-reports/airports/">Source: FlightStats</a>
           </div>
-        </div>
+        </div> -->
         <div class="sub-section item pollution" id="pollution">
           <div class="container">
             <div class="">
@@ -416,7 +398,32 @@
             <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/sLD7GYZT7Z8" frameborder="0" allowfullscreen></iframe> -->
           </div>
         </div>
-
+        <div class="sub-section item citystats" id="citystats">
+          <div class="container">
+            <div class="">
+              <div class="col-lg-12">
+                <h1 class="section-title">Transport profiles</h1>
+                <div class="content">
+                  <div class="radarChart"></div>
+                  <p class="citystats-info">Click the key items to toggle between cities</p>
+                  <div class="key"></div>
+                  <div class="table-button">Toggle table</div>
+                  <div class="info">
+                    <table id="cityStatsTable" border="1" class="hidden"></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="side-panel blurb">
+            <p>Are there patterns amongst cities in terms of their activity? Do we often see large, fast-paced cities, and small, slow-paced cities? What variables would factor into a profile like this?</p>
+            <p>A radar chart has been used to plot cities across 14 different variables that help indicate activity in some form or shape.</p>
+            <p>By overlaying multiple cities on the chart, it becomes easy to compare cities across those variables, and highlights similar and different profiles using the space and shape of the plots.</p>
+            <p>The values have been normalised against the maximum scoring value for each variable.</p>
+            <p>Try comparing all other cities to Beijing, and notice the difference in profile patterns.</p>
+          </div>
+        </div>
+      </div>
         <div class="sub-section item buildings active" id="buildings">
           <div class="floor"></div>
           <img class="airtower2" src="images/airtower.svg" height="500" />
@@ -450,12 +457,29 @@
           </div>
         </div>
         
+        <div class="sub-section item landprices" id="landprices">
+          <div class="container">
+            <div class="">
+              <div class="col-lg-12">
+                <h1 class="section-title">House prices - Beijing</h1>
+                <!-- <h2 class="section-title2">Beijing</h1> -->
+                <div class="content">
+                  <!-- <iframe scrolling="no" class="landprice-iframe" width="100%" height="520" frameborder="0" src="https://ucfngeo.carto.com/builder/a06cd61c-3a4b-11e7-a402-0ee66e2c9693/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe> -->
+                  <iframe class="landprice-iframe" scrolling="no" src="beijing-landprices.html" width="100%" frameborder="0"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="side-panel blurb" style="margin-top: 125px;">
+            <p>London and Beijing have high projected growth and are economically diverse, they draw in residents by offering plenty of cultural and leisure activities. In both cities house prices have been rising faster than wages. These price increases make such metropolitan areas less livable for average and lower income households</p>
+          </div>
+        </div>
         
         <div class="sub-section item wordClouds" id="wordClouds">
           <div class="container">
             <div class="">
               <div class="col-lg-12">
-                <h1 class="section-title">Instagram wordclouds</h1>
+                <h1 class="section-title">Online activity</h1>
                 <div class="content">
                   <!-- <iframe class="top-attractions" src="wordclouds.html" width="100%" frameborder="0"></iframe> -->
                   <h3 class="london">London</h3>
@@ -488,49 +512,8 @@
             <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/sLD7GYZT7Z8" frameborder="0" allowfullscreen></iframe> -->
           </div>
         </div>
-        <div class="sub-section item landprices" id="landprices">
-          <div class="container">
-            <div class="">
-              <div class="col-lg-12">
-                <h1 class="section-title">House prices - Beijing</h1>
-                <!-- <h2 class="section-title2">Beijing</h1> -->
-                <div class="content">
-                  <!-- <iframe scrolling="no" class="landprice-iframe" width="100%" height="520" frameborder="0" src="https://ucfngeo.carto.com/builder/a06cd61c-3a4b-11e7-a402-0ee66e2c9693/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe> -->
-                  <iframe class="landprice-iframe" scrolling="no" src="beijing-landprices.html" width="100%" frameborder="0"></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="side-panel blurb" style="margin-top: 125px;">
-            <p>London and Beijing have high projected growth and are economically diverse, they draw in residents by offering plenty of cultural and leisure activities. In both cities house prices have been rising faster than wages. These price increases make such metropolitan areas less livable for average and lower income households</p>
-          </div>
-        </div>
-        <div class="sub-section item citystats" id="citystats">
-          <div class="container">
-            <div class="">
-              <div class="col-lg-12">
-                <h1 class="section-title">Transport profiles</h1>
-                <div class="content">
-                  <div class="radarChart"></div>
-                  <p class="citystats-info">Click the key items to toggle between cities</p>
-                  <div class="key"></div>
-                  <div class="table-button">Toggle table</div>
-                  <div class="info">
-                    <table id="cityStatsTable" border="1" class="hidden"></table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="side-panel blurb">
-            <p>Are there patterns amongst cities in terms of their activity? Do we often see large, fast-paced cities, and small, slow-paced cities? What variables would factor into a profile like this?</p>
-            <p>A radar chart has been used to plot cities across 14 different variables that help indicate activity in some form or shape.</p>
-            <p>By overlaying multiple cities on the chart, it becomes easy to compare cities across those variables, and highlights similar and different profiles using the space and shape of the plots.</p>
-            <p>The values have been normalised against the maximum scoring value for each variable.</p>
-            <p>Try comparing all other cities to Beijing, and notice the difference in profile patterns.</p>
-          </div>
-        </div>
-      </div>
+        
+        
       <!-- Controls -->
       <a class="left carousel-control" href="#carousel-ground" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
