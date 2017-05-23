@@ -153,3 +153,7 @@ img.revealed {
 .tooltipster {
     /*padding: 10px;*/
 }
+div.undergroundmap .side-panel.blurb {
+    left: 0;
+    bottom: 70px;
+}
