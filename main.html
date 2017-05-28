@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+<section>
+<div class="strips">
+    <div class="strip hoverin">
+        +
+        <div class="content">
+            
+
+             <img src="mainscene.png" alt="HTML5 Icon" style="width:100px;height:100px;">
+
+           <h1>Main Scene</h1>
+            <p>
+                
+                The center of everything,where the acting takes place. The main scene in the urban environment consists by all the places that we tent to go in our everyday life. Our home, our school, our beloved parks. Is where all of our focus is given.
+
+            </p>
+        </div>
+    </div>
+    <div class="strip">
+        <div class="plus">+</div>
+        <div class="content">
+            
+             <img src="bal1.png" alt="HTML5 Icon" style="width:100px;height:100px;">
+             <h1>Main Actor</h1>
+            <p>Af portland aesthetic, poutine roof party narwhal iPhone keffiyeh gentrify hammock synth occupy church-key chia. Tbh pinterest affogato, lyft mustache whatever portland synth offal. Actually roof party raw denim yuccie, af fanny pack blue
+                bottle cold-pressed forage try-hard williamsburg 8-bit sustainable craft beer. Listicle ethical pork belly post-ironic man braid kinfolk. Tumeric beard cornhole, microdosing tacos VHS occupy kogi vinyl biodiesel XOXO pitchfork mixtape
+                pinterest live-edge. Kombucha tacos cardigan cliche vinyl cold-pressed. Yr schlitz chartreuse raw denim 8-bit, hashtag VHS snackwave bushwick brooklyn raclette aesthetic.</p>
+        </div>
+    </div>
+    <div class="strip">
+        <div class="plus">+</div>
+        <div class="content">
+
+        <img src="support.png" alt="HTML5 Icon" style="width:100px;height:100px;">
+            <h1>Supporting Actors </h1>
+            <p>Af portland aesthetic, poutine roof party narwhal iPhone keffiyeh gentrify hammock synth occupy church-key chia. Tbh pinterest affogato, lyft mustache whatever portland synth offal. Actually roof party raw denim yuccie, af fanny pack blue
+                bottle cold-pressed forage try-hard williamsburg 8-bit sustainable craft beer. Listicle ethical pork belly post-ironic man braid kinfolk. Tumeric beard cornhole, microdosing tacos VHS occupy kogi vinyl biodiesel XOXO pitchfork mixtape
+                pinterest live-edge. Kombucha tacos cardigan cliche vinyl cold-pressed. Yr schlitz chartreuse raw denim 8-bit, hashtag VHS snackwave bushwick brooklyn raclette aesthetic.</p>
+        </div>
+    </div>
+    <div class="strip">
+        <div class="plus">+</div>
+        <div class="content">
+
+                <img src="directors.png" alt="HTML5 Icon" style="width:100px;height:100px;">
+
+            <h1>Behind the scenes</h1>
+            <p> Taking us back to the ballet of a street as a concept to perceive the urban activity. 
+A 3D vizualisation was developed.
+Each different part that is needed for a ballet performance to succeed, was linked with our everyday urban scene.
+
+</p>
+        </div>
+    </div>
+    <div class="strip">
+        <div class="plus">+</div>
+        <div class="content">
+
+                        <img src="lights.png" alt="HTML5 Icon" style="width:100px;height:100px;">
+
+            <h1>Above the scene</h1>
+            <p>From the main stage, and the actors, that represents the places that we are familiar with.
+To the back stage and the mechanisms that run above actors, without the notice of the viewer, in a similar way that the underground and electrical network does.
+An amazing, complex and well organized system, which remains hidden in different layers. </p>
+        </div>
+    </div>
+    <div class="strip">
+        <div class="plus">+</div>
+        <div class="content">
+
+        <img src="clothes.png" alt="HTML5 Icon" style="width:100px;height:100px;">
+            <h1>Beneath the scene</h1>
+            <p>Af portland aesthetic, poutine roof party narwhal iPhone keffiyeh gentrify hammock synth occupy church-key chia. Tbh pinterest affogato, lyft mustache whatever portland synth offal. Actually roof party raw denim yuccie, af fanny pack blue
+                bottle cold-pressed forage try-hard williamsburg 8-bit sustainable craft beer. Listicle ethical pork belly post-ironic man braid kinfolk. Tumeric beard cornhole, microdosing tacos VHS occupy kogi vinyl biodiesel XOXO pitchfork mixtape
+                pinterest live-edge. Kombucha tacos cardigan cliche vinyl cold-pressed. Yr schlitz chartreuse raw denim 8-bit, hashtag VHS snackwave bushwick brooklyn raclette aesthetic.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="extra">
+    
+ <h1>Theatrical Scope</h1>
+<video width="500" height="300" autoplay loop>
+  <source src="scene.mp4" type="video/mp4">
+</video>
+
+
+
+
+</div>
+
+ </section>
+
+
+
+<script>
+
+let strips = document.querySelector('.strips');
+let strip  = document.querySelectorAll('.strip');
+
+strip.forEach(function(theStrip){
+    theStrip.addEventListener('mouseenter', function() {
+        strip[0].classList.remove('hoverin');
+        theStrip.classList.add('hoverin');
+    });
+    theStrip.addEventListener('mouseleave', function() {
+        theStrip.classList.remove('hoverin');
+        strip[0].classList.add('hoverin');
+    });
+});
+    
+</script>
+
+
+
+</body>
+</html>

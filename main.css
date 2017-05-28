@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300|Montserrat:900");
+html,
+body {
+  margin: 365;
+  padding: 730;
+}
+
+img {
+  margin-left: 80px;
+  width:60%;
+}
+
+section {
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Merriweather', serif;
+  -webkit-box-pack: left;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 2.5;
+}
+
+h1 {
+  position: absolute;
+  margin: 0;
+  padding: 356;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+  letter-spacing: 2px;
+  margin-top: 370px;
+}
+
+.strips {
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10, 1fr);
+  height: 600px;
+  width: 700px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  overflow: hidden;
+  margin-top: 10px;
+
+}
+
+.strip {
+  -webkit-box-align: left;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 120vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+.strip .content {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  width: 0;
+}
+.strip .content h1,
+.strip .content p {
+  font-size: 1.5em;
+  opacity: 0;
+  -webkit-transition: opacity 600ms ease, -webkit-transform 600ms ease;
+  transition: opacity 600ms ease, -webkit-transform 600ms ease;
+  transition: opacity 600ms ease, transform 600ms ease;
+  transition: opacity 600ms ease, transform 600ms ease, -webkit-transform 600ms ease;
+}
+.strip .content h1 {
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
+}
+.strip .content p {
+  -webkit-transform: translateX(25%);
+          transform: translateX(25%);
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
+}
+.strip.hoverin {
+  -ms-grid-column-span: 4;
+  -ms-grid-column: 1;
+      grid-column: 1 / span 4;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 2em;
+}
+.strip.hoverin .content {
+  font-size: .4em;
+  opacity: 1;
+  padding: 1em;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  width: 700px;
+}
+.strip.hoverin .content h1,
+.strip.hoverin .content p {
+  opacity: 1;
+}
+.strip.hoverin .content h1 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.strip.hoverin .content p {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.strip:nth-child(1) {
+  background-color: #0f0f0f;
+  color: white;
+}
+.strip:nth-child(1):hover {
+  -ms-grid-column-span: 4;
+  -ms-grid-column: 1;
+      grid-column: 1 / span 4;
+}
+
+.strip:nth-child(2) {
+  background-color: #1e1e1e;
+  color: white;
+}
+.strip:nth-child(2):hover {
+  -ms-grid-column-span: 4;
+  -ms-grid-column: 2;
+      grid-column: 2 / span 4;
+}
+
+.strip:nth-child(3) {
+  background-color: #2d2d2d;
+  color: white;
+}
+.strip:nth-child(3):hover {
+  -ms-grid-column-span: 4;
+  -ms-grid-column: 3;
+      grid-column: 3 / span 4;
+}
+
+.strip:nth-child(4) {
+  background-color: #3c3c3c;
+  color: white;
+}
+.strip:nth-child(4):hover {
+  -ms-grid-column-span: 4;
+  -ms-grid-column: 4;
+      grid-column: 4 / span 4;
+}
+
+.strip:nth-child(5) {
+  background-color: #4b4b4b;
+  color: white;
+}
+.strip:nth-child(5):hover {
+  -ms-grid-column-span: 4;
+  -ms-grid-column: 5;
+      grid-column: 5 / span 4;
+}
+
+.strip:nth-child(6) {
+  background-color: #5a5a5a;
+  color: white;
+}
+.strip:nth-child(6):hover {
+  -ms-grid-column-span: 4;
+  -ms-grid-column: 6;
+      grid-column: 6 / span 4;
+}
+
+.extra {
+  height: 10px;
+  width: 20px;
+  margin-right: 500px;
+}
+
+.article {
+  margin-top: 100vh;
+  margin-left: 500px;
+  margin-top: 100px;
+  padding: 10em;
+  overflow: hidden;
+}
+
+.article1 {
+  margin-right: 500px;
+  /*margin-top: 400px;*/
+  padding: 8em;
+  overflow: hidden;
+}

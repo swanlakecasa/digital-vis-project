@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 200 137" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
+    </pattern>
+    <linearGradient id="gradient-4" gradientUnits="userSpaceOnUse" x1="120.463" y1="96.79" x2="120.463" y2="358.446" gradientTransform="matrix(0.639606, 0.286353, -0.077826, 0.176372, -43.149336, -35.283173)" spreadMethod="pad">
+      <stop offset="0" style="stop-color: rgb(226, 205, 145);"/>
+      <stop offset="0.708" style="stop-color: rgb(197, 179, 135);"/>
+      <stop offset="1" style="stop-color: rgb(146, 128, 74);"/>
+    </linearGradient>
+    <linearGradient id="gradient-5" gradientUnits="userSpaceOnUse" x1="406.785" y1="300.307" x2="406.785" y2="364.564" gradientTransform="matrix(0.578413, 0.397012, -0.428909, 0.63401, 87.629132, -259.862981)">
+      <stop offset="0" style="stop-color: rgb(237, 215, 146);"/>
+      <stop offset="0.455" style="stop-color: rgb(173, 153, 94);"/>
+      <stop offset="1" style="stop-color: rgb(99, 85, 40);"/>
+    </linearGradient>
+    <linearGradient id="gradient-0" gradientUnits="userSpaceOnUse" x1="180.532" y1="89.171" x2="180.532" y2="141.205" gradientTransform="matrix(0.831789, 0.555092, -0.532077, 0.797303, 91.185768, -80.253809)">
+      <stop offset="0" style="stop-color: rgba(160, 152, 100, 1)"/>
+      <stop offset="1" style="stop-color: rgb(142, 135, 89);"/>
+    </linearGradient>
+    <linearGradient id="gradient-1" gradientUnits="userSpaceOnUse" x1="96.878" y1="4.601" x2="96.878" y2="132.577" gradientTransform="matrix(0.873086, 0.487567, -0.188067, 0.336772, 16.881721, 0.397404)">
+      <stop offset="0" style="stop-color: rgba(160, 152, 100, 1)"/>
+      <stop offset="1" style="stop-color: rgb(142, 135, 89);"/>
+    </linearGradient>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, -1.241357, 0.413786)">
+    <path d="M 193.64 91.159 C 189.32 89.171 173.96 92.313 168.191 100.627 C 158.522 114.561 163.613 129.976 166.035 132.278 C 167.382 133.558 182.522 141.205 195.424 119.351 C 202.542 107.296 198.451 93.373 193.64 91.159 Z" style="fill: url(#gradient-5); vector-effect: non-scaling-stroke; stroke: url(#gradient-0); stroke-width: 2;"/>
+    <path d="M -0.016 4.601 L 193.773 91.023 C 193.773 91.023 176.742 88.586 168.1 102.34 C 157.811 118.715 166.27 132.577 166.27 132.577 L -0.017 57.284 L -0.016 4.601 Z" style="fill: url(#gradient-4); vector-effect: non-scaling-stroke; stroke: url(#gradient-1);"/>
+  </g>
+</svg>

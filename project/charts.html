@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.0-beta.30/vega.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.0-beta.2/vega-lite.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-beta.14/vega-embed.js"></script>
+  <style>
+  body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  
+  .vega-actions {
+    display: none;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="parking" class="chart"></div>
+  <script>
+  var opt = {
+    "mode": "vega-lite"
+  };
+  var parking = {
+    "name": "parking",
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "description": "http://www.thisismoney.co.uk/money/cars/article-2524669/London-expensive-city-world-park.html",
+    "width": "500",
+    "data": {
+      "values": [{
+        "City": "London",
+        "Parking cost (£)": 42
+      }, {
+        "City": "Tokyo",
+        "Parking cost (£)": 38
+      }, {
+        "City": "Stockholm",
+        "Parking cost (£)": 32
+      }, {
+        "City": "Zurich",
+        "Parking cost (£)": 31
+      }, {
+        "City": "Sydney",
+        "Parking cost (£)": 29
+      }, {
+        "City": "New York",
+        "Parking cost (£)": 28
+      }, {
+        "City": "Paris",
+        "Parking cost (£)": 26
+      }, {
+        "City": "Hong Kong",
+        "Parking cost (£)": 25
+      }, {
+        "City": "Hamburg",
+        "Parking cost (£)": 19
+      }, {
+        "City": "Brussels",
+        "Parking cost (£)": 16
+      }]
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "City",
+        "type": "ordinal",
+        "sort": null
+      },
+      "y": {
+        "field": "Parking cost (£)",
+        "type": "quantitative",
+        "sort": "ascending"
+      }
+    }
+  };
+  // Source: https://www.lta.gov.sg/ltaacademy/doc/13Sep105-Pan_KeyTransportStatistics.pdf
+  var cityStats = [
+  {
+    "City": "Beijing",
+    "Greater Population ('000)": 20186,
+    "Greater Area (km2)": 16411,
+    "Greater Density (Persons/km 2)": 1230,
+    "City Population (‘000)": 12014,
+    "City Area (km2)": 1368,
+    "City Density (Persons/km 2)": 8780,
+    "Rail length (km)": 456,
+    "Public bus fleet size": 21628,
+    "Rail length (km) per million persons": 38,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 1071,
+    "Daily ridership ('000) Rail and LRT)": 6008,
+    "Daily ridership ('000) Public bus": 13788,
+    "Road density (km of km2)": 2,
+    "Motor Vehicles (‘000)": 4983,
+    "Private cars (‘000)": 2862,
+    "Private cars per 100 persons": 14
+  },
+  {
+    "City": "Berlin",
+    "Greater Population ('000)": 3502,
+    "Greater Area (km2)": 892,
+    "Greater Density (Persons/km 2)": 3927,
+    "City Population (‘000)": 3502,
+    "City Area (km2)": 892,
+    "City Density (Persons/km 2)": 3927,
+    "Rail length (km)": 146,
+    "Public bus fleet size": 1316,
+    "Rail length (km) per million persons": 42,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 376,
+    "Daily ridership ('000) Rail and LRT)": 1386,
+    "Daily ridership ('000) Public bus": 1052,
+    "Road density (km of km2)": 6,
+    "Motor Vehicles (‘000)": 1305,
+    "Private cars (‘000)": 1120,
+    "Private cars per 100 persons": 32
+  },
+  {
+    "City": "Hong Kong",
+    "Greater Population ('000)": 7184,
+    "Greater Area (km2)": 1104,
+    "Greater Density (Persons/km 2)": 6505,
+    "City Population (‘000)": 7184,
+    "City Area (km2)": 1104,
+    "City Density (Persons/km 2)": 6505,
+    "Rail length (km)": 218,
+    "Public bus fleet size": 5743,
+    "Rail length (km) per million persons": 30,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 799,
+    "Daily ridership ('000) Rail and LRT)": 4701,
+    "Daily ridership ('000) Public bus": 3833,
+    "Road density (km of km2)": 2,
+    "Motor Vehicles (‘000)": 653,
+    "Private cars (‘000)": 455,
+    "Private cars per 100 persons": 6
+  },
+  {
+    "City": "London",
+    "Greater Population ('000)": 8302,
+    "Greater Area (km2)": 1572,
+    "Greater Density (Persons/km 2)": 5281,
+    "City Population (‘000)": 8302,
+    "City Area (km2)": 1572,
+    "City Density (Persons/km 2)": 5281,
+    "Rail length (km)": 436,
+    "Public bus fleet size": 7500,
+    "Rail length (km) per million persons": 53,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 903,
+    "Daily ridership ('000) Rail and LRT)": 3641,
+    "Daily ridership ('000) Public bus": 6397,
+    "Road density (km of km2)": 9,
+    "Motor Vehicles (‘000)": 2934,
+    "Private cars (‘000)": 2535,
+    "Private cars per 100 persons": 31
+  },
+  {
+    "City": "Madrid",
+    "Greater Population ('000)": 3249,
+    "Greater Area (km2)": 604,
+    "Greater Density (Persons/km 2)": 5377,
+    "City Population (‘000)": 3249,
+    "City Area (km2)": 604,
+    "City Density (Persons/km 2)": 5377,
+    "Rail length (km)": 292,
+    "Public bus fleet size": 2095,
+    "Rail length (km) per million persons": 90,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 645,
+    "Daily ridership ('000) Rail and LRT)": 1644,
+    "Daily ridership ('000) Public bus": 1169,
+    "Road density (km of km2)": 5,
+    "Motor Vehicles (‘000)": 1687,
+    "Private cars (‘000)": 1330,
+    "Private cars per 100 persons": 41
+  },
+  {
+    "City": "New York",
+    "Greater Population ('000)": 8337,
+    "Greater Area (km2)": 790,
+    "Greater Density (Persons/km 2)": 10553,
+    "City Population (‘000)": 8337,
+    "City Area (km2)": 790,
+    "City Density (Persons/km 2)": 10553,
+    "Rail length (km)": 373,
+    "Public bus fleet size": 4344,
+    "Rail length (km) per million persons": 45,
+    "No. of rail stations per km 2 of land area": 1,
+    "Public buses per million persons": 521,
+    "Daily ridership ('000) Rail and LRT)": 4521,
+    "Daily ridership ('000) Public bus": 1825,
+    "Road density (km of km2)": 13,
+    "Motor Vehicles (‘000)": 1978,
+    "Private cars (‘000)": 1777,
+    "Private cars per 100 persons": 21
+  },
+  {
+    "City": "Shanghai",
+    "Greater Population ('000)": 23475,
+    "Greater Area (km2)": 6341,
+    "Greater Density (Persons/km 2)": 3702,
+    "City Population (‘000)": 14679,
+    "City Area (km2)": 1871,
+    "City Density (Persons/km 2)": 7847,
+    "Rail length (km)": 454,
+    "Public bus fleet size": 16235,
+    "Rail length (km) per million persons": 31,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 692,
+    "Daily ridership ('000) Rail and LRT)": 5756,
+    "Daily ridership ('000) Public bus": 7592,
+    "Road density (km of km2)": 3,
+    "Motor Vehicles (‘000)": 3280,
+    "Private cars (‘000)": 989,
+    "Private cars per 100 persons": 4
+  },
+  {
+    "City": "Singapore",
+    "Greater Population ('000)": 5312,
+    "Greater Area (km2)": 716,
+    "Greater Density (Persons/km 2)": 7422,
+    "City Population (‘000)": 5312,
+    "City Area (km2)": 716,
+    "City Density (Persons/km 2)": 7422,
+    "Rail length (km)": 178,
+    "Public bus fleet size": 4212,
+    "Rail length (km) per million persons": 34,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 793,
+    "Daily ridership ('000) Rail and LRT)": 2649,
+    "Daily ridership ('000) Public bus": 3481,
+    "Road density (km of km2)": 5,
+    "Motor Vehicles (‘000)": 970,
+    "Private cars (‘000)": 535,
+    "Private cars per 100 persons": 10
+  },
+  {
+    "City": "Sydney",
+    "Greater Population ('000)": 4667,
+    "Greater Area (km2)": 12368,
+    "Greater Density (Persons/km 2)": 377,
+    "City Population (‘000)": 1721,
+    "City Area (km2)": 594,
+    "City Density (Persons/km 2)": 2899,
+    "Rail length (km)": 329,
+    "Public bus fleet size": 2213,
+    "Rail length (km) per million persons": 71,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 474,
+    "Daily ridership ('000) Rail and LRT)": 829,
+    "Daily ridership ('000) Public bus": 625,
+    "Road density (km of km2)": "-",
+    "Motor Vehicles (‘000)": 2626,
+    "Private cars (‘000)": 2626,
+    "Private cars per 100 persons": 56
+  },
+  {
+    "City": "Tokyo",
+    "Greater Population ('000)": 13277,
+    "Greater Area (km2)": 2189,
+    "Greater Density (Persons/km 2)": 6066,
+    "City Population (‘000)": 9050,
+    "City Area (km2)": 622,
+    "City Density (Persons/km 2)": 14550,
+    "Rail length (km)": 304,
+    "Public bus fleet size": 1462,
+    "Rail length (km) per million persons": 34,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 162,
+    "Daily ridership ('000) Rail and LRT)": 8715,
+    "Daily ridership ('000) Public bus": 554,
+    "Road density (km of km2)": 19,
+    "Motor Vehicles (‘000)": 2117,
+    "Private cars (‘000)": 1641,
+    "Private cars per 100 persons": 18
+  },
+  {
+    "City": "Vienna",
+    "Greater Population ('000)": 1757,
+    "Greater Area (km2)": 415,
+    "Greater Density (Persons/km 2)": 4235,
+    "City Population (‘000)": 1757,
+    "City Area (km2)": 415,
+    "City Density (Persons/km 2)": 4235,
+    "Rail length (km)": 74,
+    "Public bus fleet size": 496,
+    "Rail length (km) per million persons": 42,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 282,
+    "Daily ridership ('000) Rail and LRT)": 1608,
+    "Daily ridership ('000) Public bus": 323,
+    "Road density (km of km2)": 7,
+    "Motor Vehicles (‘000)": 838,
+    "Private cars (‘000)": 679,
+    "Private cars per 100 persons": 39
+  },
+  {
+    "City": "Warsaw",
+    "Greater Population ('000)": 1709,
+    "Greater Area (km2)": 517,
+    "Greater Density (Persons/km 2)": 3303,
+    "City Population (‘000)": 1709,
+    "City Area (km2)": 517,
+    "City Density (Persons/km 2)": 3303,
+    "Rail length (km)": 23,
+    "Public bus fleet size": 1561,
+    "Rail length (km) per million persons": 14,
+    "No. of rail stations per km 2 of land area": 0,
+    "Public buses per million persons": 914,
+    "Daily ridership ('000) Rail and LRT)": 362,
+    "Daily ridership ('000) Public bus": 1346,
+    "Road density (km of km2)": 4,
+    "Motor Vehicles (‘000)": 1187,
+    "Private cars (‘000)": 957,
+    "Private cars per 100 persons": 56
+  }
+];
+
+  function createVega(config) {
+    vega.embed("#" + config.name, config, opt, function(error, result) {
+      if (result) {
+        var a = document.createElement('a');
+        var linkText = document.createTextNode("Source");
+        a.appendChild(linkText);
+        a.title = "Click for " + config.name + " source";
+        a.href = config.description;
+        a.target = "_blank";
+        result.view._el.appendChild(a);
+      }
+    });
+  }
+
+  createVega(parking);
+  </script>
+</body>
+
+</html>

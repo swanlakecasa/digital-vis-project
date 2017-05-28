@@ -1,0 +1,222 @@
+#ground {}
+
+#vizicities {
+  width: 100%;
+  height: 600px;
+}
+
+#ground .sub-section {}
+
+#ground .buildings {
+
+}
+
+#ground .floor {
+  background-color: #8C8C8C;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 47%;
+  bottom: 0;
+}
+
+#ground .buildingheight-background {
+    background-image: url(../images/building_heights.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 100%;
+    width: calc(100%);
+    position: absolute;
+}
+/*#googleTubeMap {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}*/
+
+#carstaxis {}
+
+#carstaxis .london {
+    width: 40%;
+    position: absolute;
+    top: 50px;
+    bottom: 0px;
+    left: 0;
+    background: #8C8C8C;
+    height: 1000%;
+    color: #fff;
+}
+
+#carstaxis .beijing {
+  width: 40%;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 60%;
+    background: #8C8C8C;
+    height: 1000%;
+    color: #fff;
+}
+img.buildingbg {
+position: absolute;
+}
+#carstaxis .separator {
+  width: 20%;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 40%;
+      background: #fff;
+    height: 1000%;
+    color: #fff;
+}
+#wordClouds .content {
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 50px;
+}
+#carstaxis .separator img {
+  width: 50%;
+}
+.stats {
+    font-size: 18px;
+    margin-top: 20px;
+}
+.stats2 {
+    font-size: 18px;
+    margin-top: 25px;
+}
+.stats2 p {
+    margin-top: 30px; 
+}
+.comp {
+    margin-top: 10px;
+}
+
+.car {
+    margin-top: 60px;
+}
+
+.taxi {
+      margin-top: 95px;
+}
+
+.buss {
+    max-width: 40%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.wage {
+margin-top: 20px;
+    max-width: 30%;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bikebus .side-panel.blurb {
+    background: rgba(51, 51, 51, 0.65);
+    height: auto;
+    position: absolute;
+    width: 41%;
+    left: 5%;
+    z-index: 999999;
+    padding-top: 0;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 25px;
+    display: block;
+    margin: 0;
+    bottom: 25px;
+    padding: 30px;
+    text-align: left;
+}
+.bikebus .side-panel.blurb.two {
+    left: auto;
+    right: 5%;
+}
+iframe.top-attractions {
+    width: 100%;
+    height: 784px;
+    margin-top: 50px;
+}
+
+/* top attractions */
+#topattractions section {
+  margin-top: 23px;
+}
+
+iframe.bus-bike-iframe {
+    width: 100%;
+    height: 784px;
+}
+iframe.landprice-iframe {
+    margin-top: 50px;
+}
+.landprices .side-panel.blurb {
+    left: 25px;
+    top: -40px;
+}
+.map0 {
+    position: absolute;
+    top: 160px;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+}
+
+.map1 {
+    position: absolute;
+    top: 160px;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+}
+div.wordClouds img {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 500px;
+    position: absolute;
+    top: calc(50% - 250px);
+}
+div.wordClouds h3.london {
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 50%;
+}
+div.wordClouds h3.beijing {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    width: 50%;
+}
+div.wordClouds img.two {
+  position: absolute;
+  left: 50%;
+}
+iframe.layout-try {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 50px;
+    z-index: 9999;
+    width: 100%;
+    height: 800px;
+}
+#citystats .side-panel.blurb {
+    top: 50px;
+}

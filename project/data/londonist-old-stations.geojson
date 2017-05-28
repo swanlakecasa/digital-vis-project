@@ -1,0 +1,260 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.079994,
+          51.504362,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Tower Subway South Entrance (Demolished)",
+        "link": "https://en.m.wikipedia.org/wiki/Tower_Subway"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.11585,
+          51.512235,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Aldwych",
+        "link": "http://www.abandonedstations.org.uk/Aldwych_station_1.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.123022,
+          51.517446,
+          0
+        ]
+      },
+      "properties": {
+        "name": "British Museum",
+        "link": "http://www.abandonedstations.org.uk/British_Museum_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.168917,
+          51.497264,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Brompton Road",
+        "link": "http://www.abandonedstations.org.uk/Brompton_Road_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.097761,
+          51.529585,
+          0
+        ]
+      },
+      "properties": {
+        "name": "City Road",
+        "link": "http://www.abandonedstations.org.uk/City_Road_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.147977,
+          51.504619,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Down Street",
+        "link": "http://www.abandonedstations.org.uk/Down_Street_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.086603,
+          51.509958,
+          0
+        ]
+      },
+      "properties": {
+        "name": "King William Street",
+        "link": "http://www.abandonedstations.org.uk/King_William_Street_1.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.079313,
+          51.509764,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Mark Lane",
+        "link": "http://www.abandonedstations.org.uk/Mark_Lane_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.17598,
+          51.536609,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Marlborough Road",
+        "link": "http://www.abandonedstations.org.uk/Marlborough_Road_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.122625,
+          51.538385,
+          0
+        ]
+      },
+      "properties": {
+        "name": "York Road",
+        "link": "http://www.abandonedstations.org.uk/York_Road_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.181867,
+          51.568358,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Bull and Bush/North End",
+        "link": "http://www.abandonedstations.org.uk/North_End_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.135157,
+          51.527613,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Euston",
+        "link": "http://www.abandonedstations.org.uk/Euston_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.154104,
+          51.502382,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Hyde Park Corner",
+        "description": "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Pizza_on_the_Park.jpg/1280px-Pizza_on_the_Park.jpg' />"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.105357,
+          51.532025,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Angel",
+        "link": "http://www.abandonedstations.org.uk/Angel_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.141755,
+          51.544907,
+          0
+        ]
+      },
+      "properties": {
+        "name": "South Kentish Town",
+        "link": "http://www.abandonedstations.org.uk/South_Kentish_Town_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.103906,
+          51.54673,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Highbury & Islington",
+        "link": "http://www.abandonedstations.org.uk/Highbury_station.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.113232,
+          51.518391,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Chancery Lane",
+        "link": "http://www.subbrit.org.uk/rsg/sites/k/kingsway/"
+      }
+    }
+  ]
+}

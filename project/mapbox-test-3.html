@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css' rel='stylesheet' />
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+  }
+  
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  #menu {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 0;
+    margin-right: 10px;
+    border-radius: 3px;
+    width: 120px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  #menu a {
+    font-size: 13px;
+    color: #fff;
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    text-align: center;
+  }
+  
+  #menu a:last-child {
+    border: none;
+  }
+  
+  #menu a:hover {
+    background-color: #f8f8f8;
+    color: #404040;
+  }
+  /*    #menu a.active {
+        background-color: #3887be;
+        color: #ffffff;
+    }
+
+    #menu a.active:hover {
+        background: #3074a4;
+    }*/
+  
+  #menu a#satellite {
+    background-color: #CCCCCC;
+    color: #333333;
+  }
+
+  #menu a#londonist-rivers {
+    background-color: #1C99C0;
+  }
+  
+  #menu a#londonist-old-stations {
+    background-color: #D569FD;
+  }
+  
+  #menu a#londonist-war-shelters {
+    background-color: #FF0000;
+  }
+  
+  #menu a#sewer {
+    background-color: rgb(231, 231, 225);
+    color: #000000;
+  }
+  
+  #menu a#gas-pipe {
+    background-color: #FED0AE;
+    color: #000000;
+  }
+  
+  #menu a#gas-site {
+    background-color: #FED0AE;
+    color: #000000;
+  }
+  
+  #menu a#cable {
+    background-color: #76FFE1;
+    color: #000000;
+  }
+  
+  #menu a#ohl {
+    background-color: #1967FD;
+  }
+  
+  #menu a#substations {
+    background-color: #76FFE1;
+    color: #000000;
+  }
+  
+  #menu a#towers {
+    background-color: #1967FD;
+  }
+  
+  #menu a#sewer input {
+    width: 100%;
+  }
+  
+#story {
+      display: none;
+    background: rgba(0,0,0,0.3);
+    color: #ffffff;
+    width: 25%;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 25px;
+}
+  </style>
+</head>
+
+<body>
+  <nav id="menu"></nav>
+  <div id='map'></div>
+  <div id="story">
+  </div>
+  <div id="info" style="position: absolute; right: 10px; top: 10px; background: #ccc;"></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js'></script>
+  <script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGFucGF1bHNtaXRoIiwiYSI6ImNpeXc4NXU5ZDAwMDMzMm9lZmd4ZTFmZmQifQ.Nl9itu3jhaFTlhrV92LS0g';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    // style: 'mapbox://styles/danpaulsmith/cj1mfp0e800222rpb1nbd6jnb',
+    style: 'mapbox://styles/danpaulsmith/cj1ij723s000a2srknmqdbrgd',
+    zoom: 11,
+    center: [-0.116, 51.515]
+  });
+
+  map.on('load', function() {
+
+    // Rivers
+    map.addLayer({
+      "id": "londonist-rivers",
+      "type": "line",
+      "source": {
+        "type": "geojson",
+        "data": 'data/londonist-rivers.geojson',
+      },
+      "paint": {
+        "line-color": "#1C99C0",
+        "line-width": 3
+      }
+    });
+    map.on('click', 'londonist-rivers', function(e) {
+      $('#story').html('<h3>Underground rivers</h3><p>There are 12 underground rivers that pass through London and into the Thames.</p><p>Some of the more well-known rivers:</p><p>River Fleet - Became polluted as Smithfield butchers threw remains of dead animals into the river, and was eventually incorporated into the sewer system</p><p>River Tyburn - Flowing through Regents Park under Buckingham Palace, the river was once reputed to have some of London\'s best salmon fishing</p><p>River Walbrook - Its name is thought to derive from the fact the river ran under the Roman London Wall</p><p>River Westbourne - Remains of the river flow through a pipe running above Sloane Square Tube station</p><p>River Effra - Banks of the Oval cricket ground were built with earth excavated during the enclosing of the river</p>').show();
+      map.flyTo({
+        center: e.lngLat,
+        duration: 3000,
+        zoom: 14,
+        pitch: 60
+      });
+      new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML('<iframe width="600" height="500" src="' + e.features[0].properties.description + '" frameborder="0" />')
+        .addTo(map);
+    });
+    map.on('mouseenter', 'londonist-rivers', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', 'londonist-rivers', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // Stations
+    map.addLayer({
+      "id": "londonist-old-stations",
+      "type": "symbol",
+      "source": {
+        "type": "geojson",
+        "data": 'data/londonist-old-stations.geojson',
+      },
+      "layout": {
+        "icon-image": "circle-11",
+        "text-field": "{name}",
+        "text-offset": [0, 0.6],
+        "text-anchor": "top"
+      },
+      "paint": {
+        "icon-color": "#D569FD",
+        "text-color": "#D569FD"
+      }
+    });
+    map.on('click', 'londonist-old-stations', function(e) {
+      console.log(e.features[0].properties.link)
+      map.flyTo({
+        center: e.lngLat,
+        duration: 3000,
+        zoom: 14,
+        pitch: 60
+      });
+      if(e.features[0].properties.link) {
+         new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML('<iframe width="600" height="500" src="' + e.features[0].properties.link + '" frameborder="0" />')
+        .addTo(map);
+      } else {
+        new mapboxgl.Popup()
+          .setLngLat(e.lngLat)
+          .setHTML(e.features[0].properties.name + '<br /><br />' + e.features[0].properties.description)
+          .addTo(map);
+      }
+      $('#story').html('<h3>Old stations</h3><p>There are 100 old stations deep below London\'s surface.</p><p>Many tube stations were used as air-raid shelters during the Second World War, but the Central Line was even converted into a fighter aircraft factory that stretched for over two miles, with its own railway system. Its existence remained an official secret until the 1980s. <a href="http://www.telegraph.co.uk/travel/destinations/europe/united-kingdom/england/london/articles/London-Underground-150-fascinating-Tube-facts/" target="_blank">Source</a>.</p>').show();
+    });
+    map.on('mouseenter', 'londonist-old-stations', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', 'londonist-old-stations', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // War shelters
+    map.addLayer({
+      "id": "londonist-war-shelters",
+      "type": "fill",
+      "source": {
+        "type": "geojson",
+        "data": 'data/londonist-war-shelters.geojson',
+      },
+      "paint": {
+        "fill-color": "#FF0000",
+        "fill-opacity": 1
+      }
+    });
+    map.addLayer({
+      "id": "sewer",
+      "source": {
+        "type": "raster",
+        "url": "mapbox://danpaulsmith.480p7dgq"
+      },
+      "type": "raster",
+      "paint": {
+        "raster-opacity": 0.2
+      }
+    });
+    // map.addLayer({
+    //     "id": "gas-pipe",
+    //     "type": "line",
+    //     "source": {
+    //         type: 'vector',
+    //         url: 'mapbox://danpaulsmith.24gbr2l3'
+    //     },
+    //     "source-layer": "Gas_Pipe-1vxwnf",
+    //     "layout": {
+    //         "line-join": "round",
+    //         "line-cap": "round"
+    //     },
+    //     "paint": {
+    //         "line-color": "#FED0AE",
+    //         "line-width": 1
+    //     }
+    // });
+    // map.addLayer({
+    //     "id": "gas-site",
+    //     "type": "polygon",
+    //     "source": {
+    //         type: 'vector',
+    //         url: 'mapbox://danpaulsmith.6jbwn84j'
+    //     },
+    //     "source-layer": "Gas_Site-5f5032",
+    //     "paint": {
+    //         "fill-color": "#FED0AE",
+    //         "fill-opacity": 1
+    //     }
+    // });
+    map.addLayer({
+      "id": "cable",
+      "type": "line",
+      "source": {
+        type: 'vector',
+        url: 'mapbox://danpaulsmith.69v59blx'
+      },
+      "source-layer": "Cable-8yg86a",
+      "layout": {
+        "line-join": "round",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#76FFE1",
+        "line-width": 1
+      }
+    });
+    // map.addLayer({
+    //     "id": "ohl",
+    //     "type": "point",
+    //     "source": {
+    //         type: 'vector',
+    //         url: 'mapbox://danpaulsmith.79930dxt'
+    //     },
+    //     "source-layer": "OHL-40ipub",
+    //     "paint": {
+    //         "line-color": "#AEFF68",
+    //         "line-width": 1
+    //     }
+    // });
+    // 
+    map.addLayer({
+      "id": "substations",
+      "type": "fill",
+      "source": {
+        type: 'vector',
+        url: 'mapbox://danpaulsmith.9htn62xa'
+      },
+      "source-layer": "Substations-25ms1l",
+      "paint": {
+        "fill-color": "#76FFE1",
+        "fill-opacity": 1
+      }
+    });
+    // map.addLayer({
+    //     "id": "towers",
+    //     "type": "point",
+    //     "source": {
+    //         type: 'vector',
+    //         url: 'mapbox://danpaulsmith.3buy55k2'
+    //     },
+    //     "source-layer": "Towers-cs8csv",
+    //     "paint": {
+    //         "fill-color": "#47F9FD"
+    //     }
+    // });
+
+
+    // map.addLayer({
+    //     "id": "gas-pipe",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.24gbr2l3"
+    //     },
+    //     "type": "vector"
+    // });
+    // map.addLayer({
+    //     "id": "gas-station",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.6jbwn84j"
+    //     },
+    //     "type": "vector"
+    // });
+    // map.addLayer({
+    //     "id": "ohl",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.79930dxt"
+    //     },
+    //     "type": "vector"
+    // });
+    // map.addLayer({
+    //     "id": "substations",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.9htn62xa"
+    //     },
+    //     "type": "vector"
+    // });
+    // map.addLayer({
+    //     "id": "towers",
+    //     "source": {
+    //         "type": "vector",
+    //         "url": "mapbox://danpaulsmith.3buy55k2"
+    //     },
+    //     "type": "vector"
+    // });
+
+
+
+
+
+
+    map.on('click', 'londonist-war-shelters', function(e) {
+      $('#story').html('<h3>Deep level war shelters</h3><p>There are 15 war shelters deep below London\'s surface, each planned to store up to 10,000 citizens.</p><p>Each shelter consists of a pair of parallel tunnels 5m in diameter and 370m long. Each tunnel is subdivided into two decks.</p>').show();
+      map.flyTo({
+        center: e.lngLat,
+        duration: 3000,
+        zoom: 14,
+        pitch: 60
+      });
+      new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML('<iframe width="600" height="500" src="' + e.features[0].properties.description + '" frameborder="0" />')
+        .addTo(map);
+    });
+    map.on('mouseenter', 'londonist-war-shelters', function() {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', 'londonist-war-shelters', function() {
+      map.getCanvas().style.cursor = '';
+    });
+
+    // 3D buildings
+    // map.addLayer({
+    //     'id': '3d-buildings',
+    //     'source': 'composite',
+    //     'source-layer': 'building',
+    //     'filter': ['==', 'extrude', 'true'],
+    //     'type': 'fill-extrusion',
+    //     'minzoom': 15,
+    //     'paint': {
+    //         'fill-extrusion-color': '#aaa',
+    //         'fill-extrusion-height': {
+    //             'type': 'identity',
+    //             'property': 'height'
+    //         },
+    //         'fill-extrusion-base': {
+    //             'type': 'identity',
+    //             'property': 'min_height'
+    //         },
+    //         'fill-extrusion-opacity': .6
+    //     }
+    // });
+
+    var toggleableLayerIds = ['satellite', 'londonist-rivers', 'londonist-war-shelters', 'londonist-old-stations', 'sewer', 'cable'];
+    var satellite = false;
+
+    function getLayerName(id) {
+      switch (id) {
+        case 'satellite':
+          return 'Satellite image toggle';
+        case 'londonist-rivers':
+          return 'Underground rivers';
+        case 'londonist-war-shelters':
+          return 'War shelters';
+        case 'londonist-old-stations':
+          return 'Old tube stations';
+        case 'sewer':
+          return 'London Sewer network (1930)';
+        case 'cable':
+          return 'Electric cables and substations';
+        case 'gas-pipe':
+          return 'Gas pipes';
+        case 'gas-site':
+          return 'Gas site';
+        case 'ohl':
+          return 'National Grid - Electricity overhead lines';
+        case 'substations':
+          return 'National Grid - Electricity substations';
+        case 'towers':
+          return 'National Grid - Electricity towers';
+        default:
+          return id;
+      }
+    }
+    for (var i = 0; i < toggleableLayerIds.length; i++) {
+      var id = toggleableLayerIds[i];
+
+      var link = document.createElement('a');
+      link.href = 'javascript:void(0);';
+      link.className = 'active';
+      link.id = id;
+      if (id === 'sewer') {
+        var input = document.createElement('input');
+        input.type = 'range';
+        input.min = 0;
+        input.max = 100;
+        input.step = 1;
+        input.value = 30;
+        input.id = 'sewerOpacity';
+        var span = document.createElement('span');
+        var t = document.createTextNode(getLayerName(id));
+        span.appendChild(t);
+        link.appendChild(span);
+        link.appendChild(input);
+        input.addEventListener('input', function(e) {
+          // Adjust the layers opacity. layer here is arbitrary - this could
+          // be another layer name found in your style or a custom layer
+          // added on the fly using `addSource`.
+          map.setPaintProperty('sewer', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+        });
+      } else {
+        var span = document.createElement('span');
+        var t = document.createTextNode(getLayerName(id));
+        span.appendChild(t);
+      }
+
+      span.onclick = function(e) {
+        var clickedLayer = this.parentNode.id;
+        e.preventDefault();
+        e.stopPropagation();
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+        if (visibility === 'visible' || visibility === undefined) {
+          if (clickedLayer === 'cable') {
+            map.setLayoutProperty('substations', 'visibility', 'none');
+          }
+          map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+          this.className = '';
+        } else if(clickedLayer === 'satellite') {
+          if(!satellite) {
+            map.setStyle('mapbox://styles/mapbox/satellite-v9');
+            satellite = true;
+          } else {
+            map.setStyle('mapbox://styles/danpaulsmith/cj1ij723s000a2srknmqdbrgd');
+            satellite = false;
+          }
+        } else {
+          this.className = 'active';
+          if (clickedLayer === 'cable') {
+            map.setLayoutProperty('substations', 'visibility', 'visible');
+          }
+          map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+      };
+      link.appendChild(span);
+
+      var layers = document.getElementById('menu');
+      layers.appendChild(link);
+    }
+
+    // var slider = document.getElementById('sewerOpacity');
+
+    // slider.addEventListener('input', function(e) {
+    //     // Adjust the layers opacity. layer here is arbitrary - this could
+    //     // be another layer name found in your style or a custom layer
+    //     // added on the fly using `addSource`.
+    //     map.setPaintProperty('sewer', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+    // });
+
+
+  });
+  </script>
+</body>
+
+</html>

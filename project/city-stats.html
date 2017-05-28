@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>Smoothed D3.js Radar Chart</title>
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <!-- D3.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <style>
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    fill: #242424;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    cursor: default;
+  }
+  
+  .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  .info p {
+    margin: 0;
+    padding: 0;
+    clear: both;
+  }
+  
+  span.one {
+    float: left;
+  }
+  
+  span.two {
+    float: right;
+  }
+  
+  .key {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    position: absolute;
+    margin-left: -25px;
+  }
+  
+  .key ul {
+    list-style-type: none;
+    text-align: left;
+  }
+  
+  .key ul li {
+    margin-bottom: 3px;
+  }
+  
+  li.active {
+    opacity: 1;
+  }
+  
+  li {
+    opacity: 0.3;
+  }
+  
+  .legend {
+    font-family: 'Raleway', sans-serif;
+    fill: #333333;
+  }
+  
+  .tooltip {
+    fill: #333333;
+  }
+  
+  .radarChart {
+    text-align: right;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="radarChart"></div>
+  <div class="key"></div>
+  <div class="info"></div>
+  <script src="js/radarChart.js"></script>
+  <script>
+  /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+
+  ////////////////////////////////////////////////////////////// 
+  //////////////////////// Set-Up ////////////////////////////// 
+  ////////////////////////////////////////////////////////////// 
+
+  var margin = {
+      top: 100,
+      right: 100,
+      bottom: 100,
+      left: 100
+    },
+    width = (window.innerWidth * 0.5) - margin.left - margin.right,
+    height = window.innerHeight - margin.top - margin.bottom;
+
+  ////////////////////////////////////////////////////////////// 
+  ////////////////////////// Data ////////////////////////////// 
+  ////////////////////////////////////////////////////////////// 
+  var cityStats2 = [
+    [{
+      axis: "City",
+      value: "Beijing"
+    }, {
+      axis: "Greater Population ('000)",
+      value: 20186
+    }, {
+      axis: "Greater Area (km2)",
+      value: 16411
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 1230
+    }, {
+      axis: "City Population (‘000)",
+      value: 12014
+    }, {
+      axis: "City Area (km2)",
+      value: 1368
+    }, {
+      axis: "City Density (Persons/km 2)",
+      value: 8780
+    }, {
+      axis: "Rail length (km)",
+      value: 456
+    }, {
+      axis: "Public bus fleet size",
+      value: 21628
+    }, {
+      axis: "Rail length (km) per million persons",
+      value: 38
+    }, {
+      axis: "No. of rail stations per km 2 of land area",
+      value: 0
+    }, {
+      axis: "Public buses per million persons",
+      value: 1071
+    }, {
+      axis: "Daily ridership ('000) Rail and LRT)",
+      value: 6008
+    }, {
+      axis: "Daily ridership ('000) Public bus",
+      value: 13788
+    }, {
+      axis: "Road density (km of km2)",
+      value: 2
+    }, {
+      axis: "Motor Vehicles (‘000)",
+      value: 4983
+    }, {
+      axis: "Private cars (‘000)",
+      value: 2862
+    }, {
+      axis: "Private cars per 100 persons",
+      value: 14
+    }],
+    [{
+      axis: "City",
+      value: "London"
+    }, {
+      axis: "Greater Population ('000)",
+      value: 8302
+    }, {
+      axis: "Greater Area (km2)",
+      value: 1572
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 5281
+    }, {
+      axis: "City Population (‘000)",
+      value: 8302
+    }, {
+      axis: "City Area (km2)",
+      value: 1572
+    }, {
+      axis: "City Density (Persons/km 2)",
+      value: 5281
+    }, {
+      axis: "Rail length (km)",
+      value: 436
+    }, {
+      axis: "Public bus fleet size",
+      value: 7500
+    }, {
+      axis: "Rail length (km) per million persons",
+      value: 53
+    }, {
+      axis: "No. of rail stations per km 2 of land area",
+      value: 0
+    }, {
+      axis: "Public buses per million persons",
+      value: 903
+    }, {
+      axis: "Daily ridership ('000) Rail and LRT)",
+      value: 3641
+    }, {
+      axis: "Daily ridership ('000) Public bus",
+      value: 6397
+    }, {
+      axis: "Road density (km of km2)",
+      value: 9
+    }, {
+      axis: "Motor Vehicles (‘000)",
+      value: 2934
+    }, {
+      axis: "Private cars (‘000)",
+      value: 2535
+    }, {
+      axis: "Private cars per 100 persons",
+      value: 31
+    }]
+  ]
+
+  // var data = [
+  //   [ //iPhone
+  //     {
+  //       axis: "Battery Life",
+  //       value: 0.22
+  //     }, {
+  //       axis: "Brand",
+  //       value: 0.28
+  //     }, {
+  //       axis: "Contract Cost",
+  //       value: 0.29
+  //     }, {
+  //       axis: "Design And Quality",
+  //       value: 0.17
+  //     }, {
+  //       axis: "Have Internet Connectivity",
+  //       value: 0.22
+  //     }, {
+  //       axis: "Large Screen",
+  //       value: 0.02
+  //     }, {
+  //       axis: "Price Of Device",
+  //       value: 0.21
+  //     }, {
+  //       axis: "To Be A Smartphone",
+  //       value: 0.50
+  //     }
+  //   ],
+  //   [ //Samsung
+  //     {
+  //       axis: "Battery Life",
+  //       value: 0.27
+  //     }, {
+  //       axis: "Brand",
+  //       value: 0.16
+  //     }, {
+  //       axis: "Contract Cost",
+  //       value: 0.35
+  //     }, {
+  //       axis: "Design And Quality",
+  //       value: 0.13
+  //     }, {
+  //       axis: "Have Internet Connectivity",
+  //       value: 0.20
+  //     }, {
+  //       axis: "Large Screen",
+  //       value: 0.13
+  //     }, {
+  //       axis: "Price Of Device",
+  //       value: 0.35
+  //     }, {
+  //       axis: "To Be A Smartphone",
+  //       value: 0.38
+  //     }
+  //   ],
+  //   [ //Nokia Smartphone
+  //     {
+  //       axis: "Battery Life",
+  //       value: 0.26
+  //     }, {
+  //       axis: "Brand",
+  //       value: 0.10
+  //     }, {
+  //       axis: "Contract Cost",
+  //       value: 0.30
+  //     }, {
+  //       axis: "Design And Quality",
+  //       value: 0.14
+  //     }, {
+  //       axis: "Have Internet Connectivity",
+  //       value: 0.22
+  //     }, {
+  //       axis: "Large Screen",
+  //       value: 0.04
+  //     }, {
+  //       axis: "Price Of Device",
+  //       value: 0.41
+  //     }, {
+  //       axis: "To Be A Smartphone",
+  //       value: 0.30
+  //     }
+  //   ]
+  // ];
+  var cityStats = [
+    [{
+      axis: "City",
+      value: "Beijing"
+    }, {
+      axis: "Greater Population ('000)",
+      value: 20186
+    }, {
+      axis: "Greater Area (km2)",
+      value: 16411
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 1230
+    }, {
+      axis: "City Population (‘000)",
+      value: 12014
+    }, {
+      axis: "City Area (km2)",
+      value: 1368
+    }, {
+      axis: "City Density (Persons/km 2)",
+      value: 8780
+    }, {
+      axis: "Rail length (km)",
+      value: 456
+    }, {
+      axis: "Public bus fleet size",
+      value: 21628
+    }, {
+      axis: "Rail length (km) per million persons",
+      value: 38
+    }, {
+      axis: "No. of rail stations per km 2 of land area",
+      value: 0
+    }, {
+      axis: "Public buses per million persons",
+      value: 1071
+    }, {
+      axis: "Daily ridership ('000) Rail and LRT)",
+      value: 6008
+    }, {
+      axis: "Daily ridership ('000) Public bus",
+      value: 13788
+    }, {
+      axis: "Road density (km of km2)",
+      value: 2
+    }, {
+      axis: "Motor Vehicles (‘000)",
+      value: 4983
+    }, {
+      axis: "Private cars (‘000)",
+      value: 2862
+    }, {
+      axis: "Private cars per 100 persons",
+      value: 14
+    }],
+    [{
+      axis: "City",
+      value: "London"
+    }, {
+      axis: "Greater Population ('000)",
+      value: 8302
+    }, {
+      axis: "Greater Area (km2)",
+      value: 1572
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 5281
+    }, {
+      axis: "City Population (‘000)",
+      value: 8302
+    }, {
+      axis: "City Area (km2)",
+      value: 1572
+    }, {
+      axis: "City Density (Persons/km 2)",
+      value: 5281
+    }, {
+      axis: "Rail length (km)",
+      value: 436
+    }, {
+      axis: "Public bus fleet size",
+      value: 7500
+    }, {
+      axis: "Rail length (km) per million persons",
+      value: 53
+    }, {
+      axis: "No. of rail stations per km 2 of land area",
+      value: 0
+    }, {
+      axis: "Public buses per million persons",
+      value: 903
+    }, {
+      axis: "Daily ridership ('000) Rail and LRT)",
+      value: 3641
+    }, {
+      axis: "Daily ridership ('000) Public bus",
+      value: 6397
+    }, {
+      axis: "Road density (km of km2)",
+      value: 9
+    }, {
+      axis: "Motor Vehicles (‘000)",
+      value: 2934
+    }, {
+      axis: "Private cars (‘000)",
+      value: 2535
+    }, {
+      axis: "Private cars per 100 persons",
+      value: 31
+    }],
+    [{
+      axis: "City",
+      value: "Madrid"
+    }, {
+      axis: "Greater Population ('000)",
+      value: 3249
+    }, {
+      axis: "Greater Area (km2)",
+      value: 604
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 5377
+    }, {
+      axis: "City Population (‘000)",
+      value: 3249
+    }, {
+      axis: "City Area (km2)",
+      value: 604
+    }, {
+      axis: "City Density (Persons/km 2)",
+      value: 5377
+    }, {
+      axis: "Rail length (km)",
+      value: 292
+    }, {
+      axis: "Public bus fleet size",
+      value: 2095
+    }, {
+      axis: "Rail length (km) per million persons",
+      value: 90
+    }, {
+      axis: "No. of rail stations per km 2 of land area",
+      value: 0
+    }, {
+      axis: "Public buses per million persons",
+      value: 645
+    }, {
+      axis: "Daily ridership ('000) Rail and LRT)",
+      value: 1644
+    }, {
+      axis: "Daily ridership ('000) Public bus",
+      value: 1169
+    }, {
+      axis: "Road density (km of km2)",
+      value: 5
+    }, {
+      axis: "Motor Vehicles (‘000)",
+      value: 1687
+    }, {
+      axis: "Private cars (‘000)",
+      value: 1330
+    }, {
+      axis: "Private cars per 100 persons",
+      value: 41
+    }],
+    [{
+      axis: "City",
+      value: "New York"
+    }, {
+      axis: "Greater Population ('000)",
+      value: 8337
+    }, {
+      axis: "Greater Area (km2)",
+      value: 790
+    }, {
+      axis: "Greater Density (Persons/km 2)",
+      value: 10553
+    }, {
+      axis: "City Population (‘000)",
+      value: 8337
+    }, {
+      axis: "City Area (km2)",
+      value: 790
+    }, {
+      axis: "City Density (Persons/km 2)",
+      value: 10553
+    }, {
+      axis: "Rail length (km)",
+      value: 373
+    }, {
+      axis: "Public bus fleet size",
+      value: 4344
+    }, {
+      axis: "Rail length (km) per million persons",
+      value: 45
+    }, {
+      axis: "No. of rail stations per km 2 of land area",
+      value: 1
+    }, {
+      axis: "Public buses per million persons",
+      value: 521
+    }, {
+      axis: "Daily ridership ('000) Rail and LRT)",
+      value: 4521
+    }, {
+      axis: "Daily ridership ('000) Public bus",
+      value: 1825
+    }, {
+      axis: "Road density (km of km2)",
+      value: 13
+    }, {
+      axis: "Motor Vehicles (‘000)",
+      value: 1978
+    }, {
+      axis: "Private cars (‘000)",
+      value: 1777
+    }, {
+      axis: "Private cars per 100 persons",
+      value: 21
+    }]
+  ];
+  ////////////////////////////////////////////////////////////// 
+  //////////////////// Draw the Chart ////////////////////////// 
+  ////////////////////////////////////////////////////////////// 
+  var names = [];
+  var exclusions = [];
+  var color = d3.scale.category10();
+  var lis = cityStats.map(function(city, i) {
+    return '<li class="active" id="menu-' + i + '"><span class="icon" style="background:' + color(i) + '"></span>' + city[0].value + '</li>';
+  }).join('');
+  d3.select('.key').append('ul').html(lis);
+  d3.select('.key').selectAll('ul').selectAll('li').on('mouseover', function() {
+    var id = d3.select(this).attr('id').replace('menu-', '');
+    d3.selectAll('path').style('fill-opacity', 0.1);
+    d3.selectAll('#path-' + id).style('fill-opacity', 1);
+    d3.selectAll('.key ul li').attr('class', '');
+    d3.select(this).attr('class', 'active');
+    displayInfo(id);
+    // if(id in exclusions) {
+    // 	exclusions.splice(exclusions.indexOf(id), 1);
+    // 	d3.select('#path-'+id).attr('fill-opacity', 1);
+    // 	d3.select(this).attr('class', 'active');
+    // } else {
+    // 	exclusions.push(id);
+    // 	d3.select('#path-'+id).attr('fill-opacity', 0);
+    // 	d3.select(this).attr('class', 'inactive');
+    // }
+    // rebuildChart();
+  }).on('mouseout', function() {
+    d3.selectAll('path').style('fill-opacity', 0.5);
+    d3.selectAll('.key ul li').attr('class', 'active');
+    hideInfo();
+  });
+
+  function displayInfo(id) {
+    var html = '';
+    c = cityStats[id];
+    console.log(c);
+    html = '<h3>' + names[id].value + '</h3>';
+    c.forEach(function(attr) {
+      html += '<p><span class="one">' + attr.axis + '</span><span class="two">' + attr.originalValue + '</span></p>';
+    })
+    d3.select('.info').html(html);
+    //c.originalValue
+  }
+
+  function hideInfo() {
+
+  }
+
+  var radarChartOptions = {
+    w: width,
+    h: height,
+    margin: margin,
+    maxValue: 1.0,
+    levels: 10,
+    roundStrokes: true
+  };
+
+  var data = cityStats.map(function(city) {
+    names.push(city.shift());
+    return city;
+  });
+
+  var stats = {};
+  cityStats[0].forEach(function(attr, i) {
+    console.log(attr.axis, attr.value);
+    stats[attr.axis] = [];
+    cityStats.forEach(function(city) {
+      stats[attr.axis].push(city[i].value)
+    })
+  });
+  cityStats[0].forEach(function(attr, i) {
+    cityStats.forEach(function(city) {
+      city[i].originalValue = city[i].value;
+      city[i].value = city[i].value / _.max(stats[city[i].axis]);
+    })
+  });
+  // console.log(data);
+  //Call function to draw the Radar chart
+  RadarChart(".radarChart", data, radarChartOptions);
+  d3.selectAll('.radarStroke').style('stroke-opacity', 0);
+  d3.selectAll('.radarCircle').style('fill-opacity', 0);
+  d3.selectAll('path').style('fill-opacity', 0.5);
+  </script>
+</body>
+
+</html>

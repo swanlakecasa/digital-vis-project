@@ -1,0 +1,96 @@
+html, body{
+	height:100%;
+	width: 100%;
+	overflow: hidden;
+	margin: 0;
+}
+
+.ground{
+	height: 100%;
+	width:100%;
+	
+}
+
+.cloud{
+	position:absolute;
+}
+.cloud:nth-child(1){
+	width:200px;
+	top: 100px;
+	/*opacity: 0.5;*/
+	animation: wind 40s linear infinite reverse;
+}
+
+.cloud:nth-child(2){
+	width:300px;
+	top:80;
+	animation: wind 50s linear infinite reverse;
+}
+
+
+.bus{
+	position: absolute;
+	top:460px;
+	left: 0px;
+	z-index: 2;
+	animation-name: drive;
+	animation-duration: 5s;
+	/*animation-fill-mode: both;*/
+	/*when use infinite, the charactor will go over and over*/
+	animation-iteration-count: infinite;
+	/*animation-delay: 2s;*/
+	animation-timing-function: ease-in-out;
+	
+}
+
+.taxi{
+	position: absolute;
+	top: 500px;
+	left: 0;
+	z-index: 1;
+	animation-name: drive;
+	animation-duration: 4s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+}
+
+.car{
+	position: absolute;
+	top: 480px;
+	left: 0;
+	z-index:0;
+	animation-name: drive;
+	animation-duration: 4s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-direction: reverse;
+}
+
+ .human{
+ 	position:absolute;
+ 	top: 600px;
+ 	animation-name: drive;
+	animation-duration: 15s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+ }
+/*keyframes*/
+	@keyframes wind{
+		from{left: -300px;}
+		to{left: 100%;}
+	}
+
+	@keyframes drive{
+		from{ transform: translateX(-100px); }
+		to{ transform: translateX(1300px); }
+	}
+
+	/*
+	@keyframes walk{
+        	from{background-position: -900px;}
+        	to{background-position: 0px;}
+        }
+*/
+
+

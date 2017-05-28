@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="js/jquery.elevateZoom-3.0.8.min.js"></script>
+  <style>
+  body {
+     margin: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #000;
+    overflow: hidden;
+  }
+  .pic {
+    text-align: center;
+    position: relative;
+    height: 100%;
+    background: #000;
+  }
+  .blur {
+    height: 100%;
+  }
+  .overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+  }
+  #zoom_01 {
+    margin: auto;
+  }
+  </style>
+</head>
+
+<body>
+  <img id="zoom_01" src='images/tube-cross-sectional-edited-by-dan.png' data-zoom-image="http://www.stephenbiesty.co.uk/jpegs/bigTube.jpg"/>
+  <script>
+  $('#zoom_01').elevateZoom({
+    tint:true, 
+    tintColour:'#000', 
+    tintOpacity:0.9});
+  </script>
+</body>
+
+</html>
