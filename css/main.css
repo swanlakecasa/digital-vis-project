@@ -112,6 +112,9 @@ h1.section-title {
     border-radius: 10px;
     margin: 25px;
 }
+.side-panel.second img {
+    margin-bottom: 3px;
+}
 .ug-cross .side-panel.blurb {
     bottom: 0;
 }
