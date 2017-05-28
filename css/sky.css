@@ -302,9 +302,10 @@ img.pol {
     position: absolute;
     right: 10%;
     top: 190px;
+    width: 675px;
 }
 img.pol.beijing-pol {
-    top: 500px;
+  top: 450px;
 }
 img.airtower {
     position: absolute;

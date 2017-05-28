@@ -155,6 +155,10 @@ iframe.bus-bike-iframe {
 iframe.landprice-iframe {
     margin-top: 50px;
 }
+.landprices .side-panel.blurb {
+    left: 25px;
+    top: -40px;
+}
 .map0 {
     position: absolute;
     top: 160px;

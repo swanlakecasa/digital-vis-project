@@ -55,7 +55,6 @@ section {
     border-bottom: 1px solid #ddd;
     opacity: 0.25;
     font-size: 13px;
-    margin-top: 25px;
 }
 section.active {
     opacity: 1;
@@ -70,12 +69,12 @@ section:last-child {
 <!-- <div id="london" style="top: 0px; left: 0px; width:470px; height:800px; float: left"></div> -->
 <!-- <div id="beijing" style="top: 0px; right: 0px; width:470px; height:800px"></div> -->
 <div id='menu'>
-    <input id='streets' type='radio' name='rtoggle' value='streets' checked='checked'>
-    <label for='streets'>Streets</label>
-    <input id='light' type='radio' name='rtoggle' value='light'>
+    <input id='light' type='radio' name='rtoggle' value='light' checked='checked'>
     <label for='light'>Light</label>
     <input id='dark' type='radio' name='rtoggle' value='dark'>
     <label for='dark'>Dark</label>
+    <input id='streets' type='radio' name='rtoggle' value='streets'>
+    <label for='streets'>Streets</label>
     <input id='satellite' type='radio' name='rtoggle' value='satellite'>
     <label for='satellite'>Satellite</label>
 </div>
@@ -153,7 +152,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibGlzYXNhc2FzYSIsImEiOiJjajJndjhmdHEwMDBoMzNtd
 
 var london = new mapboxgl.Map({
     container: 'london',
-    style: 'mapbox://styles/mapbox/streets-v9',
+    style: 'mapbox://styles/mapbox/light-v9',
     center: [-0.163222, 51.502741],
     zoom: 13.5,
     bearing: 27,
@@ -265,7 +264,7 @@ london.on('style.load', function () {
 
 var beijing = new mapboxgl.Map({
     container: 'beijing',
-    style: 'mapbox://styles/mapbox/streets-v9',
+    style: 'mapbox://styles/mapbox/light-v9',
     center: [116.402707, 39.906284],
     zoom: 11.3,
     bearing: 0,
