@@ -75,7 +75,7 @@
                 background-color: #19E2E8;
                 transform: translate3d(-200px, 0, 0);
                 transition: transform 0.4s ease;
-                opacity: 0.5;
+                /*opacity: 0.5;*/
                 filter:alpha (opacity=90);
             }
             .active-nav nav {
@@ -160,10 +160,10 @@
             <img class="nav-toggle-btn" src="logopng.PNG">
             
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="javascript:void(0)" class="intro-link">Introduction</a></li>
+                <li><a href="javascript:void(0);" class="home-link">Home</a></li>
+                <li><a href="javascript:void(0);" class="intro-link">Introduction</a></li>
                 <li><a href="project/">Visualisation</a></li>
-                <li><a href="#">About us</a></li>
+                <li><a href="#" class="about-link">About us</a></li>
             </ul>
             
         </nav>        
@@ -217,9 +217,19 @@
 $('.Home').height(window.innerHeight);
 $('.Introducation').height(window.innerHeight);
             $('.Aboutus').height(window.innerHeight);
+            $('.home-link').click(function(){
+                $('html, body').animate({
+                    scrollTop: 0
+                  }, 2000);
+            })
             $('.intro-link').click(function(){
                 $('html, body').animate({
                     scrollTop: $('.Introducation').offset().top
+                  }, 2000);
+            })
+            $('.about-link').click(function(){
+                $('html, body').animate({
+                    scrollTop: $('.Aboutus').offset().top
                   }, 2000);
             })
             
