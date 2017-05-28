@@ -230,6 +230,7 @@ $(document).ready(function() {
   // UI.bikebusInitialize();
   $('iframe.storyofinstagram').height(window.innerHeight - 110);
   $('iframe.bus-bike-iframe').height(window.innerHeight - 110);
+  $('iframe.layout-try').height(window.innerHeight - 110);
   $('table#cityStatsTable').width(window.innerWidth);
   $('div.map0').height(window.innerHeight - 110);
   $('div.map1').height(window.innerHeight - 110);
