@@ -6,7 +6,7 @@ body {
 }
 
 img {
-  margin-left: 80px;
+  /*margin-left: 80px;*/
   width:60%;
 }
 
@@ -66,10 +66,11 @@ h1 {
   overflow: hidden;
 }
 .strip .content {
+  text-align: center;
   opacity: 0;
   -webkit-transform: scale(0);
           transform: scale(0);
-  width: 0;
+      width: auto;
 }
 .strip .content h1,
 .strip .content p {
@@ -105,7 +106,8 @@ h1 {
   padding: 1em;
   -webkit-transform: scale(1);
           transform: scale(1);
-  width: 700px;
+      width: auto;
+  margin-top: -350px;
 }
 .strip.hoverin .content h1,
 .strip.hoverin .content p {

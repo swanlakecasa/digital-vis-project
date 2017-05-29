@@ -427,3 +427,9 @@ path.domain {
     padding: 10%;
     /*font-size: 36px;*/
 }
+.shard-sky {
+    position: absolute;
+    left: 227px;
+    bottom: 0px;
+    width: 160px;
+}
